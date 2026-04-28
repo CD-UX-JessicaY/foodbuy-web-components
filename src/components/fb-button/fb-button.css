@@ -1,0 +1,143 @@
+:host {
+  display: inline-flex;
+}
+
+/* ── Base ─────────────────────────────────────────────────────────── */
+.fb-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-8);
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--fb-button-radius, var(--radius-sm));
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s, opacity 0.15s;
+  white-space: nowrap;
+  line-height: 1;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.fb-button:focus-visible {
+  outline: var(--focus-width) solid var(--focus-color);
+  outline-offset: var(--focus-offset);
+}
+
+/* ── Sizes ────────────────────────────────────────────────────────── */
+.size-xs {
+  height: 24px;
+  padding: 0 var(--spacing-8);
+  font-size: var(--font-size-12);
+}
+
+.size-sm {
+  height: 28px;
+  padding: 0 var(--spacing-12);
+  font-size: var(--font-size-12);
+}
+
+.size-default {
+  height: 36px;
+  padding: 0 var(--spacing-16);
+  font-size: var(--font-size-14);
+}
+
+.size-lg {
+  height: 44px;
+  padding: 0 var(--spacing-20);
+  font-size: var(--font-size-16);
+}
+
+/* Icon-only: square, no padding */
+.icon-only.size-xs    { width: 24px; padding: 0; }
+.icon-only.size-sm    { width: 28px; padding: 0; }
+.icon-only.size-default { width: 36px; padding: 0; }
+.icon-only.size-lg    { width: 44px; padding: 0; }
+
+/* ── Rounded modifier ─────────────────────────────────────────────── */
+.rounded { border-radius: var(--radius-max); }
+
+/* ── Variants ─────────────────────────────────────────────────────── */
+
+/* Default (primary filled) */
+.variant-default {
+  background-color: var(--color-primary-500);
+  color: var(--color-neutral-white);
+  border: none;
+}
+.variant-default:hover:not(:disabled)  { background-color: var(--color-primary-600); }
+.variant-default:active:not(:disabled) { background-color: var(--color-primary-700); }
+
+/* Secondary */
+.variant-secondary {
+  background-color: var(--color-neutral-100);
+  color: var(--color-neutral-black);
+  border: none;
+}
+.variant-secondary:hover:not(:disabled)  { background-color: var(--color-neutral-200); }
+.variant-secondary:active:not(:disabled) { background-color: var(--color-neutral-300); }
+
+/* Outline */
+.variant-outline {
+  background-color: transparent;
+  color: var(--color-primary-500);
+  border: 1px solid var(--color-primary-500);
+}
+.variant-outline:hover:not(:disabled) {
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-600);
+  border-color: var(--color-primary-600);
+}
+.variant-outline:active:not(:disabled) {
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-700);
+  border-color: var(--color-primary-700);
+}
+
+/* Ghost */
+.variant-ghost {
+  background-color: transparent;
+  color: var(--color-primary-500);
+  border: none;
+}
+.variant-ghost:hover:not(:disabled)  { background-color: var(--color-primary-50); color: var(--color-primary-600); }
+.variant-ghost:active:not(:disabled) { background-color: var(--color-primary-100); color: var(--color-primary-700); }
+
+/* Destructive */
+.variant-destructive {
+  background-color: var(--color-danger-500);
+  color: var(--color-neutral-white);
+  border: none;
+}
+.variant-destructive:hover:not(:disabled)  { background-color: var(--color-danger-600); }
+.variant-destructive:active:not(:disabled) { background-color: var(--color-danger-800); }
+
+/* Link */
+.variant-link {
+  background-color: transparent;
+  color: var(--color-primary-500);
+  border: none;
+  text-decoration: underline;
+  border-radius: var(--radius-xs);
+  padding: 4px var(--spacing-8);
+  height: auto;
+}
+.variant-link:hover:not(:disabled)  { background-color: var(--color-primary-50);  color: var(--color-primary-600); }
+.variant-link:active:not(:disabled) { background-color: var(--color-primary-100); color: var(--color-primary-700); }
+
+/* ── Disabled state ───────────────────────────────────────────────── */
+.fb-button:disabled,
+.fb-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Icon slots ───────────────────────────────────────────────────── */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}

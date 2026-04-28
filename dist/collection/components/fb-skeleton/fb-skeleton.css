@@ -1,0 +1,26 @@
+:host { display: block; }
+
+.fb-skeleton {
+  display: block;
+  background: linear-gradient(
+    90deg,
+    var(--color-neutral-100) 25%,
+    var(--color-neutral-50)  50%,
+    var(--color-neutral-100) 75%
+  );
+  background-size: 200% 100%;
+  animation: fb-shimmer 1.4s ease-in-out infinite;
+}
+
+.variant-text   { border-radius: var(--radius-xs); }
+.variant-rect   { border-radius: var(--radius-sm); }
+.variant-circle { border-radius: var(--radius-max); }
+
+@keyframes fb-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fb-skeleton { animation: none; opacity: 0.6; }
+}

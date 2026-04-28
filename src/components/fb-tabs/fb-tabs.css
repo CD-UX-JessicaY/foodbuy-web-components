@@ -1,0 +1,94 @@
+:host { display: block; }
+
+/* ── Tab list ─────────────────────────────────────────────────────── */
+.fb-tablist {
+  display: flex;
+  align-items: center;
+}
+
+.variant-underline {
+  border-bottom: 1px solid var(--color-neutral-400);
+  gap: 0;
+}
+
+.variant-pill {
+  background: var(--color-primary-50);
+  padding: var(--spacing-4);
+  border-radius: var(--radius-sm);
+  gap: var(--spacing-4);
+}
+
+.fb-tablist.full-width { width: 100%; }
+
+/* ── Tab button ───────────────────────────────────────────────────── */
+.fb-tab {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-neutral-500);
+  white-space: nowrap;
+  transition: color 0.15s, background-color 0.15s;
+  /* NEVER remove focus outline — customise it instead */
+  outline-offset: -2px;
+}
+
+.fb-tab:focus-visible {
+  outline: var(--focus-width) solid var(--focus-color);
+  border-radius: var(--radius-xs);
+}
+
+.fb-tab.full-width { flex: 1; text-align: center; }
+
+/* Sizes */
+.size-sm      { font-size: var(--font-size-12); padding: 6px var(--spacing-12); }
+.size-default { font-size: var(--font-size-14); padding: 10px var(--spacing-16); }
+.size-lg      { font-size: var(--font-size-16); padding: var(--spacing-12) var(--spacing-20); }
+
+/* Underline variant */
+.variant-underline .fb-tab {
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  border-radius: 0;
+}
+.variant-underline .fb-tab:hover:not(.disabled):not(.active) {
+  color: var(--color-neutral-700);
+  border-bottom-color: var(--color-neutral-200);
+}
+.variant-underline .fb-tab.active {
+  color: var(--color-primary-500);
+  font-weight: var(--font-weight-semibold);
+  border-bottom-color: var(--color-primary-500);
+}
+
+/* Pill variant */
+.variant-pill .fb-tab {
+  border-radius: var(--radius-xs);
+  border: 1px solid transparent;
+}
+.variant-pill .fb-tab:hover:not(.disabled):not(.active) {
+  background-color: color-mix(in srgb, var(--color-primary-100) 50%, transparent);
+}
+.variant-pill .fb-tab.active {
+  background-color: var(--color-neutral-white);
+  border-color: var(--color-primary-500);
+  color: var(--color-primary-600);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Disabled */
+.fb-tab.disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Tab panel ────────────────────────────────────────────────────── */
+.fb-tabpanel {
+  padding-top: var(--spacing-16);
+  font-family: var(--font-family-primary);
+  outline: none;
+}
+
+.fb-tabpanel:focus-visible {
+  outline: var(--focus-width) solid var(--focus-color);
+  outline-offset: var(--focus-offset);
+  border-radius: var(--radius-xs);
+}

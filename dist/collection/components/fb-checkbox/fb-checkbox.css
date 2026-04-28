@@ -1,0 +1,70 @@
+:host { display: block; }
+
+.fb-checkbox-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  font-family: var(--font-family-primary);
+}
+
+.fb-checkbox-label {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--spacing-8);
+  cursor: pointer;
+}
+.fb-checkbox-label.disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Hide native checkbox visually but keep it accessible */
+.native-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Show focus ring on the custom box when native input is focused */
+.native-checkbox:focus-visible + .checkbox-box {
+  outline: var(--focus-width) solid var(--focus-color);
+  outline-offset: var(--focus-offset);
+}
+
+/* Custom visual box */
+.checkbox-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-standard) solid var(--color-neutral-400);
+  border-radius: var(--radius-xs);
+  background-color: var(--color-neutral-white);
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.size-sm { width: 14px; height: 14px; }
+.size-md { width: 18px; height: 18px; }
+.size-lg { width: 22px; height: 22px; border-radius: var(--radius-sm); }
+
+.checkbox-box.checked {
+  background-color: var(--color-primary-500);
+  border-color: var(--color-primary-500);
+}
+.checkbox-box.error {
+  border-color: var(--color-danger-500);
+  border-width: var(--border-thick);
+}
+
+.label-text {
+  font-size: var(--font-size-14);
+  color: var(--color-neutral-700);
+  line-height: 1.4;
+}
+
+.fb-helper        { font-size: var(--font-size-12); color: var(--color-neutral-500); padding-left: 26px; }
+.fb-helper--error { color: var(--color-danger-600); }

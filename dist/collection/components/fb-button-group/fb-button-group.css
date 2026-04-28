@@ -1,0 +1,14 @@
+:host {
+  display: inline-flex;
+}
+
+.fb-button-group {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fb-button-group.vertical {
+  flex-direction: column;
+  align-items: stretch;
+}

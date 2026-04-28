@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foodbuy Web Components — Dev Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/build/foodbuy.css" />
+  <script type="module" src="/build/foodbuy.esm.js"></script>
+  <script nomodule src="/build/foodbuy.js"></script>
+  <style>
+    body {
+      font-family: "DM Sans", "Inter", sans-serif;
+      margin: 0;
+      padding: 32px;
+      background: #f9fafb;
+      color: #111;
+    }
+    h1 { font-size: 24px; margin-bottom: 8px; }
+    h2 { font-size: 18px; margin: 32px 0 12px; border-bottom: 1px solid #e5e7eb; padding-bottom: 8px; }
+    .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 12px; }
+    .col { display: flex; flex-direction: column; gap: 12px; }
+    section { margin-bottom: 48px; }
+  </style>
+</head>
+<body>
+<h1>Foodbuy Web Components — Dev Preview</h1>
+
+<!-- ── BUTTON ─────────────────────────────────── -->
+<section>
+  <h2>fb-button</h2>
+  <div class="row">
+    <fb-button>Default</fb-button>
+    <fb-button variant="secondary">Secondary</fb-button>
+    <fb-button variant="outline">Outline</fb-button>
+    <fb-button variant="ghost">Ghost</fb-button>
+    <fb-button variant="destructive">Destructive</fb-button>
+    <fb-button disabled>Disabled</fb-button>
+  </div>
+</section>
+
+<!-- ── TOGGLE ──────────────────────────────────── -->
+<section>
+  <h2>fb-toggle</h2>
+  <div class="row">
+    <fb-toggle label="Bold">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 3h5a2.5 2.5 0 0 1 0 5H4V3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M4 8h5.5a2.5 2.5 0 0 1 0 5H4V8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+    </fb-toggle>
+    <fb-toggle variant="outline" label="Italic">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M7 3h5M4 13h5M9 3l-2 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </fb-toggle>
+    <fb-toggle variant="outline" pressed label="Underline">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 3v5a4 4 0 0 0 8 0V3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M3 13h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </fb-toggle>
+    <fb-toggle variant="outline" disabled label="Disabled">Disabled</fb-toggle>
+  </div>
+</section>
+
+<!-- ── TOGGLE GROUP ────────────────────────────── -->
+<section>
+  <h2>fb-toggle-group</h2>
+  <div class="col">
+    <fb-toggle-group
+      label="Text formatting"
+      type="multiple"
+      items='[{"value":"bold","icon":"bold"},{"value":"italic","icon":"italic"},{"value":"underline","icon":"underline"}]'
+    ></fb-toggle-group>
+    <fb-toggle-group
+      variant="outline"
+      label="Text alignment"
+      type="single"
+      items='[{"value":"left","icon":"align-left","label":"Left"},{"value":"center","icon":"align-center","label":"Center"},{"value":"right","icon":"align-right","label":"Right"}]'
+      value="left"
+    ></fb-toggle-group>
+    <fb-toggle-group
+      variant="outline"
+      label="View mode"
+      type="single"
+      items='[{"value":"grid","icon":"grid","label":"Grid"},{"value":"list","icon":"list","label":"List"}]'
+      value="grid"
+    ></fb-toggle-group>
+  </div>
+</section>
+
+<!-- ── BUTTON GROUP ───────────────────────────── -->
+<section>
+  <h2>fb-button-group</h2>
+  <div class="col">
+    <fb-button-group aria-label="Archive actions">
+      <fb-button variant="outline">Archive</fb-button>
+      <fb-button variant="outline">Report</fb-button>
+      <fb-button variant="outline">Snooze</fb-button>
+    </fb-button-group>
+    <fb-button-group aria-label="Primary actions">
+      <fb-button>Save</fb-button>
+      <fb-button>Duplicate</fb-button>
+    </fb-button-group>
+    <fb-button-group orientation="vertical" aria-label="Vertical actions" style="width:120px">
+      <fb-button variant="outline">Top</fb-button>
+      <fb-button variant="outline">Middle</fb-button>
+      <fb-button variant="outline">Bottom</fb-button>
+    </fb-button-group>
+  </div>
+</section>
+
+<!-- ── BADGE ──────────────────────────────────── -->
+<section>
+  <h2>fb-badge</h2>
+  <div class="row">
+    <fb-badge label="Default"></fb-badge>
+    <fb-badge label="Success" variant="success"></fb-badge>
+    <fb-badge label="Warning" variant="warning"></fb-badge>
+    <fb-badge label="Danger" variant="danger"></fb-badge>
+    <fb-badge label="Info" variant="info"></fb-badge>
+    <fb-badge variant="success" dot label="Online"></fb-badge>
+  </div>
+</section>
+
+<!-- ── SPINNER / SKELETON ─────────────────────── -->
+<section>
+  <h2>fb-spinner &amp; fb-skeleton</h2>
+  <div class="row">
+    <fb-spinner></fb-spinner>
+    <fb-spinner size="sm"></fb-spinner>
+    <fb-spinner size="lg"></fb-spinner>
+    <fb-skeleton width="200px" height="16px"></fb-skeleton>
+    <fb-skeleton variant="circle" width="40px" height="40px"></fb-skeleton>
+  </div>
+</section>
+
+<!-- ── INPUT ──────────────────────────────────── -->
+<section>
+  <h2>fb-input</h2>
+  <div class="col" style="max-width:360px">
+    <fb-input label="Username" placeholder="Enter username"></fb-input>
+    <fb-input label="Password" type="password" value="secret"></fb-input>
+    <fb-input label="Search" clearable value="hello"></fb-input>
+    <fb-input label="Error state" helper-text="This field is required" error></fb-input>
+    <fb-input label="Disabled" value="Can't edit" disabled></fb-input>
+  </div>
+</section>
+
+<!-- ── TEXTAREA ───────────────────────────────── -->
+<section>
+  <h2>fb-textarea</h2>
+  <div class="col" style="max-width:360px">
+    <fb-textarea label="Notes" placeholder="Write something..."></fb-textarea>
+    <fb-textarea label="Limited" max-length="100" value="Hello"></fb-textarea>
+  </div>
+</section>
+
+<!-- ── CHECKBOX ───────────────────────────────── -->
+<section>
+  <h2>fb-checkbox</h2>
+  <div class="col">
+    <fb-checkbox label="Accept terms"></fb-checkbox>
+    <fb-checkbox label="Checked" checked></fb-checkbox>
+    <fb-checkbox label="Indeterminate" indeterminate></fb-checkbox>
+    <fb-checkbox label="Disabled" disabled></fb-checkbox>
+  </div>
+</section>
+
+<!-- ── RADIO GROUP ────────────────────────────── -->
+<section>
+  <h2>fb-radio-group</h2>
+  <fb-radio-group
+    label="Choose a plan"
+    options='[{"value":"starter","label":"Starter"},{"value":"pro","label":"Pro"},{"value":"enterprise","label":"Enterprise","disabled":true}]'
+    value="pro"
+  ></fb-radio-group>
+</section>
+
+<!-- ── SWITCH ─────────────────────────────────── -->
+<section>
+  <h2>fb-switch</h2>
+  <div class="col">
+    <fb-switch label="Notifications"></fb-switch>
+    <fb-switch label="Dark mode" checked></fb-switch>
+    <fb-switch label="Disabled" disabled></fb-switch>
+  </div>
+</section>
+
+<!-- ── SELECT ─────────────────────────────────── -->
+<section>
+  <h2>fb-select</h2>
+  <fb-select
+    label="Country"
+    options='[{"value":"ca","label":"Canada"},{"value":"us","label":"United States"},{"value":"uk","label":"United Kingdom","disabled":true}]'
+    style="max-width:280px"
+  ></fb-select>
+</section>
+
+<!-- ── ALERT ──────────────────────────────────── -->
+<section>
+  <h2>fb-alert</h2>
+  <div class="col" style="max-width:480px">
+    <fb-alert variant="info" heading="Info" description="This is an informational alert."></fb-alert>
+    <fb-alert variant="success" heading="Success" description="Your changes were saved." dismissible></fb-alert>
+    <fb-alert variant="warning" heading="Warning" description="Please review your settings." dismissible></fb-alert>
+    <fb-alert variant="danger" heading="Error" description="Something went wrong." dismissible></fb-alert>
+  </div>
+</section>
+
+<!-- ── TOAST ──────────────────────────────────── -->
+<section>
+  <h2>fb-toast</h2>
+  <fb-toast visible message="File uploaded successfully." variant="success"></fb-toast>
+</section>
+
+<!-- ── MODAL ──────────────────────────────────── -->
+<section>
+  <h2>fb-modal</h2>
+  <button onclick="document.querySelector('#demo-modal').setAttribute('open', '')" style="padding:8px 16px;cursor:pointer">Open Modal</button>
+  <fb-modal id="demo-modal" heading="Confirm Action" description="Are you sure you want to proceed? This action cannot be undone.">
+    <div slot="footer" style="display:flex;gap:8px;justify-content:flex-end">
+      <fb-button variant="secondary" onclick="document.querySelector('#demo-modal').removeAttribute('open')">Cancel</fb-button>
+      <fb-button>Confirm</fb-button>
+    </div>
+  </fb-modal>
+</section>
+
+<!-- ── TABS ───────────────────────────────────── -->
+<section>
+  <h2>fb-tabs</h2>
+  <fb-tabs
+    tabs='[{"id":"tab1","label":"Overview"},{"id":"tab2","label":"Details"},{"id":"tab3","label":"Settings","disabled":true}]'
+  >
+    <div slot="tab1"><p>Overview content goes here.</p></div>
+    <div slot="tab2"><p>Details content goes here.</p></div>
+    <div slot="tab3"><p>Settings content (disabled).</p></div>
+  </fb-tabs>
+</section>
+
+<!-- ── BREADCRUMB ─────────────────────────────── -->
+<section>
+  <h2>fb-breadcrumb</h2>
+  <fb-breadcrumb
+    items='[{"label":"Home","href":"/"},{"label":"Products","href":"/products"},{"label":"Widget Pro"}]'
+  ></fb-breadcrumb>
+</section>
+
+<!-- ── PAGINATION ─────────────────────────────── -->
+<section>
+  <h2>fb-pagination</h2>
+  <fb-pagination total-pages="12" current-page="5"></fb-pagination>
+</section>
+
+<!-- ── DROPDOWN ───────────────────────────────── -->
+<section>
+  <h2>fb-dropdown</h2>
+  <fb-dropdown
+    label="Actions"
+    items='[{"id":"edit","label":"Edit"},{"id":"duplicate","label":"Duplicate"},{"id":"delete","label":"Delete","danger":true}]'
+  ></fb-dropdown>
+</section>
+
+<!-- ── TOOLTIP ────────────────────────────────── -->
+<section>
+  <h2>fb-tooltip</h2>
+  <div class="row">
+    <fb-tooltip content="This is a tooltip" placement="top">
+      <fb-button variant="secondary">Hover or focus me</fb-button>
+    </fb-tooltip>
+    <fb-tooltip content="Right side tooltip" placement="right">
+      <fb-button variant="outline">Right</fb-button>
+    </fb-tooltip>
+  </div>
+</section>
+
+<!-- ── POPOVER ────────────────────────────────── -->
+<section>
+  <h2>fb-popover</h2>
+  <fb-popover heading="More info">
+    <fb-button slot="trigger" variant="secondary">Open Popover</fb-button>
+    <p style="margin:0">This is popover content. Press Escape or click the × to close.</p>
+  </fb-popover>
+</section>
+
+<!-- ── SIDE SHEET ─────────────────────────────── -->
+<section>
+  <h2>fb-side-sheet</h2>
+  <button onclick="document.querySelector('#demo-sheet').setAttribute('open', '')" style="padding:8px 16px;cursor:pointer">Open Side Sheet</button>
+  <fb-side-sheet id="demo-sheet" heading="Filter Options">
+    <p>Side sheet body content. Press Escape or click × to close.</p>
+    <div slot="footer" style="display:flex;gap:8px;justify-content:flex-end">
+      <fb-button variant="secondary" onclick="document.querySelector('#demo-sheet').removeAttribute('open')">Cancel</fb-button>
+      <fb-button>Apply</fb-button>
+    </div>
+  </fb-side-sheet>
+</section>
+
+<!-- ── CARD ───────────────────────────────────── -->
+<section>
+  <h2>fb-card</h2>
+  <div class="row" style="align-items:stretch">
+    <fb-card style="max-width:240px">
+      <div slot="header" style="border-bottom:1px solid #e5e7eb;padding-bottom:12px;margin-bottom:12px;font-weight:600">Card Header</div>
+      Card body content goes here.
+    </fb-card>
+    <fb-card clickable label="Clickable card" style="max-width:240px">
+      <strong>Clickable Card</strong><br/>Click anywhere on this card.
+    </fb-card>
+    <fb-card href="#" label="Link card" style="max-width:240px">
+      <strong>Link Card</strong><br/>This whole card is a link.
+    </fb-card>
+  </div>
+</section>
+
+<!-- ── AVATAR ─────────────────────────────────── -->
+<section>
+  <h2>fb-avatar</h2>
+  <div class="row">
+    <fb-avatar initials="JY" alt="Jessica Yiu"></fb-avatar>
+    <fb-avatar initials="AB" alt="Alex Brown" size="lg" status="online"></fb-avatar>
+    <fb-avatar initials="CD" alt="Chris Doe" size="sm" status="busy"></fb-avatar>
+    <fb-avatar initials="EF" alt="Eva Fox" shape="square" size="xl"></fb-avatar>
+  </div>
+</section>
+
+<!-- ── CHIP ───────────────────────────────────── -->
+<section>
+  <h2>fb-chip</h2>
+  <div class="row">
+    <fb-chip label="Default"></fb-chip>
+    <fb-chip label="Primary" variant="primary"></fb-chip>
+    <fb-chip label="Success" variant="success"></fb-chip>
+    <fb-chip label="Warning" variant="warning"></fb-chip>
+    <fb-chip label="Danger" variant="danger"></fb-chip>
+    <fb-chip label="Dismissible" dismissible></fb-chip>
+    <fb-chip label="Selectable" selectable></fb-chip>
+    <fb-chip label="Selected" selectable selected></fb-chip>
+  </div>
+</section>
+
+<!-- ── SEPARATOR ─────────────────────────────── -->
+<section>
+  <h2>fb-separator</h2>
+  <fb-separator></fb-separator>
+  <div style="margin-top:16px">
+    <fb-separator label="Or continue with" decorative="false"></fb-separator>
+  </div>
+</section>
+
+<!-- ── TIMELINE ──────────────────────────────── -->
+<section>
+  <h2>fb-timeline</h2>
+  <fb-timeline
+    label="Order status"
+    items='[
+      {"id":"1","title":"Order placed","timestamp":"Apr 1, 2026","status":"complete","description":"Your order has been confirmed."},
+      {"id":"2","title":"Processing","timestamp":"Apr 2, 2026","status":"complete"},
+      {"id":"3","title":"Shipped","timestamp":"Apr 3, 2026","status":"active","description":"Your order is on its way."},
+      {"id":"4","title":"Delivered","status":"pending"}
+    ]'
+  ></fb-timeline>
+</section>
+
+<!-- ── SIDEBAR ───────────────────────────────── -->
+<section>
+  <h2>fb-sidebar</h2>
+  <div style="height:300px;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;display:flex">
+    <fb-sidebar
+      label="App navigation"
+      active-id="dashboard"
+      items='[
+        {"id":"dashboard","label":"Dashboard","href":"/dashboard"},
+        {"id":"orders","label":"Orders","href":"/orders","children":[
+          {"id":"orders-active","label":"Active","href":"/orders/active"},
+          {"id":"orders-history","label":"History","href":"/orders/history"}
+        ]},
+        {"id":"reports","label":"Reports","href":"/reports"},
+        {"id":"settings","label":"Settings","href":"/settings","disabled":true}
+      ]'
+    ></fb-sidebar>
+    <div style="padding:16px;flex:1;font-size:14px;color:#6b7280">← sidebar demo</div>
+  </div>
+</section>
+
+<script>
+  // Wire open/close for modal and side-sheet via attribute changes
+  document.querySelectorAll('fb-modal, fb-side-sheet').forEach(el => {
+    const obs = new MutationObserver(() => {
+      const hasOpen = el.hasAttribute('open');
+      el.open = hasOpen;
+    });
+    obs.observe(el, { attributes: true, attributeFilter: ['open'] });
+  });
+</script>
+</body>
+</html>

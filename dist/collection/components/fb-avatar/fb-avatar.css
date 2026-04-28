@@ -1,0 +1,53 @@
+:host { display: inline-flex; }
+
+.fb-avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary-100);
+  color: var(--color-primary-700);
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-semibold);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Size */
+.fb-avatar--xs      { width: 24px;  height: 24px;  font-size: var(--font-size-10); }
+.fb-avatar--sm      { width: 32px;  height: 32px;  font-size: var(--font-size-12); }
+.fb-avatar--default { width: 40px;  height: 40px;  font-size: var(--font-size-14); }
+.fb-avatar--lg      { width: 48px;  height: 48px;  font-size: var(--font-size-16); }
+.fb-avatar--xl      { width: 64px;  height: 64px;  font-size: var(--font-size-20); }
+
+/* Shape */
+.fb-avatar--circle { border-radius: 50%; }
+.fb-avatar--square { border-radius: var(--radius-sm); }
+
+.fb-avatar__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fb-avatar__initials {
+  line-height: 1;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+/* Status indicator */
+.fb-avatar__status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+  height: 25%;
+  min-width: 8px;
+  min-height: 8px;
+  border-radius: 50%;
+  border: 2px solid var(--color-neutral-white);
+}
+.fb-avatar__status--online  { background: var(--color-success-500); }
+.fb-avatar__status--offline { background: var(--color-neutral-400); }
+.fb-avatar__status--busy    { background: var(--color-danger-500); }

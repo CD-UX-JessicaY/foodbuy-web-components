@@ -1,0 +1,41 @@
+{
+  "entries": [
+    "components/fb-alert/fb-alert.js",
+    "components/fb-badge/fb-badge.js",
+    "components/fb-breadcrumb/fb-breadcrumb.js",
+    "components/fb-button/fb-button.js",
+    "components/fb-button-group/fb-button-group.js",
+    "components/fb-checkbox/fb-checkbox.js",
+    "components/fb-dropdown/fb-dropdown.js",
+    "components/fb-input/fb-input.js",
+    "components/fb-modal/fb-modal.js",
+    "components/fb-radio-group/fb-radio-group.js",
+    "components/fb-select/fb-select.js",
+    "components/fb-sidebar/fb-sidebar.js",
+    "components/fb-skeleton/fb-skeleton.js",
+    "components/fb-spinner/fb-spinner.js",
+    "components/fb-tabs/fb-tabs.js",
+    "components/fb-textarea/fb-textarea.js",
+    "components/fb-timeline/fb-timeline.js",
+    "components/fb-toast/fb-toast.js",
+    "components/fb-toggle/fb-toggle.js",
+    "components/fb-toggle-group/fb-toggle-group.js",
+    "components/fb-avatar/fb-avatar.js",
+    "components/fb-card/fb-card.js",
+    "components/fb-chip/fb-chip.js",
+    "components/fb-pagination/fb-pagination.js",
+    "components/fb-popover/fb-popover.js",
+    "components/fb-separator/fb-separator.js",
+    "components/fb-side-sheet/fb-side-sheet.js",
+    "components/fb-switch/fb-switch.js",
+    "components/fb-tooltip/fb-tooltip.js"
+  ],
+  "mixins": [],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "4.43.4",
+    "typescriptVersion": "5.8.3"
+  },
+  "collections": [],
+  "bundles": []
+}

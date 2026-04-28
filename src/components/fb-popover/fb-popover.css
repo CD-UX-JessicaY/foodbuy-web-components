@@ -1,0 +1,71 @@
+:host { display: contents; }
+
+.fb-popover-anchor {
+  display: inline-flex;
+  position: relative;
+}
+
+.fb-popover-trigger {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-family-primary);
+}
+.fb-popover-trigger:focus-visible { outline: var(--focus-width) solid var(--focus-color); outline-offset: var(--focus-offset); }
+
+.fb-popover {
+  position: absolute;
+  z-index: 60;
+  min-width: 240px;
+  max-width: 320px;
+  background: var(--color-neutral-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-300);
+  padding: 0;
+}
+
+.fb-popover--bottom  { top: calc(100% + 8px); left: 0; }
+.fb-popover--top     { bottom: calc(100% + 8px); left: 0; }
+.fb-popover--right   { left: calc(100% + 8px); top: 0; }
+.fb-popover--left    { right: calc(100% + 8px); top: 0; }
+
+.fb-popover__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-12) var(--spacing-16) var(--spacing-8);
+  border-bottom: 1px solid var(--color-neutral-100);
+}
+
+.fb-popover__heading {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-black);
+}
+
+.fb-popover__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  color: var(--color-neutral-500);
+  padding: 0;
+  margin-left: auto;
+}
+.fb-popover__close:hover { background: var(--color-neutral-100); color: var(--color-neutral-800); }
+.fb-popover__close:focus-visible { outline: var(--focus-width) solid var(--focus-color); outline-offset: var(--focus-offset); }
+
+.fb-popover__body {
+  padding: var(--spacing-12) var(--spacing-16) var(--spacing-16);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-14);
+  color: var(--color-neutral-700);
+}

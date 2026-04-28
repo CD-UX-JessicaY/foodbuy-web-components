@@ -1,0 +1,57 @@
+:host { display: block; }
+
+.fb-textarea-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  font-family: var(--font-family-primary);
+  width: 100%;
+}
+
+.fb-label {
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-700);
+}
+
+.required-indicator { color: var(--color-danger-500); }
+
+.fb-textarea {
+  width: 100%;
+  font-family: var(--font-family-primary);
+  color: var(--color-neutral-black);
+  border: var(--border-standard) solid var(--color-neutral-400);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-neutral-white);
+  resize: vertical;
+  box-sizing: border-box;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+
+.size-sm      { font-size: var(--font-size-12); padding: var(--spacing-8); }
+.size-default { font-size: var(--font-size-14); padding: var(--spacing-12); }
+.size-lg      { font-size: var(--font-size-16); padding: var(--spacing-16); }
+
+.fb-textarea:focus-visible {
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 var(--focus-width) color-mix(in srgb, var(--focus-color) 20%, transparent);
+}
+
+.state-error    { border-color: var(--color-danger-500); border-width: var(--border-thick); }
+.state-disabled { background-color: var(--color-neutral-100); border-color: var(--color-neutral-200); opacity: 0.6; cursor: not-allowed; }
+.state-readonly { background-color: var(--color-neutral-50); }
+
+.fb-textarea::placeholder { color: var(--color-neutral-400); }
+
+.fb-textarea-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.fb-helper        { display: flex; align-items: center; gap: var(--spacing-4); font-size: var(--font-size-12); color: var(--color-neutral-500); }
+.fb-helper--error { color: var(--color-danger-600); }
+
+.fb-counter         { font-size: var(--font-size-12); color: var(--color-neutral-400); margin-left: auto; }
+.fb-counter--limit  { color: var(--color-danger-500); font-weight: var(--font-weight-semibold); }

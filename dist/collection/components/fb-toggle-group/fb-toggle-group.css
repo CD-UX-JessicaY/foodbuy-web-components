@@ -1,0 +1,96 @@
+:host {
+  display: inline-flex;
+}
+
+/* ── Container ──────────────────────────────────────────────────── */
+.fb-toggle-group {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fb-toggle-group.vertical {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Default variant — pill/segmented container */
+.variant-default {
+  background: var(--color-neutral-100);
+  border-radius: var(--radius-sm);
+  padding: 3px;
+  gap: 2px;
+}
+
+/* Outline variant — no container background */
+.variant-outline {
+  background: transparent;
+}
+
+/* ── Items ──────────────────────────────────────────────────────── */
+.item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-8);
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  user-select: none;
+  flex-shrink: 0;
+  outline: none;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.item:focus-visible {
+  outline: var(--focus-width) solid var(--focus-color);
+  outline-offset: 0;
+  z-index: 2;
+}
+
+/* Sizes */
+.size-sm      .item { height: 26px; padding: 0 var(--spacing-8);  font-size: var(--font-size-12); }
+.size-default .item { height: 34px; padding: 0 var(--spacing-12); font-size: var(--font-size-14); }
+.size-lg      .item { height: 42px; padding: 0 var(--spacing-16); font-size: var(--font-size-16); }
+
+/* Default variant items */
+.variant-default .item {
+  border: none;
+  border-radius: var(--radius-xs);
+  background: transparent;
+  color: var(--color-neutral-600);
+}
+.variant-default .item:hover:not(.disabled) {
+  background: var(--color-neutral-white);
+  color: var(--color-neutral-700);
+}
+.variant-default .item.pressed {
+  background: var(--color-neutral-white);
+  color: var(--color-primary-600);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Outline variant items */
+.variant-outline .item {
+  background: var(--color-neutral-white);
+  color: var(--color-neutral-600);
+  border: 1px solid var(--color-neutral-300);
+}
+.variant-outline .item:hover:not(.disabled) {
+  background: var(--color-neutral-50);
+}
+.variant-outline .item.pressed {
+  background: var(--color-primary-50);
+  color: var(--color-primary-600);
+  border-color: var(--color-primary-500);
+  z-index: 1;
+}
+
+/* Disabled */
+.item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}

@@ -1,0 +1,60 @@
+:host { display: inline-flex; }
+
+.fb-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-xs);
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+/* ── Sizes ────────────────────────────────────────────────────────── */
+.size-sm      { font-size: var(--font-size-10); padding: 1px var(--spacing-4); }
+.size-default { font-size: var(--font-size-12); padding: 2px var(--spacing-8); }
+.size-lg      { font-size: var(--font-size-14); padding: 4px var(--spacing-12); }
+
+/* ── Variants ─────────────────────────────────────────────────────── */
+.variant-default {
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-600);
+  border-color: var(--color-primary-200);
+}
+.variant-success {
+  background-color: var(--color-success-50);
+  color: var(--color-success-600);
+  border-color: var(--color-success-200);
+}
+.variant-warning {
+  background-color: var(--color-warning-50);
+  color: var(--color-warning-600);
+  border-color: var(--color-warning-200);
+}
+.variant-danger {
+  background-color: var(--color-danger-50);
+  color: var(--color-danger-500);
+  border-color: var(--color-danger-200);
+}
+.variant-neutral {
+  background-color: var(--color-neutral-50);
+  color: var(--color-neutral-600);
+  border-color: var(--color-neutral-200);
+}
+.variant-info {
+  background-color: var(--color-secondary-50);
+  color: var(--color-secondary-500);
+  border-color: var(--color-secondary-100);
+}
+
+/* ── Dot variant ──────────────────────────────────────────────────── */
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-max);
+  padding: 0;
+  border: none;
+}
+.size-sm.dot    { width: 6px;  height: 6px; }
+.size-lg.dot    { width: 10px; height: 10px; }

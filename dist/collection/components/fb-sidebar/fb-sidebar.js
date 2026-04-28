@@ -63,7 +63,7 @@ export class FbSidebar {
     }
     render() {
         const items = this.parsedItems;
-        return (h(Host, { key: '92bc9c4236abe9d60be0727771fbd8d11ec3765d' }, h("nav", { key: '5a3fc0ac84f768b81192ddfa901539cf6c1fcfaa', "aria-label": this.label, class: { 'fb-sidebar': true, 'fb-sidebar--collapsed': this.collapsed } }, h("ul", { key: '65a00499e557abeb80388f08d72d1c172737999b', role: "list", class: "fb-sidebar__list" }, this.renderItems(items)), h("slot", { key: 'b215f931b78c10d78335b6f88280a49ef5ca2853', name: "footer" }))));
+        return (h(Host, { key: '54f6c21a7f81ab5f294c1a62abd19eaabad4c055' }, h("nav", { key: '337a5dfa47fe0f69c7dc8175e40091b2184b472f', "aria-label": this.label, class: { 'fb-sidebar': true, 'fb-sidebar--collapsed': this.collapsed } }, h("ul", { key: '90b2b06002effbf021f97a9690347c3d7e538a79', role: "list", class: "fb-sidebar__list" }, this.renderItems(items)), h("slot", { key: '68d7c4d033ed2a4067e23f93c2182aaa17848436', name: "footer" }))));
     }
     static get is() { return "fb-sidebar"; }
     static get encapsulation() { return "shadow"; }

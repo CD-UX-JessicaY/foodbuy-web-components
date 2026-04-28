@@ -11,7 +11,7 @@ export class FbSkeleton {
             width: this.width,
             height: this.height || (this.variant === 'text' ? '1em' : this.variant === 'circle' ? this.width : '80px'),
         };
-        return (h(Host, { key: 'a10fefe57166e4ac8c3419f6774af7004862cb03' }, h("span", { key: 'd4275c369aa29f7789ff8126fb37978318398ca1', "aria-hidden": "true", class: { 'fb-skeleton': true, [`variant-${this.variant}`]: true }, style: style })));
+        return (h(Host, { key: '04ca6f723d16aacd4838e2279e720387fb91878f' }, h("span", { key: '4bfe5d69721cfd6b18f45a4c3409d60d7ef8a120', "aria-hidden": "true", class: { 'fb-skeleton': true, [`variant-${this.variant}`]: true }, style: style })));
     }
     static get is() { return "fb-skeleton"; }
     static get encapsulation() { return "shadow"; }

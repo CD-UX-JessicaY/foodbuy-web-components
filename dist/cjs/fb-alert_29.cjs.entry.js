@@ -52,7 +52,7 @@ const FbAvatar = class {
         const content = this.src
             ? index.h("img", { src: this.src, alt: this.alt, class: "fb-avatar__img" })
             : (index.h("span", { role: "img", "aria-label": this.alt || this.initials || 'Avatar', class: "fb-avatar__initials" }, this.initials));
-        return (index.h(index.Host, { key: 'b1c6b226485af9d4d8e327568c4990f451d15d2c' }, index.h("span", { key: '24c3c6ca060fd1fa51eec9a92ca0c10b6dc5ca60', class: classes }, content, this.status !== 'none' && (index.h("span", { key: '1b1d1d68ffef62d11a7109462fd97986d3950dc2', class: `fb-avatar__status fb-avatar__status--${this.status}`, "aria-label": this.getStatusLabel(), role: "img" })))));
+        return (index.h(index.Host, { key: '83acdef33deb57e218c2678dfd1342e34e0606d5' }, index.h("span", { key: '3977b42e1705915625fd999f86895f86c84d0579', class: classes }, content, this.status !== 'none' && (index.h("span", { key: '0a703e639732ded0bc7e30483dd93b32da585f40', class: `fb-avatar__status fb-avatar__status--${this.status}`, "aria-label": this.getStatusLabel(), role: "img" })))));
     }
 };
 FbAvatar.style = fbAvatarCss();
@@ -487,7 +487,7 @@ const FbDropdown = class {
     }
     render() {
         const items = this.parsedItems;
-        return (index.h(index.Host, { key: 'c9cb944ccbfc857a5cb5779a0666bccbe8459cf4', style: { position: 'relative', display: 'inline-block' } }, index.h("button", { key: '99bd3eb90fde634b20277d1e2ed5ac1af77692c7', id: this.triggerId, type: "button", "aria-haspopup": "true", "aria-expanded": this.open ? 'true' : 'false', "aria-controls": this.menuId, disabled: this.disabled, class: { 'fb-trigger': true, [`variant-${this.variant}`]: true }, onClick: () => this.toggle(), onKeyDown: this.handleTriggerKeyDown }, index.h("slot", { key: 'fd40f6d30fcb5a4f1f11760b69b3a6b2eca8f355', name: "trigger" }, this.label), index.h("svg", { key: 'aa38bfeeb141a115a6cacd72c357840085329274', "aria-hidden": "true", width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round", class: { 'chevron': true, 'chevron--open': this.open } }, index.h("path", { key: 'e64a279d8e27e30b402830bf2f09b8716f8947fa', d: "M6 9l6 6 6-6" }))), this.open && (index.h("ul", { key: '50d7a56c6e4645b9c8e689b594a1ad5b34d33f06', id: this.menuId, role: "menu", "aria-label": this.label, class: "fb-menu", onKeyDown: this.handleMenuKeyDown }, items.map(item => (index.h("li", { key: item.id, role: "none" }, index.h("button", { type: "button", role: "menuitem", "aria-disabled": item.disabled ? 'true' : null, class: { 'fb-menuitem': true, 'danger': !!item.danger, 'disabled': !!item.disabled }, tabindex: item.disabled ? -1 : 0, onClick: () => this.select(item) }, item.label))))))));
+        return (index.h(index.Host, { key: 'ab250ea34bbebc6a08b391fc5476f7932c070e21', style: { position: 'relative', display: 'inline-block' } }, index.h("button", { key: '9e00e8ff365afe35848082008bb520873a420608', id: this.triggerId, type: "button", "aria-haspopup": "true", "aria-expanded": this.open ? 'true' : 'false', "aria-controls": this.menuId, disabled: this.disabled, class: { 'fb-trigger': true, [`variant-${this.variant}`]: true }, onClick: () => this.toggle(), onKeyDown: this.handleTriggerKeyDown }, index.h("slot", { key: '7ffd7fa8e701e4e7ca0c408bf1aad0faa60bd5de', name: "trigger" }, this.label), index.h("svg", { key: 'dd849c3a308691a15a18ce493c405d7b6f31f627', "aria-hidden": "true", width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round", class: { 'chevron': true, 'chevron--open': this.open } }, index.h("path", { key: '2a610996ac4798a7ebfb748191653da723428731', d: "M6 9l6 6 6-6" }))), this.open && (index.h("ul", { key: 'a9be7df1d0c7782cd123d2aedcf59b5f366f9eef', id: this.menuId, role: "menu", "aria-label": this.label, class: "fb-menu", onKeyDown: this.handleMenuKeyDown }, items.map(item => (index.h("li", { key: item.id, role: "none" }, index.h("button", { type: "button", role: "menuitem", "aria-disabled": item.disabled ? 'true' : null, class: { 'fb-menuitem': true, 'danger': !!item.danger, 'disabled': !!item.disabled }, tabindex: item.disabled ? -1 : 0, onClick: () => this.select(item) }, item.label))))))));
     }
     get el() { return index.getElement(this); }
 };
@@ -555,17 +555,17 @@ const FbInput = class {
         const inputType = isPassword && this.showPassword ? 'text' : this.type;
         const showClear = this.clearable && !!this.value && !this.isDisabled && !this.isReadOnly;
         const hasHelper = !!this.helperText;
-        return (index.h(index.Host, { key: '501dbfd7ae93b0e51ce4c3d0bd619e045736b061' }, index.h("div", { key: '51b4a65735afc532b75fea09abab5fd5f8131189', class: "fb-input-wrapper" }, this.label && (index.h("label", { key: '3440eca48ad42f0bfa6de6e2d65cedac2d570e78', htmlFor: this.inputId, class: "fb-label" }, this.label, this.required && (index.h("span", { key: '4d66eff64d4a49741588090932d2f977f5dcb0c7', class: "required-indicator", "aria-hidden": "true" }, " *")))), index.h("div", { key: '9cd08463dcd270201ec10ef302d3315fadc30053', class: {
+        return (index.h(index.Host, { key: 'c19a75125b0e3d61f02a35ce377564c65a2a68bb' }, index.h("div", { key: '138894813510003f7c2cda6fd380aae26292a371', class: "fb-input-wrapper" }, this.label && (index.h("label", { key: 'a5da644d57a86bf4a2823e62e908a23b6c9a8dbd', htmlFor: this.inputId, class: "fb-label" }, this.label, this.required && (index.h("span", { key: 'cb3140b9caaf80335f1c052a36b03f331b92a3be', class: "required-indicator", "aria-hidden": "true" }, " *")))), index.h("div", { key: '252b3591729a1a04635c684aa70c592926cd37fb', class: {
                 'fb-input-field': true,
                 [`size-${this.size}`]: true,
                 'state-error': this.isError,
                 'state-disabled': this.isDisabled,
                 'state-readonly': this.isReadOnly,
-            } }, isSearch && (index.h("span", { key: '120d7442cf932dd4a4fb2ef86b92be11d7db67fb', class: "adornment adornment--prefix-icon", "aria-hidden": "true" }, index.h("svg", { key: 'fb4b4823993a2439ffa0ab4617a016f8b36ec43d', width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }, index.h("circle", { key: 'fe37e403d81b380845fb221e71310edf3464602f', cx: "11", cy: "11", r: "8" }), index.h("path", { key: '53235a8327bb70fbd644706fae6aa2a24ae5346c', d: "M21 21l-4.35-4.35" })))), this.prefixText && (index.h("span", { key: 'c128b46d5d73fd8fb84b2789287cf39fb6d2ca6a', class: "adornment adornment--prefix", "aria-hidden": "true" }, this.prefixText)), index.h("input", { key: '0b40da4e9ef8ea8b39fb379cb0901febefbddce6', id: this.inputId, type: inputType, value: this.value, placeholder: this.placeholder, disabled: this.isDisabled, readOnly: this.isReadOnly, required: this.required, "aria-required": this.required ? 'true' : null, "aria-invalid": this.isError ? 'true' : null, "aria-describedby": hasHelper ? this.helperId : null, class: "native-input", onInput: this.handleInput, onFocus: () => this.fbFocus.emit(), onBlur: () => this.fbBlur.emit() }), showClear && (index.h("button", { key: '814e1f0f780046b719a3760f732febc228a704b1', type: "button", class: "adornment-btn", "aria-label": "Clear input", onClick: this.handleClear }, index.h("svg", { key: 'fce99179f2b28508c3e56d8a59c4cc8e6e4687bd', "aria-hidden": "true", width: "12", height: "12", viewBox: "0 0 12 12", fill: "none", stroke: "currentColor", "stroke-width": "1.5", "stroke-linecap": "round" }, index.h("path", { key: '2948c66622d750256932e98afc3033c25ac40ea1', d: "M2 2l8 8M10 2l-8 8" })))), this.suffixText && (index.h("span", { key: '446b277e4c822d121ca0b354203fee8141be33fb', class: "adornment adornment--suffix", "aria-hidden": "true" }, this.suffixText)), isPassword && (index.h("button", { key: '9ef93cb8ac5ca5ee3b73ba066ae3f890e0d3241f', type: "button", class: "adornment-btn", "aria-label": this.showPassword ? 'Hide password' : 'Show password', "aria-pressed": this.showPassword ? 'true' : 'false', onClick: this.togglePassword }, this.showPassword
+            } }, isSearch && (index.h("span", { key: '580cf854e4215e0ce2cd9a7a54d8a7205be069d9', class: "adornment adornment--prefix-icon", "aria-hidden": "true" }, index.h("svg", { key: 'd9488cb9a812d32a874a1592da900e2fb21026d7', width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }, index.h("circle", { key: '87f5f1e3f074b3b06de96d76fb7c7e27b5c58e07', cx: "11", cy: "11", r: "8" }), index.h("path", { key: '3817050505842284b9e5d85933b64918241e9331', d: "M21 21l-4.35-4.35" })))), this.prefixText && (index.h("span", { key: 'd0661658dec2f6eba70d506d35b3710e0edaa3ca', class: "adornment adornment--prefix", "aria-hidden": "true" }, this.prefixText)), index.h("input", { key: 'b1f4945c706f50b8b570ff46b52d69ebdf403faf', id: this.inputId, type: inputType, value: this.value, placeholder: this.placeholder, disabled: this.isDisabled, readOnly: this.isReadOnly, required: this.required, "aria-required": this.required ? 'true' : null, "aria-invalid": this.isError ? 'true' : null, "aria-describedby": hasHelper ? this.helperId : null, class: "native-input", onInput: this.handleInput, onFocus: () => this.fbFocus.emit(), onBlur: () => this.fbBlur.emit() }), showClear && (index.h("button", { key: 'f55cb25aa41493c77cdd85c1f1a2ba557f29c4cb', type: "button", class: "adornment-btn", "aria-label": "Clear input", onClick: this.handleClear }, index.h("svg", { key: '1f69e98fe63af3853b544111dc5dec0b985fd3f2', "aria-hidden": "true", width: "12", height: "12", viewBox: "0 0 12 12", fill: "none", stroke: "currentColor", "stroke-width": "1.5", "stroke-linecap": "round" }, index.h("path", { key: '087dc6982b967f89bd8261934b534b51816d5580', d: "M2 2l8 8M10 2l-8 8" })))), this.suffixText && (index.h("span", { key: '7de06ac4ebc440d272e01d0e24f594a6e89f73d3', class: "adornment adornment--suffix", "aria-hidden": "true" }, this.suffixText)), isPassword && (index.h("button", { key: '5543908cf96453c9a2af9368834ab1811fc531ec', type: "button", class: "adornment-btn", "aria-label": this.showPassword ? 'Hide password' : 'Show password', "aria-pressed": this.showPassword ? 'true' : 'false', onClick: this.togglePassword }, this.showPassword
             ? index.h("svg", { "aria-hidden": "true", width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }, index.h("path", { d: "M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24" }), index.h("line", { x1: "1", y1: "1", x2: "23", y2: "23" }))
-            : index.h("svg", { "aria-hidden": "true", width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }, index.h("path", { d: "M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" }), index.h("circle", { cx: "12", cy: "12", r: "3" }))))), hasHelper && (index.h("div", { key: 'aca27294882789dd4fd6e7180407552bd9cab17e', id: this.helperId, class: { 'fb-helper': true, 'fb-helper--error': this.isError },
+            : index.h("svg", { "aria-hidden": "true", width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }, index.h("path", { d: "M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" }), index.h("circle", { cx: "12", cy: "12", r: "3" }))))), hasHelper && (index.h("div", { key: 'a3861b09a84aa620451f19c4d7425fd6b4df7fa3', id: this.helperId, class: { 'fb-helper': true, 'fb-helper--error': this.isError },
             // role="alert" on error ensures it's announced immediately
-            role: this.isError ? 'alert' : null }, this.isError && (index.h("svg", { key: '4630b2b06952a71bcf1fdc08cdbc3762a2707e14', "aria-hidden": "true", width: "13", height: "13", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round", "stroke-linejoin": "round", class: "helper-icon" }, index.h("circle", { key: '7fcb32aff22f88e4f6c1e39e60b50bb1381a5754', cx: "12", cy: "12", r: "10" }), index.h("line", { key: 'e6b26566857f3fd41fe43fc5b79cf72a228f189e', x1: "12", y1: "8", x2: "12", y2: "12" }), index.h("line", { key: '923db20814434b6723e23e94db1413e001fa73a7', x1: "12", y1: "16", x2: "12.01", y2: "16" }))), this.helperText)))));
+            role: this.isError ? 'alert' : null }, this.isError && (index.h("svg", { key: 'a43af0e6a9774a2cd33ea36e675f97ab64a07ddd', "aria-hidden": "true", width: "13", height: "13", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round", "stroke-linejoin": "round", class: "helper-icon" }, index.h("circle", { key: '0670c0a574ba51f6932abec795c242db7f119561', cx: "12", cy: "12", r: "10" }), index.h("line", { key: '206798fc71880dc871f698afd99a3c0b1997e936', x1: "12", y1: "8", x2: "12", y2: "12" }), index.h("line", { key: '8410c162e2030baf60799bb2c64c8d83ee41ee65', x1: "12", y1: "16", x2: "12.01", y2: "16" }))), this.helperText)))));
     }
     get el() { return index.getElement(this); }
 };
@@ -709,9 +709,9 @@ const FbPagination = class {
         const pages = this.getPages();
         const isFirst = this.currentPage === 1;
         const isLast = this.currentPage === this.totalPages;
-        return (index.h(index.Host, { key: '87ba9dd4bf93fc3af0b0fa4d077f83e81e77f2f3' }, index.h("nav", { key: '1ff30ee84f21f2150f1ed6b2ec1dca8fdcf7c419', "aria-label": this.label, class: "fb-pagination" }, index.h("button", { key: 'f01a97192bf065d4baf210dea810680acde6da13', type: "button", class: "page-btn nav-btn", "aria-label": "Go to previous page", disabled: isFirst, "aria-disabled": isFirst ? 'true' : null, onClick: () => this.go(this.currentPage - 1) }, index.h("svg", { key: 'b2cb676d53945e0e441c1a74e6cc49084a240949', "aria-hidden": "true", width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }, index.h("path", { key: '14ac7e2c431a55b16c82ed7d97c76ffad565410a', d: "M15 18l-6-6 6-6" }))), pages.map((page, i) => page === '...'
+        return (index.h(index.Host, { key: '27d8e530d89d291b0adae1aced39013f331895d7' }, index.h("nav", { key: 'ca414e8ecf8bc5232d57b4a16d048769cf7173fe', "aria-label": this.label, class: "fb-pagination" }, index.h("button", { key: '9b07b7b0f5ab152f7785c2cf5fd7e063e833ac58', type: "button", class: "page-btn nav-btn", "aria-label": "Go to previous page", disabled: isFirst, "aria-disabled": isFirst ? 'true' : null, onClick: () => this.go(this.currentPage - 1) }, index.h("svg", { key: 'd04a2b0e624863d570a5987dda2c3f2f05f0cc3e', "aria-hidden": "true", width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }, index.h("path", { key: 'bc91a6ff4d9d740600fea5ce71ac5f8f217d0d30', d: "M15 18l-6-6 6-6" }))), pages.map((page, i) => page === '...'
             ? index.h("span", { key: `ellipsis-${i}`, class: "ellipsis", "aria-hidden": "true" }, "\u2026")
-            : (index.h("button", { key: page, type: "button", class: { 'page-btn': true, 'active': page === this.currentPage }, "aria-label": `Go to page ${page}`, "aria-current": page === this.currentPage ? 'page' : null, onClick: () => this.go(page) }, page))), index.h("button", { key: 'cf1fa26bf92af21bce43b8293e3a035f1c0e4fe2', type: "button", class: "page-btn nav-btn", "aria-label": "Go to next page", disabled: isLast, "aria-disabled": isLast ? 'true' : null, onClick: () => this.go(this.currentPage + 1) }, index.h("svg", { key: '5039728da020dc1a91be23a45165532035d9b7d6', "aria-hidden": "true", width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }, index.h("path", { key: '3c0cdec271bb34531e32a200baa48c1862d46e59', d: "M9 18l6-6-6-6" }))))));
+            : (index.h("button", { key: page, type: "button", class: { 'page-btn': true, 'active': page === this.currentPage }, "aria-label": `Go to page ${page}`, "aria-current": page === this.currentPage ? 'page' : null, onClick: () => this.go(page) }, page))), index.h("button", { key: 'bcaa6600c736d3c75763e9533355db0a948d3c7d', type: "button", class: "page-btn nav-btn", "aria-label": "Go to next page", disabled: isLast, "aria-disabled": isLast ? 'true' : null, onClick: () => this.go(this.currentPage + 1) }, index.h("svg", { key: 'e653c5bd2938b8e11b9f0919c1adb2f773485932', "aria-hidden": "true", width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }, index.h("path", { key: '7d6408aeb03af2b0a41151c90d73f9fcc0db4da0', d: "M9 18l6-6-6-6" }))))));
     }
 };
 FbPagination.style = fbPaginationCss();
@@ -793,7 +793,7 @@ const FbPopover = class {
         return Array.from((_b = (_a = this.el.shadowRoot) === null || _a === void 0 ? void 0 : _a.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')) !== null && _b !== void 0 ? _b : []);
     }
     render() {
-        return (index.h(index.Host, { key: '3cc987e6b6e85837d2bd0539e6dc99a328b4b971' }, index.h("span", { key: 'ecf3872eac4f2be80af5017ca64978797306f907', class: "fb-popover-anchor" }, index.h("button", { key: 'b89088b6999648ad100b9c4026b66f319d9e6c0e', id: this.triggerId, type: "button", "aria-haspopup": "dialog", "aria-expanded": this._open ? 'true' : 'false', "aria-controls": this._open ? this.popoverId : null, class: "fb-popover-trigger", onClick: () => this.toggle() }, index.h("slot", { key: '6c3f47a0b585b7bf1fe06baf5ea11e7d9f1942b5', name: "trigger" }, "Open")), this._open && (index.h("div", { key: '8df0016c661e15a6242d19d83d93302a69a15ba3', id: this.popoverId, role: "dialog", "aria-modal": "false", "aria-label": this.heading || 'Popover', class: `fb-popover fb-popover--${this.placement}`, onKeyDown: this.handleKeyDown }, index.h("div", { key: '7b5be1cc295be06b4159e4e33ffb56b05ef1d532', class: "fb-popover__header" }, this.heading && index.h("span", { key: 'd79d7673d8d61fb2008d61c90a3e27b10c64f427', class: "fb-popover__heading" }, this.heading), index.h("button", { key: '6213de7c8cb607238dba880eb0e1b9cfcb9cdc16', type: "button", class: "fb-popover__close", "aria-label": "Close popover", onClick: () => this.closePopover() }, index.h("svg", { key: 'f45605df8de24ac837f14e46e52fadc1b513c29b', "aria-hidden": "true", width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round", "stroke-linejoin": "round" }, index.h("path", { key: '3e1170cfbab28ede33b8d62fcf8ed99b7b979f0c', d: "M18 6L6 18M6 6l12 12" })))), index.h("div", { key: 'f9c01d125b70a9188af521a2f50ee20451aca7f4', class: "fb-popover__body" }, index.h("slot", { key: '77bac0d6e0f4361a68bc16fd6769aee019c90fc2' })))))));
+        return (index.h(index.Host, { key: '1f25147ad68015e461da1e11849f7246d5e478ee' }, index.h("span", { key: 'bef70d515edabbf65a0264f816cfca82dfb08f14', class: "fb-popover-anchor" }, index.h("button", { key: 'bb9253a32571dd8822a3e943e28f17d7230097aa', id: this.triggerId, type: "button", "aria-haspopup": "dialog", "aria-expanded": this._open ? 'true' : 'false', "aria-controls": this._open ? this.popoverId : null, class: "fb-popover-trigger", onClick: () => this.toggle() }, index.h("slot", { key: 'b5976e76c18a0023516f012be5aba0e8444ed087', name: "trigger" }, "Open")), this._open && (index.h("div", { key: '2e8281267f6d2f72fa275a454fd9bd910dea730e', id: this.popoverId, role: "dialog", "aria-modal": "false", "aria-label": this.heading || 'Popover', class: `fb-popover fb-popover--${this.placement}`, onKeyDown: this.handleKeyDown }, index.h("div", { key: 'b65fce691deab4d556d7391648d4b559296b0c5c', class: "fb-popover__header" }, this.heading && index.h("span", { key: 'f1e8b58ebe235169b888c1b34c7634657710f1ae', class: "fb-popover__heading" }, this.heading), index.h("button", { key: '336bc30b601fce58c185834c412a661c3a182d91', type: "button", class: "fb-popover__close", "aria-label": "Close popover", onClick: () => this.closePopover() }, index.h("svg", { key: '67cc402d69b17fd915aa3ad5c86473bb080a81d7', "aria-hidden": "true", width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round", "stroke-linejoin": "round" }, index.h("path", { key: '36341dafc0c33768e0adc062f3ea8409be51e3b8', d: "M18 6L6 18M6 6l12 12" })))), index.h("div", { key: 'd3e5a1d3700584cc70586c7ba34f3cd1752f6b99', class: "fb-popover__body" }, index.h("slot", { key: 'a10da665979d8b4553f3611642d66d85d880c106' })))))));
     }
     get el() { return index.getElement(this); }
     static get watchers() { return {
@@ -840,7 +840,7 @@ const FbRadioGroup = class {
     render() {
         const options = this.parsedOptions;
         const hasHelper = !!this.helperText;
-        return (index.h(index.Host, { key: 'fbb74556f301e46ee108698bff47cbbb62621503' }, index.h("fieldset", { key: 'ff7c618deb5171785f509941eeae7afe236e9de9', class: { 'fb-radio-group': true, 'has-error': this.isError }, disabled: this.disabled, "aria-describedby": hasHelper ? this.helperId : null, "aria-required": this.required ? 'true' : null }, this.label && index.h("legend", { key: '48741e370518199304cf22ce41f0d8f994f20357', class: "fb-legend" }, this.label), index.h("div", { key: '062d404cc849d6bcf70d2d6b2dc374630ffec7e7', class: "options-list" }, options.map((opt) => {
+        return (index.h(index.Host, { key: 'c1dcd925bee51b2b16a55b6aec766f752e9dcc75' }, index.h("fieldset", { key: 'e18b0a24b04f2ab486ae75aba16002a84e07fee9', class: { 'fb-radio-group': true, 'has-error': this.isError }, disabled: this.disabled, "aria-describedby": hasHelper ? this.helperId : null, "aria-required": this.required ? 'true' : null }, this.label && index.h("legend", { key: '55a6779bab533ce67b4a96c20eae7f675f8f459a', class: "fb-legend" }, this.label), index.h("div", { key: '2c81b142af64f3aaaa585e44f950631ae352ca88', class: "options-list" }, options.map((opt) => {
             const optId = `${this.groupName}-${opt.value}`;
             return (index.h("label", { key: opt.value, htmlFor: optId, class: {
                     'fb-radio-label': true,
@@ -849,7 +849,7 @@ const FbRadioGroup = class {
                     this.value = opt.value;
                     this.fbChange.emit(opt.value);
                 } }), index.h("span", { "aria-hidden": "true", class: { 'radio-dot': true, 'checked': this.value === opt.value } }), index.h("span", { class: "option-label" }, opt.label)));
-        })), hasHelper && (index.h("div", { key: 'beb2aaa0ac846eafb747d573758ef3cc6da84458', id: this.helperId, class: { 'fb-helper': true, 'fb-helper--error': this.isError }, role: this.isError ? 'alert' : null }, this.helperText)))));
+        })), hasHelper && (index.h("div", { key: 'b1edb8c79c7e86a63e826421bedd3efb3b0ff396', id: this.helperId, class: { 'fb-helper': true, 'fb-helper--error': this.isError }, role: this.isError ? 'alert' : null }, this.helperText)))));
     }
 };
 FbRadioGroup.style = fbRadioGroupCss();
@@ -992,14 +992,14 @@ const FbSelect = class {
         const activeId = this.open && this.focusedIndex >= 0
             ? `${this.listboxId}-opt-${(_a = enabledOpts[this.focusedIndex]) === null || _a === void 0 ? void 0 : _a.value}`
             : undefined;
-        return (index.h(index.Host, { key: '13ad2f78ee776aab86eb2399c42bdc0509ff9e52' }, index.h("div", { key: '5c35ba6b15a606aba07b7fe84388b795098639c8', class: "fb-select-wrapper", style: { fontFamily: 'var(--font-family-primary)' } }, this.label && (index.h("label", { key: '424673490658ed2ffd2e6691e5a9a31182086459', id: this.labelId, htmlFor: this.triggerId, class: "fb-label" }, this.label, this.required && index.h("span", { key: '150c1df1800c46d9697e0fd43937dd21338eb065', class: "required-indicator", "aria-hidden": "true" }, " *"))), index.h("div", { key: '40b71262642f2e7ffeaa42ad33efa280be9c8984', class: "fb-select-container", style: { position: 'relative' } }, index.h("button", { key: '86837630d19c3d42a17aa1241f32a3c2aaa00f81', id: this.triggerId, type: "button", role: "combobox", "aria-haspopup": "listbox", "aria-expanded": this.open ? 'true' : 'false', "aria-controls": this.listboxId, "aria-labelledby": this.label ? `${this.labelId} ${this.triggerId}` : null, "aria-activedescendant": activeId, "aria-required": this.required ? 'true' : null, "aria-invalid": this.isError ? 'true' : null, "aria-describedby": hasHelper ? this.helperId : null, disabled: this.isDisabled, class: {
+        return (index.h(index.Host, { key: 'f6bd9d4f080d4ac0362c72aa6d00ac4fdb561d17' }, index.h("div", { key: '31a12134898db53808755ec9be6addc00133b331', class: "fb-select-wrapper", style: { fontFamily: 'var(--font-family-primary)' } }, this.label && (index.h("label", { key: 'd8cee8e3a28ccad85035ecce584b5d7fd51a52c1', id: this.labelId, htmlFor: this.triggerId, class: "fb-label" }, this.label, this.required && index.h("span", { key: '95dfc9b748af2faa91fc85a6119e971ec1a11bc7', class: "required-indicator", "aria-hidden": "true" }, " *"))), index.h("div", { key: 'cd5160a66f48bb9477213d2ac466f6f9c0847569', class: "fb-select-container", style: { position: 'relative' } }, index.h("button", { key: 'da94b54f77c01aa4ba25db5c3027f97169267eac', id: this.triggerId, type: "button", role: "combobox", "aria-haspopup": "listbox", "aria-expanded": this.open ? 'true' : 'false', "aria-controls": this.listboxId, "aria-labelledby": this.label ? `${this.labelId} ${this.triggerId}` : null, "aria-activedescendant": activeId, "aria-required": this.required ? 'true' : null, "aria-invalid": this.isError ? 'true' : null, "aria-describedby": hasHelper ? this.helperId : null, disabled: this.isDisabled, class: {
                 'fb-select-trigger': true,
                 [`size-${this.size}`]: true,
                 'open': this.open,
                 'state-error': this.isError,
                 'state-disabled': this.isDisabled,
                 'has-value': !!this.selectedOption,
-            }, onClick: () => this.open ? this.close() : this.open_(), onKeyDown: this.handleTriggerKeyDown }, index.h("span", { key: '6a70d13759ea483e2c140af8c9373880615d3693', class: "trigger-text" }, this.selectedOption ? this.selectedOption.label : this.placeholder), index.h("span", { key: '50f5a41259e4117fa1205c38efe29c078a92a9c1', "aria-hidden": "true", class: { 'chevron': true, 'chevron--open': this.open } }, index.h("svg", { key: '02c48665847138f2048e649cbe62308f8009737d', width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }, index.h("path", { key: '04ca99edd560f23d02ff9c404519d0017accda53', d: "M6 9l6 6 6-6" })))), this.open && (index.h("ul", { key: '31485734cec4665b098759a7e311ce8c809357dd', id: this.listboxId, role: "listbox", "aria-label": this.label || 'Options', class: "fb-listbox" }, opts.map((opt) => {
+            }, onClick: () => this.open ? this.close() : this.open_(), onKeyDown: this.handleTriggerKeyDown }, index.h("span", { key: 'e062a0f4b3664699f1dd0e8a2a0eb685346c0f55', class: "trigger-text" }, this.selectedOption ? this.selectedOption.label : this.placeholder), index.h("span", { key: '427c4538a401079930f90739e6989812884913f6', "aria-hidden": "true", class: { 'chevron': true, 'chevron--open': this.open } }, index.h("svg", { key: 'c4242a5e69ed30b61aa015a83a2269115d35a08e', width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }, index.h("path", { key: 'fe5bf315ee4abd819f3dcbda5682da298da41163', d: "M6 9l6 6 6-6" })))), this.open && (index.h("ul", { key: 'bd6daf00c6ea5b1483e47ee95c21ba1c991ec5fd', id: this.listboxId, role: "listbox", "aria-label": this.label || 'Options', class: "fb-listbox" }, opts.map((opt) => {
             var _a;
             const isSelected = this.value === opt.value;
             const isFocused = ((_a = enabledOpts[this.focusedIndex]) === null || _a === void 0 ? void 0 : _a.value) === opt.value;
@@ -1010,7 +1010,7 @@ const FbSelect = class {
                     'focused': isFocused,
                     'disabled': !!opt.disabled,
                 }, onClick: () => this.selectOption(opt), onKeyDown: (e) => this.handleOptionKeyDown(e, opt) }, index.h("span", null, opt.label), isSelected && (index.h("svg", { "aria-hidden": "true", width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round", "stroke-linejoin": "round" }, index.h("path", { d: "M20 6L9 17l-5-5" })))));
-        })))), hasHelper && (index.h("div", { key: 'e664960f359fcfcb7caf904601df4d99824e5b87', id: this.helperId, class: { 'fb-helper': true, 'fb-helper--error': this.isError }, role: this.isError ? 'alert' : null }, this.helperText)))));
+        })))), hasHelper && (index.h("div", { key: '994a6074966f3023f752b986fe51f875a127696b', id: this.helperId, class: { 'fb-helper': true, 'fb-helper--error': this.isError }, role: this.isError ? 'alert' : null }, this.helperText)))));
     }
     get el() { return index.getElement(this); }
 };
@@ -1201,7 +1201,7 @@ const FbSidebar = class {
     }
     render() {
         const items = this.parsedItems;
-        return (index.h(index.Host, { key: '92bc9c4236abe9d60be0727771fbd8d11ec3765d' }, index.h("nav", { key: '5a3fc0ac84f768b81192ddfa901539cf6c1fcfaa', "aria-label": this.label, class: { 'fb-sidebar': true, 'fb-sidebar--collapsed': this.collapsed } }, index.h("ul", { key: '65a00499e557abeb80388f08d72d1c172737999b', role: "list", class: "fb-sidebar__list" }, this.renderItems(items)), index.h("slot", { key: 'b215f931b78c10d78335b6f88280a49ef5ca2853', name: "footer" }))));
+        return (index.h(index.Host, { key: '54f6c21a7f81ab5f294c1a62abd19eaabad4c055' }, index.h("nav", { key: '337a5dfa47fe0f69c7dc8175e40091b2184b472f', "aria-label": this.label, class: { 'fb-sidebar': true, 'fb-sidebar--collapsed': this.collapsed } }, index.h("ul", { key: '90b2b06002effbf021f97a9690347c3d7e538a79', role: "list", class: "fb-sidebar__list" }, this.renderItems(items)), index.h("slot", { key: '68d7c4d033ed2a4067e23f93c2182aaa17848436', name: "footer" }))));
     }
 };
 FbSidebar.style = fbSidebarCss();
@@ -1221,7 +1221,7 @@ const FbSkeleton = class {
             width: this.width,
             height: this.height || (this.variant === 'text' ? '1em' : this.variant === 'circle' ? this.width : '80px'),
         };
-        return (index.h(index.Host, { key: 'a10fefe57166e4ac8c3419f6774af7004862cb03' }, index.h("span", { key: 'd4275c369aa29f7789ff8126fb37978318398ca1', "aria-hidden": "true", class: { 'fb-skeleton': true, [`variant-${this.variant}`]: true }, style: style })));
+        return (index.h(index.Host, { key: '04ca6f723d16aacd4838e2279e720387fb91878f' }, index.h("span", { key: '4bfe5d69721cfd6b18f45a4c3409d60d7ef8a120', "aria-hidden": "true", class: { 'fb-skeleton': true, [`variant-${this.variant}`]: true }, style: style })));
     }
 };
 FbSkeleton.style = fbSkeletonCss();
@@ -1237,7 +1237,7 @@ const FbSpinner = class {
         this.label = 'Loading, please wait';
     }
     render() {
-        return (index.h(index.Host, { key: 'f7b81a6e7786ba712c69d4105deb5d80d892d843' }, index.h("span", { key: 'f5211020b990e4c84b08ab13d298379a6ef85832', role: "status", "aria-label": this.label, class: { 'fb-spinner': true, [`size-${this.size}`]: true } }, index.h("svg", { key: '52be63ba5b96b1d4bc9b5b9532d69752b3b3f308', "aria-hidden": "true", viewBox: "0 0 24 24", fill: "none", class: "spinner-svg" }, index.h("circle", { key: 'fad39a77e89f0f6873d19203bc27798b14396052', class: "track", cx: "12", cy: "12", r: "10", "stroke-width": "2.5" }), index.h("path", { key: 'c3698f366919189d55f0e3a418e8e46cd4a5afaf', class: "arc", d: "M12 2a10 10 0 0 1 10 10", "stroke-width": "2.5", "stroke-linecap": "round" })), index.h("span", { key: '8b7e57517f9fe470e4c85f1aaab8c02a633bf972', class: "visually-hidden" }, this.label))));
+        return (index.h(index.Host, { key: '5ed8ba7f076972e995fdaabff30f8025fb1bb988' }, index.h("span", { key: 'd14e37e65b2cfcc3965b265cb1d901d3171fbf06', role: "status", "aria-label": this.label, class: { 'fb-spinner': true, [`size-${this.size}`]: true } }, index.h("svg", { key: 'b36a1bab6ad78e7e1360483bdf30723105acb0f5', "aria-hidden": "true", viewBox: "0 0 24 24", fill: "none", class: "spinner-svg" }, index.h("circle", { key: '8289d3db112dc7f667d8e12c393a3eb8c24f2b18', class: "track", cx: "12", cy: "12", r: "10", "stroke-width": "2.5" }), index.h("path", { key: '4e3f71473babdecb930c5f136d365a7f144ea905', class: "arc", d: "M12 2a10 10 0 0 1 10 10", "stroke-width": "2.5", "stroke-linecap": "round" })), index.h("span", { key: '24bfc287f77d2f200b94273f911b7e90543fb297', class: "visually-hidden" }, this.label))));
     }
 };
 FbSpinner.style = fbSpinnerCss();
@@ -1262,10 +1262,10 @@ const FbSwitch = class {
     }
     render() {
         const hasHelper = !!this.helperText;
-        return (index.h(index.Host, { key: 'a361a3556e8de45343b7ed777b434e1a14dce828' }, index.h("div", { key: 'f3ca6b0c8bfaa294a5ff7c8984427448d437cb58', class: "fb-switch-wrapper" }, index.h("label", { key: 'b71c9542c5857e4a08ff81ea8aea1dddc85ca4a6', htmlFor: this.switchId, class: { 'fb-switch-label': true, 'disabled': this.disabled } }, index.h("input", { key: 'fc94296d98673b5908a7ddb65b4b642f4afe7462', id: this.switchId, type: "checkbox", role: "switch", checked: this.checked, disabled: this.disabled, "aria-checked": this.checked ? 'true' : 'false', "aria-describedby": hasHelper ? this.helperId : null, class: "native-switch", onChange: (e) => {
+        return (index.h(index.Host, { key: '2823bdece8351f74027953fced0b421d9ad4b886' }, index.h("div", { key: 'eee0f1e1e241e9e1ac378f0c426b6f15c251c5c1', class: "fb-switch-wrapper" }, index.h("label", { key: '7fafc30dabd6c79b8d9bceeec9112b60c637408b', htmlFor: this.switchId, class: { 'fb-switch-label': true, 'disabled': this.disabled } }, index.h("input", { key: 'ec8115e055c61e31e7b2ef2695ad18af5a3cf3a3', id: this.switchId, type: "checkbox", role: "switch", checked: this.checked, disabled: this.disabled, "aria-checked": this.checked ? 'true' : 'false', "aria-describedby": hasHelper ? this.helperId : null, class: "native-switch", onChange: (e) => {
                 this.checked = e.target.checked;
                 this.fbChange.emit(this.checked);
-            } }), index.h("span", { key: 'fe4a04b5afb9f5b2c399f720405f6f646c9c3324', "aria-hidden": "true", class: { 'switch-track': true, 'on': this.checked } }, index.h("span", { key: '62fb0c4d364b9ffb445ca3f48622e77d57685bda', class: "switch-thumb" })), this.label && index.h("span", { key: '536403e7c66d83a84a1571301b82259f2a293782', class: "label-text" }, this.label)), hasHelper && (index.h("div", { key: 'ad9b86c37dfadc69611764a3a5879c8d9a2ea881', id: this.helperId, class: "fb-helper" }, this.helperText)))));
+            } }), index.h("span", { key: 'e85631a7c9e0ce732bbf947a0583ec4b1e5a68a2', "aria-hidden": "true", class: { 'switch-track': true, 'on': this.checked } }, index.h("span", { key: 'dfbfaff05c44d8c7f996f9ebbb0997def1517159', class: "switch-thumb" })), this.label && index.h("span", { key: '7b1d5e639fa61912a567ce729c487d825ee47fc0', class: "label-text" }, this.label)), hasHelper && (index.h("div", { key: '0874c61dfd0f0a4fc5d2debb34029b804163fa4b', id: this.helperId, class: "fb-helper" }, this.helperText)))));
     }
 };
 FbSwitch.style = fbSwitchCss();
@@ -1347,7 +1347,7 @@ const FbTabs = class {
         var _a;
         const tabs = this.parsedTabs;
         const active = this._activeTab || ((_a = tabs.find(t => !t.disabled)) === null || _a === void 0 ? void 0 : _a.id);
-        return (index.h(index.Host, { key: 'b544a22e617b812c08fc83ce4c7fba278344a4b2', ref: (el) => this.el = el }, index.h("div", { key: '95fb5034d55ed26b526d434e40c42b314132b036', role: "tablist", "aria-label": this.label, class: {
+        return (index.h(index.Host, { key: 'fe8cea77c789645354272ec1de95d6c5e1946e54', ref: (el) => this.el = el }, index.h("div", { key: '9f8e43649573bd90d22e5ab19b174b0e71a18466', role: "tablist", "aria-label": this.label, class: {
                 'fb-tablist': true,
                 [`variant-${this.variant}`]: true,
                 'full-width': this.fullWidth,
@@ -1401,7 +1401,7 @@ const FbTextarea = class {
         const showCounter = !!this.maxLength;
         const counterId = showCounter ? `${this.textareaId}-counter` : null;
         const describedBy = [hasHelper ? this.helperId : null, counterId].filter(Boolean).join(' ') || null;
-        return (index.h(index.Host, { key: '3c90c9e88e4e7352afa50a83227175e15b8db8a4' }, index.h("div", { key: 'c7bafcf4a3a5cf01578563c74e355e945e31f1d6', class: "fb-textarea-wrapper" }, this.label && (index.h("label", { key: 'd199cb85ce98319ab940214929beb4b7e3ee7113', htmlFor: this.textareaId, class: "fb-label" }, this.label, this.required && index.h("span", { key: 'cade17ff70adba3a5a325a61a731c6ac8c18bc2f', class: "required-indicator", "aria-hidden": "true" }, " *"))), index.h("textarea", { key: '0da0c1d078f6f0fa6498e2379d98ada9c96460b1', id: this.textareaId, rows: this.rows, placeholder: this.placeholder, disabled: this.isDisabled, readOnly: this.isReadOnly, required: this.required, maxLength: this.maxLength, "aria-required": this.required ? 'true' : null, "aria-invalid": this.isError ? 'true' : null, "aria-describedby": describedBy, class: {
+        return (index.h(index.Host, { key: '861010b21c4f0832357fba79b662b55c8413f42f' }, index.h("div", { key: '7b4379647848e16f1a28775242cd70f5b322e67b', class: "fb-textarea-wrapper" }, this.label && (index.h("label", { key: '22486a5f45e212fabc69e76901fbbda3e827292a', htmlFor: this.textareaId, class: "fb-label" }, this.label, this.required && index.h("span", { key: 'b845a86f344933d535aea7131e80c82f5f6e553b', class: "required-indicator", "aria-hidden": "true" }, " *"))), index.h("textarea", { key: '5385a350987adb2888d610e6e48b62df895d6b9f', id: this.textareaId, rows: this.rows, placeholder: this.placeholder, disabled: this.isDisabled, readOnly: this.isReadOnly, required: this.required, maxLength: this.maxLength, "aria-required": this.required ? 'true' : null, "aria-invalid": this.isError ? 'true' : null, "aria-describedby": describedBy, class: {
                 'fb-textarea': true,
                 [`size-${this.size}`]: true,
                 'state-error': this.isError,
@@ -1411,9 +1411,9 @@ const FbTextarea = class {
                 const val = e.target.value;
                 this.value = val;
                 this.fbChange.emit(val);
-            }, onFocus: () => this.fbFocus.emit(), onBlur: () => this.fbBlur.emit() }, this.value), index.h("div", { key: 'c6cc8bf1402ba22a91ed4906a99baf00b543b33a', class: "fb-textarea-footer" }, hasHelper && (index.h("div", { key: '1d72dfeff7c3bcd28ce704612863a6dbbb09c5e2', id: this.helperId, class: { 'fb-helper': true, 'fb-helper--error': this.isError }, role: this.isError ? 'alert' : null }, this.isError && (index.h("svg", { key: '36a97c00944898c06c1d55618c640bfeff63b787', "aria-hidden": "true", width: "13", height: "13", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round", "stroke-linejoin": "round" }, index.h("circle", { key: 'f929e93093e5b93d0a9f937dd53d60afa232082b', cx: "12", cy: "12", r: "10" }), index.h("line", { key: 'f245222feaf6ce91d1c2042230b5b0afd7d7ab93', x1: "12", y1: "8", x2: "12", y2: "12" }), index.h("line", { key: 'c60224d9539166c77b51e003511b0f5a0d70f241', x1: "12", y1: "16", x2: "12.01", y2: "16" }))), this.helperText)), showCounter && (
+            }, onFocus: () => this.fbFocus.emit(), onBlur: () => this.fbBlur.emit() }, this.value), index.h("div", { key: '83509904800604fda1018e715339323d4f0e9589', class: "fb-textarea-footer" }, hasHelper && (index.h("div", { key: '12874bbf397b65d713e285266c29978e7d2e5cb3', id: this.helperId, class: { 'fb-helper': true, 'fb-helper--error': this.isError }, role: this.isError ? 'alert' : null }, this.isError && (index.h("svg", { key: '490c0bfc75f90a7e5f9a68e1907564a5e6549822', "aria-hidden": "true", width: "13", height: "13", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round", "stroke-linejoin": "round" }, index.h("circle", { key: 'd31a3ebd3238c3ef3338b955f4344469f3404919', cx: "12", cy: "12", r: "10" }), index.h("line", { key: '3aa32a60d7f5682de6cf2b51decc9916e1e81a52', x1: "12", y1: "8", x2: "12", y2: "12" }), index.h("line", { key: 'c937a43d9ec8a28d5a8ee3dca8d78d4b1198c428', x1: "12", y1: "16", x2: "12.01", y2: "16" }))), this.helperText)), showCounter && (
         // aria-live="polite" announces the count as the user types
-        index.h("div", { key: '64ca7f550fe1602104d62eec027ef9d1813aacde', id: counterId, class: { 'fb-counter': true, 'fb-counter--limit': charCount >= this.maxLength }, "aria-live": "polite" }, charCount, "/", this.maxLength))))));
+        index.h("div", { key: '150f34fdd0d53e1f0427945f9d450c16fd30b753', id: counterId, class: { 'fb-counter': true, 'fb-counter--limit': charCount >= this.maxLength }, "aria-live": "polite" }, charCount, "/", this.maxLength))))));
     }
 };
 FbTextarea.style = fbTextareaCss();
@@ -1449,7 +1449,7 @@ const FbTimeline = class {
     }
     render() {
         const items = this.parsedItems;
-        return (index.h(index.Host, { key: '287a12f751efc0c2f28338ab4a9ca409b7e34456' }, index.h("ol", { key: '725efd8e1d9cff0a8dd3333ab21d54775280b585', "aria-label": this.label, class: `fb-timeline fb-timeline--${this.orientation}` }, items.map((item, i) => {
+        return (index.h(index.Host, { key: '18807acb19b45d9f58c45968eddc79fff6da38ab' }, index.h("ol", { key: 'ca7899eb79ead9ebe2d2f87f9fac0f93bb3b1b8b', "aria-label": this.label, class: `fb-timeline fb-timeline--${this.orientation}` }, items.map((item, i) => {
             var _a, _b, _c;
             return (index.h("li", { key: item.id, class: {
                     'fb-timeline__item': true,
@@ -1507,6 +1507,176 @@ const FbToast = class {
 };
 FbToast.style = fbToastCss();
 
+const fbToggleCss = () => `:host{display:inline-flex}.fb-toggle{display:inline-flex;align-items:center;justify-content:center;gap:var(--spacing-8);font-family:var(--font-family-primary);font-weight:var(--font-weight-medium);border-radius:var(--fb-toggle-radius, var(--radius-sm));cursor:pointer;transition:background 0.15s, color 0.15s, border-color 0.15s;user-select:none;flex-shrink:0;border:none;outline:none;box-sizing:border-box}.fb-toggle:focus-visible{outline:var(--focus-width) solid var(--focus-color);outline-offset:var(--focus-offset)}.size-sm{height:32px;padding:0 var(--spacing-8);font-size:var(--font-size-12)}.size-default{height:40px;padding:0 var(--spacing-12);font-size:var(--font-size-14)}.size-lg{height:48px;padding:0 var(--spacing-16);font-size:var(--font-size-16)}.variant-default{background:transparent;color:var(--color-neutral-600)}.variant-default:hover:not(.disabled){background:var(--color-neutral-100)}.variant-default.pressed{background:var(--color-primary-100);color:var(--color-primary-600)}.variant-outline{background:var(--color-neutral-white);color:var(--color-neutral-600);border:1px solid var(--color-neutral-300)}.variant-outline:hover:not(.disabled){background:var(--color-neutral-50)}.variant-outline.pressed{background:var(--color-primary-50);color:var(--color-primary-600);border-color:var(--color-primary-400)}.disabled{opacity:0.5;cursor:not-allowed;pointer-events:none}`;
+
+const FbToggle = class {
+    constructor(hostRef) {
+        index.registerInstance(this, hostRef);
+        this.fbPressedChange = index.createEvent(this, "fbPressedChange");
+        this.variant = 'default';
+        this.size = 'default';
+        this.pressed = false;
+        this.disabled = false;
+        this.handleClick = () => {
+            if (this.disabled)
+                return;
+            this.pressed = !this.pressed;
+            this.fbPressedChange.emit(this.pressed);
+        };
+    }
+    render() {
+        return (index.h(index.Host, { key: '9afdab17f280543d3c037c6f649bb8e7b408f92c' }, index.h("button", { key: '8a2f64dffec1bd42138ac5bf704c063f779ceb1c', type: "button", class: {
+                'fb-toggle': true,
+                [`variant-${this.variant}`]: true,
+                [`size-${this.size}`]: true,
+                'pressed': this.pressed,
+                'disabled': this.disabled,
+            }, "aria-pressed": String(this.pressed), "aria-label": this.label || null, disabled: this.disabled, onClick: this.handleClick }, index.h("slot", { key: '7873d00399e37c6293dd29116be1796bb24d086e' }))));
+    }
+};
+FbToggle.style = fbToggleCss();
+
+const fbToggleGroupCss = () => `:host{display:inline-flex}.fb-toggle-group{display:inline-flex;flex-direction:row;align-items:center}.fb-toggle-group.vertical{flex-direction:column;align-items:stretch}.variant-default{background:var(--color-neutral-100);border-radius:var(--radius-sm);padding:3px;gap:2px}.variant-outline{background:transparent}.item{display:inline-flex;align-items:center;justify-content:center;gap:var(--spacing-8);font-family:var(--font-family-primary);font-weight:var(--font-weight-medium);cursor:pointer;transition:background 0.15s, color 0.15s, border-color 0.15s;user-select:none;flex-shrink:0;outline:none;box-sizing:border-box;position:relative}.item:focus-visible{outline:var(--focus-width) solid var(--focus-color);outline-offset:0;z-index:2}.size-sm .item{height:26px;padding:0 var(--spacing-8);font-size:var(--font-size-12)}.size-default .item{height:34px;padding:0 var(--spacing-12);font-size:var(--font-size-14)}.size-lg .item{height:42px;padding:0 var(--spacing-16);font-size:var(--font-size-16)}.variant-default .item{border:none;border-radius:var(--radius-xs);background:transparent;color:var(--color-neutral-600)}.variant-default .item:hover:not(.disabled){background:var(--color-neutral-white);color:var(--color-neutral-700)}.variant-default .item.pressed{background:var(--color-neutral-white);color:var(--color-primary-600);box-shadow:0 1px 3px rgba(0,0,0,0.1)}.variant-outline .item{background:var(--color-neutral-white);color:var(--color-neutral-600);border:1px solid var(--color-neutral-300)}.variant-outline .item:hover:not(.disabled){background:var(--color-neutral-50)}.variant-outline .item.pressed{background:var(--color-primary-50);color:var(--color-primary-600);border-color:var(--color-primary-500);z-index:1}.item.disabled{opacity:0.5;cursor:not-allowed;pointer-events:none}`;
+
+// Built-in icon set
+const ICONS = {
+    bold: () => index.h("svg", { width: "16", height: "16", viewBox: "0 0 16 16", fill: "none", "aria-hidden": "true" }, index.h("path", { d: "M4 3h5a2.5 2.5 0 0 1 0 5H4V3z", stroke: "currentColor", "stroke-width": "1.5", "stroke-linejoin": "round" }), index.h("path", { d: "M4 8h5.5a2.5 2.5 0 0 1 0 5H4V8z", stroke: "currentColor", "stroke-width": "1.5", "stroke-linejoin": "round" })),
+    italic: () => index.h("svg", { width: "16", height: "16", viewBox: "0 0 16 16", fill: "none", "aria-hidden": "true" }, index.h("path", { d: "M7 3h5M4 13h5M9 3l-2 10", stroke: "currentColor", "stroke-width": "1.5", "stroke-linecap": "round" })),
+    underline: () => index.h("svg", { width: "16", height: "16", viewBox: "0 0 16 16", fill: "none", "aria-hidden": "true" }, index.h("path", { d: "M4 3v5a4 4 0 0 0 8 0V3", stroke: "currentColor", "stroke-width": "1.5", "stroke-linecap": "round" }), index.h("path", { d: "M3 13h10", stroke: "currentColor", "stroke-width": "1.5", "stroke-linecap": "round" })),
+    'align-left': () => index.h("svg", { width: "16", height: "16", viewBox: "0 0 16 16", fill: "none", "aria-hidden": "true" }, index.h("path", { d: "M2 4h12M2 8h8M2 12h10", stroke: "currentColor", "stroke-width": "1.5", "stroke-linecap": "round" })),
+    'align-center': () => index.h("svg", { width: "16", height: "16", viewBox: "0 0 16 16", fill: "none", "aria-hidden": "true" }, index.h("path", { d: "M2 4h12M4 8h8M3 12h10", stroke: "currentColor", "stroke-width": "1.5", "stroke-linecap": "round" })),
+    'align-right': () => index.h("svg", { width: "16", height: "16", viewBox: "0 0 16 16", fill: "none", "aria-hidden": "true" }, index.h("path", { d: "M2 4h12M6 8h8M4 12h10", stroke: "currentColor", "stroke-width": "1.5", "stroke-linecap": "round" })),
+    grid: () => index.h("svg", { width: "16", height: "16", viewBox: "0 0 16 16", fill: "none", "aria-hidden": "true" }, index.h("rect", { x: "2", y: "2", width: "5", height: "5", rx: "1", stroke: "currentColor", "stroke-width": "1.5" }), index.h("rect", { x: "9", y: "2", width: "5", height: "5", rx: "1", stroke: "currentColor", "stroke-width": "1.5" }), index.h("rect", { x: "2", y: "9", width: "5", height: "5", rx: "1", stroke: "currentColor", "stroke-width": "1.5" }), index.h("rect", { x: "9", y: "9", width: "5", height: "5", rx: "1", stroke: "currentColor", "stroke-width": "1.5" })),
+    list: () => index.h("svg", { width: "16", height: "16", viewBox: "0 0 16 16", fill: "none", "aria-hidden": "true" }, index.h("path", { d: "M3 4h10M3 8h10M3 12h10", stroke: "currentColor", "stroke-width": "1.5", "stroke-linecap": "round" })),
+};
+const FbToggleGroup = class {
+    constructor(hostRef) {
+        index.registerInstance(this, hostRef);
+        this.fbChange = index.createEvent(this, "fbChange");
+        this.type = 'single';
+        this.variant = 'default';
+        this.size = 'default';
+        this.orientation = 'horizontal';
+        this.disabled = false;
+        this.label = 'Toggle group';
+        /** JSON array of { value, label?, icon?, disabled? } */
+        this.items = '[]';
+        /** Current selection — string for single, JSON array for multiple */
+        this.value = '';
+        this.selected = new Set();
+    }
+    componentWillLoad() {
+        this.initSelection();
+    }
+    onValueChange() {
+        this.initSelection();
+    }
+    initSelection() {
+        if (!this.value) {
+            this.selected = new Set();
+            return;
+        }
+        if (this.type === 'multiple') {
+            try {
+                this.selected = new Set(JSON.parse(this.value));
+            }
+            catch (_a) {
+                this.selected = new Set();
+            }
+        }
+        else {
+            this.selected = new Set([this.value]);
+        }
+    }
+    parsedItems() {
+        try {
+            return JSON.parse(this.items);
+        }
+        catch (_a) {
+            return [];
+        }
+    }
+    toggle(val) {
+        if (this.disabled)
+            return;
+        const next = new Set(this.selected);
+        if (this.type === 'single') {
+            if (next.has(val))
+                next.delete(val);
+            else {
+                next.clear();
+                next.add(val);
+            }
+            this.selected = next;
+            this.value = next.has(val) ? val : '';
+            this.fbChange.emit(this.value);
+        }
+        else {
+            if (next.has(val))
+                next.delete(val);
+            else
+                next.add(val);
+            this.selected = next;
+            const arr = Array.from(next);
+            this.value = JSON.stringify(arr);
+            this.fbChange.emit(arr);
+        }
+    }
+    borderRadius(isFirst, isLast) {
+        const r = 'var(--radius-sm)';
+        const isV = this.orientation === 'vertical';
+        if (isFirst && isLast)
+            return r;
+        if (isV) {
+            if (isFirst)
+                return `${r} ${r} 0 0`;
+            if (isLast)
+                return `0 0 ${r} ${r}`;
+            return '0';
+        }
+        if (isFirst)
+            return `${r} 0 0 ${r}`;
+        if (isLast)
+            return `0 ${r} ${r} 0`;
+        return '0';
+    }
+    render() {
+        const items = this.parsedItems();
+        const isOutline = this.variant === 'outline';
+        const isV = this.orientation === 'vertical';
+        const last = items.length - 1;
+        return (index.h(index.Host, { key: '2670c285aa2b2dffa3b1ccdfbc0833d50ccd70cb' }, index.h("div", { key: '0427ae0a748febab8b65de21bb9a9b68aeccc6d1', role: "group", "aria-label": this.label, "aria-disabled": this.disabled ? 'true' : null, class: {
+                'fb-toggle-group': true,
+                [`variant-${this.variant}`]: true,
+                [`size-${this.size}`]: true,
+                'vertical': isV,
+            } }, items.map((item, i) => {
+            const pressed = this.selected.has(item.value);
+            const isDisabled = this.disabled || !!item.disabled;
+            const isFirst = i === 0;
+            const isLast = i === last;
+            const icon = item.icon && ICONS[item.icon] ? ICONS[item.icon]() : null;
+            return (index.h("button", { key: item.value, type: "button", role: "button", "aria-pressed": String(pressed), "aria-label": !item.label ? item.value : null, disabled: isDisabled, class: {
+                    'item': true,
+                    'pressed': pressed,
+                    'disabled': isDisabled,
+                    'first': isFirst,
+                    'last': isLast,
+                }, style: isOutline ? {
+                    borderRadius: this.borderRadius(isFirst, isLast),
+                    marginLeft: (!isV && !isFirst) ? '-1px' : null,
+                    marginTop: (isV && !isFirst) ? '-1px' : null,
+                } : {}, onClick: () => this.toggle(item.value) }, icon, item.label && index.h("span", null, item.label)));
+        }))));
+    }
+    static get watchers() { return {
+        "value": [{
+                "onValueChange": 0
+            }]
+    }; }
+};
+FbToggleGroup.style = fbToggleGroupCss();
+
 const fbTooltipCss = () => `:host{display:contents}.fb-tooltip-wrapper{display:inline-flex;position:relative}.fb-tooltip{position:absolute;z-index:100;max-width:240px;padding:var(--spacing-4) var(--spacing-8);background:var(--color-neutral-800);color:var(--color-neutral-white);font-family:var(--font-family-primary);font-size:var(--font-size-12);line-height:1.4;border-radius:var(--radius-xs);white-space:normal;pointer-events:none;box-shadow:var(--shadow-100)}.fb-tooltip--top{bottom:calc(100% + 6px);left:50%;transform:translateX(-50%)}.fb-tooltip--bottom{top:calc(100% + 6px);left:50%;transform:translateX(-50%)}.fb-tooltip--left{right:calc(100% + 6px);top:50%;transform:translateY(-50%)}.fb-tooltip--right{left:calc(100% + 6px);top:50%;transform:translateY(-50%)}.fb-tooltip::after{content:'';position:absolute;width:0;height:0;border:5px solid transparent}.fb-tooltip--top::after{top:100%;left:50%;transform:translateX(-50%);border-top-color:var(--color-neutral-800)}.fb-tooltip--bottom::after{bottom:100%;left:50%;transform:translateX(-50%);border-bottom-color:var(--color-neutral-800)}.fb-tooltip--left::after{left:100%;top:50%;transform:translateY(-50%);border-left-color:var(--color-neutral-800)}.fb-tooltip--right::after{right:100%;top:50%;transform:translateY(-50%);border-right-color:var(--color-neutral-800)}`;
 
 let idCounter = 0;
@@ -1524,7 +1694,7 @@ const FbTooltip = class {
     show() { this.visible = true; }
     hide() { this.visible = false; }
     render() {
-        return (index.h(index.Host, { key: 'e877d2f9cc441d6cbb79705fee81ca2f91874064' }, index.h("span", { key: 'c8fadc83da8f714223a5a50509286aaa3947a9d6', class: "fb-tooltip-wrapper", onMouseEnter: () => this.show(), onMouseLeave: () => this.hide(), onFocusin: () => this.show(), onFocusout: () => this.hide() }, index.h("span", { key: 'd598302b6a9f608bd23ad4b8dbc4b3dfe3a70413', "aria-describedby": this.visible ? this.tooltipId : null }, index.h("slot", { key: '10f307004a1257d8a2e8b60d65146d9573aadb25' })), this.visible && (index.h("span", { key: '94bf4030d2b3416f5765ee7d5cd01e062800e37a', id: this.tooltipId, role: "tooltip", class: `fb-tooltip fb-tooltip--${this.placement}` }, this.content)))));
+        return (index.h(index.Host, { key: 'f3835c55c507399246d054caaa3af6b5764914f5' }, index.h("span", { key: 'bc60a49afba417ae5bec532655f1a278aea47a26', class: "fb-tooltip-wrapper", onMouseEnter: () => this.show(), onMouseLeave: () => this.hide(), onFocusin: () => this.show(), onFocusout: () => this.hide() }, index.h("span", { key: '64c60924505012c36e20c5a845392ce2ca97c44e', "aria-describedby": this.visible ? this.tooltipId : null }, index.h("slot", { key: 'db06be6123305332b73598054cef403a3badd8ad' })), this.visible && (index.h("span", { key: '6a306c8b4f2eae2db80f81fab86824be80298ec0', id: this.tooltipId, role: "tooltip", class: `fb-tooltip fb-tooltip--${this.placement}` }, this.content)))));
     }
     get el() { return index.getElement(this); }
 };
@@ -1556,4 +1726,6 @@ exports.fb_tabs = FbTabs;
 exports.fb_textarea = FbTextarea;
 exports.fb_timeline = FbTimeline;
 exports.fb_toast = FbToast;
+exports.fb_toggle = FbToggle;
+exports.fb_toggle_group = FbToggleGroup;
 exports.fb_tooltip = FbTooltip;

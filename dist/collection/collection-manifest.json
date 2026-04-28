@@ -6,6 +6,7 @@
     "components/fb-button/fb-button.js",
     "components/fb-button-group/fb-button-group.js",
     "components/fb-checkbox/fb-checkbox.js",
+    "components/fb-combobox/fb-combobox.js",
     "components/fb-dropdown/fb-dropdown.js",
     "components/fb-input/fb-input.js",
     "components/fb-modal/fb-modal.js",

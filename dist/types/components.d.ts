@@ -11,6 +11,7 @@ import { BreadcrumbItem } from "./components/fb-breadcrumb/fb-breadcrumb";
 import { ButtonSize, ButtonVariant, IconPosition } from "./components/fb-button/fb-button";
 import { GroupOrientation } from "./components/fb-button-group/fb-button-group";
 import { CheckboxSize, CheckboxState } from "./components/fb-checkbox/fb-checkbox";
+import { ComboboxOption, ComboboxSize, ComboboxState } from "./components/fb-combobox/fb-combobox";
 import { DropdownItem } from "./components/fb-dropdown/fb-dropdown";
 import { InputSize, InputState, InputType } from "./components/fb-input/fb-input";
 import { ModalSize } from "./components/fb-modal/fb-modal";
@@ -31,6 +32,7 @@ export { BreadcrumbItem } from "./components/fb-breadcrumb/fb-breadcrumb";
 export { ButtonSize, ButtonVariant, IconPosition } from "./components/fb-button/fb-button";
 export { GroupOrientation } from "./components/fb-button-group/fb-button-group";
 export { CheckboxSize, CheckboxState } from "./components/fb-checkbox/fb-checkbox";
+export { ComboboxOption, ComboboxSize, ComboboxState } from "./components/fb-combobox/fb-combobox";
 export { DropdownItem } from "./components/fb-dropdown/fb-dropdown";
 export { InputSize, InputState, InputType } from "./components/fb-input/fb-input";
 export { ModalSize } from "./components/fb-modal/fb-modal";
@@ -255,6 +257,58 @@ export namespace Components {
           * @default 'default'
          */
         "variant": 'default' | 'primary' | 'success' | 'warning' | 'danger';
+    }
+    interface FbCombobox {
+        /**
+          * Show ✕ clear button when a value is set
+          * @default false
+         */
+        "clearable": boolean;
+        /**
+          * When true the user may type a value not in the options list. fbChange fires with the raw typed string on blur/Enter.
+          * @default false
+         */
+        "freeform": boolean;
+        /**
+          * @default ''
+         */
+        "helperText": string;
+        /**
+          * Field label
+          * @default ''
+         */
+        "label": string;
+        /**
+          * Message shown when no options match the filter
+          * @default 'No results'
+         */
+        "noResultsText": string;
+        /**
+          * JSON array of { value, label, disabled? }
+          * @default '[]'
+         */
+        "options": ComboboxOption[] | string;
+        /**
+          * @default 'Search or select…'
+         */
+        "placeholder": string;
+        /**
+          * @default false
+         */
+        "required": boolean;
+        /**
+          * @default 'default'
+         */
+        "size": ComboboxSize;
+        /**
+          * @default 'default'
+         */
+        "state": ComboboxState;
+        /**
+          * Currently selected value
+          * @default ''
+         */
+        "value": string;
     }
     interface FbDropdown {
         /**
@@ -745,6 +799,10 @@ export interface FbChipCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLFbChipElement;
 }
+export interface FbComboboxCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFbComboboxElement;
+}
 export interface FbDropdownCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLFbDropdownElement;
@@ -915,6 +973,25 @@ declare global {
     var HTMLFbChipElement: {
         prototype: HTMLFbChipElement;
         new (): HTMLFbChipElement;
+    };
+    interface HTMLFbComboboxElementEventMap {
+        "fbChange": string;
+        "fbInput": string;
+        "fbClear": void;
+    }
+    interface HTMLFbComboboxElement extends Components.FbCombobox, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLFbComboboxElementEventMap>(type: K, listener: (this: HTMLFbComboboxElement, ev: FbComboboxCustomEvent<HTMLFbComboboxElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLFbComboboxElementEventMap>(type: K, listener: (this: HTMLFbComboboxElement, ev: FbComboboxCustomEvent<HTMLFbComboboxElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLFbComboboxElement: {
+        prototype: HTMLFbComboboxElement;
+        new (): HTMLFbComboboxElement;
     };
     interface HTMLFbDropdownElementEventMap {
         "fbSelect": string;
@@ -1217,6 +1294,7 @@ declare global {
         "fb-card": HTMLFbCardElement;
         "fb-checkbox": HTMLFbCheckboxElement;
         "fb-chip": HTMLFbChipElement;
+        "fb-combobox": HTMLFbComboboxElement;
         "fb-dropdown": HTMLFbDropdownElement;
         "fb-input": HTMLFbInputElement;
         "fb-modal": HTMLFbModalElement;
@@ -1458,6 +1536,70 @@ declare namespace LocalJSX {
           * @default 'default'
          */
         "variant"?: 'default' | 'primary' | 'success' | 'warning' | 'danger';
+    }
+    interface FbCombobox {
+        /**
+          * Show ✕ clear button when a value is set
+          * @default false
+         */
+        "clearable"?: boolean;
+        /**
+          * When true the user may type a value not in the options list. fbChange fires with the raw typed string on blur/Enter.
+          * @default false
+         */
+        "freeform"?: boolean;
+        /**
+          * @default ''
+         */
+        "helperText"?: string;
+        /**
+          * Field label
+          * @default ''
+         */
+        "label"?: string;
+        /**
+          * Message shown when no options match the filter
+          * @default 'No results'
+         */
+        "noResultsText"?: string;
+        /**
+          * Fires when the user selects an option (or commits a freeform value)
+         */
+        "onFbChange"?: (event: FbComboboxCustomEvent<string>) => void;
+        /**
+          * Fires when the field is cleared
+         */
+        "onFbClear"?: (event: FbComboboxCustomEvent<void>) => void;
+        /**
+          * Fires on every keystroke
+         */
+        "onFbInput"?: (event: FbComboboxCustomEvent<string>) => void;
+        /**
+          * JSON array of { value, label, disabled? }
+          * @default '[]'
+         */
+        "options"?: ComboboxOption[] | string;
+        /**
+          * @default 'Search or select…'
+         */
+        "placeholder"?: string;
+        /**
+          * @default false
+         */
+        "required"?: boolean;
+        /**
+          * @default 'default'
+         */
+        "size"?: ComboboxSize;
+        /**
+          * @default 'default'
+         */
+        "state"?: ComboboxState;
+        /**
+          * Currently selected value
+          * @default ''
+         */
+        "value"?: string;
     }
     interface FbDropdown {
         /**
@@ -2022,6 +2164,19 @@ declare namespace LocalJSX {
         "dismissible": boolean;
         "disabled": boolean;
     }
+    interface FbComboboxAttributes {
+        "label": string;
+        "options": ComboboxOption[] | string;
+        "value": string;
+        "placeholder": string;
+        "state": ComboboxState;
+        "size": ComboboxSize;
+        "helperText": string;
+        "required": boolean;
+        "clearable": boolean;
+        "freeform": boolean;
+        "noResultsText": string;
+    }
     interface FbDropdownAttributes {
         "label": string;
         "items": DropdownItem[] | string;
@@ -2174,6 +2329,7 @@ declare namespace LocalJSX {
         "fb-card": Omit<FbCard, keyof FbCardAttributes> & { [K in keyof FbCard & keyof FbCardAttributes]?: FbCard[K] } & { [K in keyof FbCard & keyof FbCardAttributes as `attr:${K}`]?: FbCardAttributes[K] } & { [K in keyof FbCard & keyof FbCardAttributes as `prop:${K}`]?: FbCard[K] };
         "fb-checkbox": Omit<FbCheckbox, keyof FbCheckboxAttributes> & { [K in keyof FbCheckbox & keyof FbCheckboxAttributes]?: FbCheckbox[K] } & { [K in keyof FbCheckbox & keyof FbCheckboxAttributes as `attr:${K}`]?: FbCheckboxAttributes[K] } & { [K in keyof FbCheckbox & keyof FbCheckboxAttributes as `prop:${K}`]?: FbCheckbox[K] };
         "fb-chip": Omit<FbChip, keyof FbChipAttributes> & { [K in keyof FbChip & keyof FbChipAttributes]?: FbChip[K] } & { [K in keyof FbChip & keyof FbChipAttributes as `attr:${K}`]?: FbChipAttributes[K] } & { [K in keyof FbChip & keyof FbChipAttributes as `prop:${K}`]?: FbChip[K] };
+        "fb-combobox": Omit<FbCombobox, keyof FbComboboxAttributes> & { [K in keyof FbCombobox & keyof FbComboboxAttributes]?: FbCombobox[K] } & { [K in keyof FbCombobox & keyof FbComboboxAttributes as `attr:${K}`]?: FbComboboxAttributes[K] } & { [K in keyof FbCombobox & keyof FbComboboxAttributes as `prop:${K}`]?: FbCombobox[K] };
         "fb-dropdown": Omit<FbDropdown, keyof FbDropdownAttributes> & { [K in keyof FbDropdown & keyof FbDropdownAttributes]?: FbDropdown[K] } & { [K in keyof FbDropdown & keyof FbDropdownAttributes as `attr:${K}`]?: FbDropdownAttributes[K] } & { [K in keyof FbDropdown & keyof FbDropdownAttributes as `prop:${K}`]?: FbDropdown[K] };
         "fb-input": Omit<FbInput, keyof FbInputAttributes> & { [K in keyof FbInput & keyof FbInputAttributes]?: FbInput[K] } & { [K in keyof FbInput & keyof FbInputAttributes as `attr:${K}`]?: FbInputAttributes[K] } & { [K in keyof FbInput & keyof FbInputAttributes as `prop:${K}`]?: FbInput[K] };
         "fb-modal": Omit<FbModal, keyof FbModalAttributes> & { [K in keyof FbModal & keyof FbModalAttributes]?: FbModal[K] } & { [K in keyof FbModal & keyof FbModalAttributes as `attr:${K}`]?: FbModalAttributes[K] } & { [K in keyof FbModal & keyof FbModalAttributes as `prop:${K}`]?: FbModal[K] };
@@ -2209,6 +2365,7 @@ declare module "@stencil/core" {
             "fb-card": LocalJSX.IntrinsicElements["fb-card"] & JSXBase.HTMLAttributes<HTMLFbCardElement>;
             "fb-checkbox": LocalJSX.IntrinsicElements["fb-checkbox"] & JSXBase.HTMLAttributes<HTMLFbCheckboxElement>;
             "fb-chip": LocalJSX.IntrinsicElements["fb-chip"] & JSXBase.HTMLAttributes<HTMLFbChipElement>;
+            "fb-combobox": LocalJSX.IntrinsicElements["fb-combobox"] & JSXBase.HTMLAttributes<HTMLFbComboboxElement>;
             "fb-dropdown": LocalJSX.IntrinsicElements["fb-dropdown"] & JSXBase.HTMLAttributes<HTMLFbDropdownElement>;
             "fb-input": LocalJSX.IntrinsicElements["fb-input"] & JSXBase.HTMLAttributes<HTMLFbInputElement>;
             "fb-modal": LocalJSX.IntrinsicElements["fb-modal"] & JSXBase.HTMLAttributes<HTMLFbModalElement>;

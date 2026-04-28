@@ -27,7 +27,7 @@ export class FbTimeline {
     }
     render() {
         const items = this.parsedItems;
-        return (h(Host, { key: '287a12f751efc0c2f28338ab4a9ca409b7e34456' }, h("ol", { key: '725efd8e1d9cff0a8dd3333ab21d54775280b585', "aria-label": this.label, class: `fb-timeline fb-timeline--${this.orientation}` }, items.map((item, i) => {
+        return (h(Host, { key: '18807acb19b45d9f58c45968eddc79fff6da38ab' }, h("ol", { key: 'ca7899eb79ead9ebe2d2f87f9fac0f93bb3b1b8b', "aria-label": this.label, class: `fb-timeline fb-timeline--${this.orientation}` }, items.map((item, i) => {
             var _a, _b, _c;
             return (h("li", { key: item.id, class: {
                     'fb-timeline__item': true,

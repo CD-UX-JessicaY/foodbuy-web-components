@@ -312,6 +312,68 @@ export namespace Components {
          */
         "value": string;
     }
+    interface FbDataTable {
+        /**
+          * Table caption / aria-label
+          * @default ''
+         */
+        "caption": string;
+        /**
+          * When true, rows are clickable; hides checkboxes and action buttons
+          * @default false
+         */
+        "clickable": boolean;
+        /**
+          * JSON array of column defs: [{key,label,sortable?,align?,type?,badgeMap?,labelMap?}]
+          * @default '[]'
+         */
+        "columns": string;
+        /**
+          * Row density
+          * @default 'default'
+         */
+        "density": 'default' | 'compact';
+        /**
+          * Hide row-selection checkboxes
+          * @default false
+         */
+        "hideCheckboxes": boolean;
+        /**
+          * Hide pagination bar
+          * @default false
+         */
+        "hidePagination": boolean;
+        /**
+          * Hide selected-row count label
+          * @default false
+         */
+        "hideRowCount": boolean;
+        /**
+          * Hide rows-per-page selector
+          * @default false
+         */
+        "hideRowsPerPage": boolean;
+        /**
+          * Hide the filter + columns-toggle toolbar
+          * @default false
+         */
+        "hideToolbar": boolean;
+        /**
+          * Initial page size
+          * @default 5
+         */
+        "initialPageSize": number;
+        /**
+          * JSON array of row actions: [{id,label,variant?,separator?,labelGroup?}]
+          * @default ''
+         */
+        "rowActions": string;
+        /**
+          * JSON array of row data objects — each row must have an `id` field
+          * @default '[]'
+         */
+        "rows": string;
+    }
     interface FbDatePicker {
         /**
           * Number of month columns shown in range mode (1 or 2). Single mode always shows 1.
@@ -885,6 +947,10 @@ export interface FbComboboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLFbComboboxElement;
 }
+export interface FbDataTableCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFbDataTableElement;
+}
 export interface FbDatePickerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLFbDatePickerElement;
@@ -1082,6 +1148,28 @@ declare global {
     var HTMLFbComboboxElement: {
         prototype: HTMLFbComboboxElement;
         new (): HTMLFbComboboxElement;
+    };
+    interface HTMLFbDataTableElementEventMap {
+        "fbRowClick": any;
+        "fbSelectionChange": string[];
+        "fbSortChange": { col: string; dir: string };
+        "fbFilterChange": string;
+        "fbActionClick": { actionId: string; row: any };
+        "fbPageChange": number;
+    }
+    interface HTMLFbDataTableElement extends Components.FbDataTable, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLFbDataTableElementEventMap>(type: K, listener: (this: HTMLFbDataTableElement, ev: FbDataTableCustomEvent<HTMLFbDataTableElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLFbDataTableElementEventMap>(type: K, listener: (this: HTMLFbDataTableElement, ev: FbDataTableCustomEvent<HTMLFbDataTableElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLFbDataTableElement: {
+        prototype: HTMLFbDataTableElement;
+        new (): HTMLFbDataTableElement;
     };
     interface HTMLFbDatePickerElementEventMap {
         "fbChange": string;
@@ -1421,6 +1509,7 @@ declare global {
         "fb-checkbox": HTMLFbCheckboxElement;
         "fb-chip": HTMLFbChipElement;
         "fb-combobox": HTMLFbComboboxElement;
+        "fb-data-table": HTMLFbDataTableElement;
         "fb-date-picker": HTMLFbDatePickerElement;
         "fb-dropdown": HTMLFbDropdownElement;
         "fb-input": HTMLFbInputElement;
@@ -1728,6 +1817,92 @@ declare namespace LocalJSX {
           * @default ''
          */
         "value"?: string;
+    }
+    interface FbDataTable {
+        /**
+          * Table caption / aria-label
+          * @default ''
+         */
+        "caption"?: string;
+        /**
+          * When true, rows are clickable; hides checkboxes and action buttons
+          * @default false
+         */
+        "clickable"?: boolean;
+        /**
+          * JSON array of column defs: [{key,label,sortable?,align?,type?,badgeMap?,labelMap?}]
+          * @default '[]'
+         */
+        "columns"?: string;
+        /**
+          * Row density
+          * @default 'default'
+         */
+        "density"?: 'default' | 'compact';
+        /**
+          * Hide row-selection checkboxes
+          * @default false
+         */
+        "hideCheckboxes"?: boolean;
+        /**
+          * Hide pagination bar
+          * @default false
+         */
+        "hidePagination"?: boolean;
+        /**
+          * Hide selected-row count label
+          * @default false
+         */
+        "hideRowCount"?: boolean;
+        /**
+          * Hide rows-per-page selector
+          * @default false
+         */
+        "hideRowsPerPage"?: boolean;
+        /**
+          * Hide the filter + columns-toggle toolbar
+          * @default false
+         */
+        "hideToolbar"?: boolean;
+        /**
+          * Initial page size
+          * @default 5
+         */
+        "initialPageSize"?: number;
+        /**
+          * Fires when a row action is selected: detail = {actionId, row}
+         */
+        "onFbActionClick"?: (event: FbDataTableCustomEvent<{ actionId: string; row: any }>) => void;
+        /**
+          * Fires when filter input changes: detail = filter string
+         */
+        "onFbFilterChange"?: (event: FbDataTableCustomEvent<string>) => void;
+        /**
+          * Fires when the page changes: detail = page number
+         */
+        "onFbPageChange"?: (event: FbDataTableCustomEvent<number>) => void;
+        /**
+          * Fires when a row is clicked (clickable mode): detail = row object
+         */
+        "onFbRowClick"?: (event: FbDataTableCustomEvent<any>) => void;
+        /**
+          * Fires when selection changes: detail = array of selected row IDs
+         */
+        "onFbSelectionChange"?: (event: FbDataTableCustomEvent<string[]>) => void;
+        /**
+          * Fires when column sort changes: detail = {col, dir}
+         */
+        "onFbSortChange"?: (event: FbDataTableCustomEvent<{ col: string; dir: string }>) => void;
+        /**
+          * JSON array of row actions: [{id,label,variant?,separator?,labelGroup?}]
+          * @default ''
+         */
+        "rowActions"?: string;
+        /**
+          * JSON array of row data objects — each row must have an `id` field
+          * @default '[]'
+         */
+        "rows"?: string;
     }
     interface FbDatePicker {
         /**
@@ -2401,6 +2576,20 @@ declare namespace LocalJSX {
         "freeform": boolean;
         "noResultsText": string;
     }
+    interface FbDataTableAttributes {
+        "columns": string;
+        "rows": string;
+        "caption": string;
+        "rowActions": string;
+        "density": 'default' | 'compact';
+        "clickable": boolean;
+        "hideToolbar": boolean;
+        "hideCheckboxes": boolean;
+        "hidePagination": boolean;
+        "hideRowsPerPage": boolean;
+        "hideRowCount": boolean;
+        "initialPageSize": number;
+    }
     interface FbDatePickerAttributes {
         "label": string;
         "mode": 'single' | 'range';
@@ -2574,6 +2763,7 @@ declare namespace LocalJSX {
         "fb-checkbox": Omit<FbCheckbox, keyof FbCheckboxAttributes> & { [K in keyof FbCheckbox & keyof FbCheckboxAttributes]?: FbCheckbox[K] } & { [K in keyof FbCheckbox & keyof FbCheckboxAttributes as `attr:${K}`]?: FbCheckboxAttributes[K] } & { [K in keyof FbCheckbox & keyof FbCheckboxAttributes as `prop:${K}`]?: FbCheckbox[K] };
         "fb-chip": Omit<FbChip, keyof FbChipAttributes> & { [K in keyof FbChip & keyof FbChipAttributes]?: FbChip[K] } & { [K in keyof FbChip & keyof FbChipAttributes as `attr:${K}`]?: FbChipAttributes[K] } & { [K in keyof FbChip & keyof FbChipAttributes as `prop:${K}`]?: FbChip[K] };
         "fb-combobox": Omit<FbCombobox, keyof FbComboboxAttributes> & { [K in keyof FbCombobox & keyof FbComboboxAttributes]?: FbCombobox[K] } & { [K in keyof FbCombobox & keyof FbComboboxAttributes as `attr:${K}`]?: FbComboboxAttributes[K] } & { [K in keyof FbCombobox & keyof FbComboboxAttributes as `prop:${K}`]?: FbCombobox[K] };
+        "fb-data-table": Omit<FbDataTable, keyof FbDataTableAttributes> & { [K in keyof FbDataTable & keyof FbDataTableAttributes]?: FbDataTable[K] } & { [K in keyof FbDataTable & keyof FbDataTableAttributes as `attr:${K}`]?: FbDataTableAttributes[K] } & { [K in keyof FbDataTable & keyof FbDataTableAttributes as `prop:${K}`]?: FbDataTable[K] };
         "fb-date-picker": Omit<FbDatePicker, keyof FbDatePickerAttributes> & { [K in keyof FbDatePicker & keyof FbDatePickerAttributes]?: FbDatePicker[K] } & { [K in keyof FbDatePicker & keyof FbDatePickerAttributes as `attr:${K}`]?: FbDatePickerAttributes[K] } & { [K in keyof FbDatePicker & keyof FbDatePickerAttributes as `prop:${K}`]?: FbDatePicker[K] };
         "fb-dropdown": Omit<FbDropdown, keyof FbDropdownAttributes> & { [K in keyof FbDropdown & keyof FbDropdownAttributes]?: FbDropdown[K] } & { [K in keyof FbDropdown & keyof FbDropdownAttributes as `attr:${K}`]?: FbDropdownAttributes[K] } & { [K in keyof FbDropdown & keyof FbDropdownAttributes as `prop:${K}`]?: FbDropdown[K] };
         "fb-input": Omit<FbInput, keyof FbInputAttributes> & { [K in keyof FbInput & keyof FbInputAttributes]?: FbInput[K] } & { [K in keyof FbInput & keyof FbInputAttributes as `attr:${K}`]?: FbInputAttributes[K] } & { [K in keyof FbInput & keyof FbInputAttributes as `prop:${K}`]?: FbInput[K] };
@@ -2612,6 +2802,7 @@ declare module "@stencil/core" {
             "fb-checkbox": LocalJSX.IntrinsicElements["fb-checkbox"] & JSXBase.HTMLAttributes<HTMLFbCheckboxElement>;
             "fb-chip": LocalJSX.IntrinsicElements["fb-chip"] & JSXBase.HTMLAttributes<HTMLFbChipElement>;
             "fb-combobox": LocalJSX.IntrinsicElements["fb-combobox"] & JSXBase.HTMLAttributes<HTMLFbComboboxElement>;
+            "fb-data-table": LocalJSX.IntrinsicElements["fb-data-table"] & JSXBase.HTMLAttributes<HTMLFbDataTableElement>;
             "fb-date-picker": LocalJSX.IntrinsicElements["fb-date-picker"] & JSXBase.HTMLAttributes<HTMLFbDatePickerElement>;
             "fb-dropdown": LocalJSX.IntrinsicElements["fb-dropdown"] & JSXBase.HTMLAttributes<HTMLFbDropdownElement>;
             "fb-input": LocalJSX.IntrinsicElements["fb-input"] & JSXBase.HTMLAttributes<HTMLFbInputElement>;

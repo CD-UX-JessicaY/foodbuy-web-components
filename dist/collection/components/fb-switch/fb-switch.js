@@ -15,10 +15,10 @@ export class FbSwitch {
     }
     render() {
         const hasHelper = !!this.helperText;
-        return (h(Host, { key: 'b7e6238aacf1c654665ae27ebc8cff5a7e4dc88e' }, h("div", { key: 'b41a7018ca86930b381ab7867b9ae008d878d642', class: "fb-switch-wrapper" }, h("label", { key: '27a5136fd7e1254d0bca6e0f87396f6f72e7e1ad', htmlFor: this.switchId, class: { 'fb-switch-label': true, 'disabled': this.disabled } }, h("input", { key: '8679f2cc0c6bb681049cf0565c01793e40b2879c', id: this.switchId, type: "checkbox", role: "switch", checked: this.checked, disabled: this.disabled, "aria-checked": this.checked ? 'true' : 'false', "aria-describedby": hasHelper ? this.helperId : null, class: "native-switch", onChange: (e) => {
+        return (h(Host, { key: '95d52933821b2f3676b10c7a6507473edfaee0f4' }, h("div", { key: '772a90ee095cc31243f9f46790636051f39b6266', class: "fb-switch-wrapper" }, h("label", { key: 'd47b563e16d676095f3e83d0f1a9889efc8cd5ad', htmlFor: this.switchId, class: { 'fb-switch-label': true, 'disabled': this.disabled } }, h("input", { key: '8793bcf1d810c8b2f4413e0927bf27260f1a1f2f', id: this.switchId, type: "checkbox", role: "switch", checked: this.checked, disabled: this.disabled, "aria-checked": this.checked ? 'true' : 'false', "aria-describedby": hasHelper ? this.helperId : null, class: "native-switch", onChange: (e) => {
                 this.checked = e.target.checked;
                 this.fbChange.emit(this.checked);
-            } }), h("span", { key: '17c012b3587cf5bd7e4391fbaf1fa88c7477babc', "aria-hidden": "true", class: { 'switch-track': true, 'on': this.checked } }, h("span", { key: 'ae0dcab4bbc1e894a40b41ed8745be1a18c4ba3b', class: "switch-thumb" })), this.label && h("span", { key: '7c2ab00b3d0f6475d610bea0781c551a0096f86b', class: "label-text" }, this.label)), hasHelper && (h("div", { key: '0616644749fb204cf9a556c43e11d882195e7198', id: this.helperId, class: "fb-helper" }, this.helperText)))));
+            } }), h("span", { key: '25721984c1deb47ccf6e8fb92b9a6918a5bd59f3', "aria-hidden": "true", class: { 'switch-track': true, 'on': this.checked } }, h("span", { key: '3fa2beb75ab2acb68a0ca92bbd35ddbd431ae168', class: "switch-thumb" })), this.label && h("span", { key: '81fa0765953c018ac02b86ae0c5bc5fd38d07f50', class: "label-text" }, this.label)), hasHelper && (h("div", { key: '43c0e60336f1083511815fbd88a1c711ccc5f37f', id: this.helperId, class: "fb-helper" }, this.helperText)))));
     }
     static get is() { return "fb-switch"; }
     static get encapsulation() { return "shadow"; }

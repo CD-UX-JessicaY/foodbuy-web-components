@@ -13,7 +13,7 @@ export class FbTooltip {
     show() { this.visible = true; }
     hide() { this.visible = false; }
     render() {
-        return (h(Host, { key: '40ad7fb5108d391946d87e2462e9237fa72097ba' }, h("span", { key: '9ac62f2b8225b59d9ecb4b285bee5d750483000b', class: "fb-tooltip-wrapper", onMouseEnter: () => this.show(), onMouseLeave: () => this.hide(), onFocusin: () => this.show(), onFocusout: () => this.hide() }, h("span", { key: '8050ae1a404ba4e1c9c11e6ea61c833b9bae4511', "aria-describedby": this.visible ? this.tooltipId : null }, h("slot", { key: 'b5712cbc43937ff0ea319c4dca3b56e86ead4e57' })), this.visible && (h("span", { key: '947741ae81c6326b7e71b556c6af3ef52c408447', id: this.tooltipId, role: "tooltip", class: `fb-tooltip fb-tooltip--${this.placement}` }, this.content)))));
+        return (h(Host, { key: '0702c9e86ef0bdc1202424a115b8e758eedb52db' }, h("span", { key: '0cf5909c7c2d41bde9befc76d24833e7b4175d2f', class: "fb-tooltip-wrapper", onMouseEnter: () => this.show(), onMouseLeave: () => this.hide(), onFocusin: () => this.show(), onFocusout: () => this.hide() }, h("span", { key: 'bebd92b79909cb5e55ea1ed0f10eea193a9338bb', "aria-describedby": this.visible ? this.tooltipId : null }, h("slot", { key: 'b895d9f582f2ecd70a5fb11f06a9b564ba3b9fda' })), this.visible && (h("span", { key: 'b3ffe4bad494064e1d86d22dc1300c04a9f8d59c', id: this.tooltipId, role: "tooltip", class: `fb-tooltip fb-tooltip--${this.placement}` }, this.content)))));
     }
     static get is() { return "fb-tooltip"; }
     static get encapsulation() { return "shadow"; }

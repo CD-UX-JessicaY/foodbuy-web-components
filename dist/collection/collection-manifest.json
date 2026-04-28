@@ -25,6 +25,7 @@
     "components/fb-avatar/fb-avatar.js",
     "components/fb-card/fb-card.js",
     "components/fb-chip/fb-chip.js",
+    "components/fb-data-table/fb-data-table.js",
     "components/fb-date-picker/fb-date-picker.js",
     "components/fb-pagination/fb-pagination.js",
     "components/fb-popover/fb-popover.js",

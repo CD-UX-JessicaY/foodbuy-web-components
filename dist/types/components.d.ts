@@ -16,6 +16,7 @@ import { DropdownItem } from "./components/fb-dropdown/fb-dropdown";
 import { InputSize, InputState, InputType } from "./components/fb-input/fb-input";
 import { ModalSize } from "./components/fb-modal/fb-modal";
 import { RadioOption } from "./components/fb-radio-group/fb-radio-group";
+import { ResizableOrientation } from "./components/fb-resizable-group/fb-resizable-group";
 import { SelectOption, SelectSize, SelectState } from "./components/fb-select/fb-select";
 import { SidebarItem } from "./components/fb-sidebar/fb-sidebar";
 import { SkeletonVariant } from "./components/fb-skeleton/fb-skeleton";
@@ -37,6 +38,7 @@ export { DropdownItem } from "./components/fb-dropdown/fb-dropdown";
 export { InputSize, InputState, InputType } from "./components/fb-input/fb-input";
 export { ModalSize } from "./components/fb-modal/fb-modal";
 export { RadioOption } from "./components/fb-radio-group/fb-radio-group";
+export { ResizableOrientation } from "./components/fb-resizable-group/fb-resizable-group";
 export { SelectOption, SelectSize, SelectState } from "./components/fb-select/fb-select";
 export { SidebarItem } from "./components/fb-sidebar/fb-sidebar";
 export { SkeletonVariant } from "./components/fb-skeleton/fb-skeleton";
@@ -478,6 +480,33 @@ export namespace Components {
          */
         "value": string;
     }
+    interface FbResizableGroup {
+        /**
+          * Initial size of the "start" panel as a percentage of the container (0–100). The "end" panel takes the remainder.
+          * @default 50
+         */
+        "defaultSize": number;
+        /**
+          * Accessible label read by screen readers for the resize handle
+          * @default ''
+         */
+        "label": string;
+        /**
+          * Minimum size either panel may reach, as a percentage (0–100). Prevents panels from collapsing completely.
+          * @default 10
+         */
+        "minSize": number;
+        /**
+          * Layout direction of the two panels
+          * @default 'horizontal'
+         */
+        "orientation": ResizableOrientation;
+        /**
+          * Show a dot-grid grip indicator on the resize handle
+          * @default false
+         */
+        "withHandle": boolean;
+    }
     interface FbSelect {
         /**
           * @default ''
@@ -827,6 +856,10 @@ export interface FbRadioGroupCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLFbRadioGroupElement;
 }
+export interface FbResizableGroupCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFbResizableGroupElement;
+}
 export interface FbSelectCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLFbSelectElement;
@@ -1099,6 +1132,23 @@ declare global {
         prototype: HTMLFbRadioGroupElement;
         new (): HTMLFbRadioGroupElement;
     };
+    interface HTMLFbResizableGroupElementEventMap {
+        "fbResize": number;
+    }
+    interface HTMLFbResizableGroupElement extends Components.FbResizableGroup, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLFbResizableGroupElementEventMap>(type: K, listener: (this: HTMLFbResizableGroupElement, ev: FbResizableGroupCustomEvent<HTMLFbResizableGroupElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLFbResizableGroupElementEventMap>(type: K, listener: (this: HTMLFbResizableGroupElement, ev: FbResizableGroupCustomEvent<HTMLFbResizableGroupElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLFbResizableGroupElement: {
+        prototype: HTMLFbResizableGroupElement;
+        new (): HTMLFbResizableGroupElement;
+    };
     interface HTMLFbSelectElementEventMap {
         "fbChange": string;
     }
@@ -1301,6 +1351,7 @@ declare global {
         "fb-pagination": HTMLFbPaginationElement;
         "fb-popover": HTMLFbPopoverElement;
         "fb-radio-group": HTMLFbRadioGroupElement;
+        "fb-resizable-group": HTMLFbResizableGroupElement;
         "fb-select": HTMLFbSelectElement;
         "fb-separator": HTMLFbSeparatorElement;
         "fb-side-sheet": HTMLFbSideSheetElement;
@@ -1788,6 +1839,37 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
+    interface FbResizableGroup {
+        /**
+          * Initial size of the "start" panel as a percentage of the container (0–100). The "end" panel takes the remainder.
+          * @default 50
+         */
+        "defaultSize"?: number;
+        /**
+          * Accessible label read by screen readers for the resize handle
+          * @default ''
+         */
+        "label"?: string;
+        /**
+          * Minimum size either panel may reach, as a percentage (0–100). Prevents panels from collapsing completely.
+          * @default 10
+         */
+        "minSize"?: number;
+        /**
+          * Fires whenever the start panel size changes (value = new percentage)
+         */
+        "onFbResize"?: (event: FbResizableGroupCustomEvent<number>) => void;
+        /**
+          * Layout direction of the two panels
+          * @default 'horizontal'
+         */
+        "orientation"?: ResizableOrientation;
+        /**
+          * Show a dot-grid grip indicator on the resize handle
+          * @default false
+         */
+        "withHandle"?: boolean;
+    }
     interface FbSelect {
         /**
           * @default ''
@@ -2225,6 +2307,13 @@ declare namespace LocalJSX {
         "helperText": string;
         "state": 'default' | 'error';
     }
+    interface FbResizableGroupAttributes {
+        "orientation": ResizableOrientation;
+        "defaultSize": number;
+        "minSize": number;
+        "withHandle": boolean;
+        "label": string;
+    }
     interface FbSelectAttributes {
         "label": string;
         "options": SelectOption[] | string;
@@ -2336,6 +2425,7 @@ declare namespace LocalJSX {
         "fb-pagination": Omit<FbPagination, keyof FbPaginationAttributes> & { [K in keyof FbPagination & keyof FbPaginationAttributes]?: FbPagination[K] } & { [K in keyof FbPagination & keyof FbPaginationAttributes as `attr:${K}`]?: FbPaginationAttributes[K] } & { [K in keyof FbPagination & keyof FbPaginationAttributes as `prop:${K}`]?: FbPagination[K] };
         "fb-popover": Omit<FbPopover, keyof FbPopoverAttributes> & { [K in keyof FbPopover & keyof FbPopoverAttributes]?: FbPopover[K] } & { [K in keyof FbPopover & keyof FbPopoverAttributes as `attr:${K}`]?: FbPopoverAttributes[K] } & { [K in keyof FbPopover & keyof FbPopoverAttributes as `prop:${K}`]?: FbPopover[K] };
         "fb-radio-group": Omit<FbRadioGroup, keyof FbRadioGroupAttributes> & { [K in keyof FbRadioGroup & keyof FbRadioGroupAttributes]?: FbRadioGroup[K] } & { [K in keyof FbRadioGroup & keyof FbRadioGroupAttributes as `attr:${K}`]?: FbRadioGroupAttributes[K] } & { [K in keyof FbRadioGroup & keyof FbRadioGroupAttributes as `prop:${K}`]?: FbRadioGroup[K] };
+        "fb-resizable-group": Omit<FbResizableGroup, keyof FbResizableGroupAttributes> & { [K in keyof FbResizableGroup & keyof FbResizableGroupAttributes]?: FbResizableGroup[K] } & { [K in keyof FbResizableGroup & keyof FbResizableGroupAttributes as `attr:${K}`]?: FbResizableGroupAttributes[K] } & { [K in keyof FbResizableGroup & keyof FbResizableGroupAttributes as `prop:${K}`]?: FbResizableGroup[K] };
         "fb-select": Omit<FbSelect, keyof FbSelectAttributes> & { [K in keyof FbSelect & keyof FbSelectAttributes]?: FbSelect[K] } & { [K in keyof FbSelect & keyof FbSelectAttributes as `attr:${K}`]?: FbSelectAttributes[K] } & { [K in keyof FbSelect & keyof FbSelectAttributes as `prop:${K}`]?: FbSelect[K] };
         "fb-separator": Omit<FbSeparator, keyof FbSeparatorAttributes> & { [K in keyof FbSeparator & keyof FbSeparatorAttributes]?: FbSeparator[K] } & { [K in keyof FbSeparator & keyof FbSeparatorAttributes as `attr:${K}`]?: FbSeparatorAttributes[K] } & { [K in keyof FbSeparator & keyof FbSeparatorAttributes as `prop:${K}`]?: FbSeparator[K] };
         "fb-side-sheet": Omit<FbSideSheet, keyof FbSideSheetAttributes> & { [K in keyof FbSideSheet & keyof FbSideSheetAttributes]?: FbSideSheet[K] } & { [K in keyof FbSideSheet & keyof FbSideSheetAttributes as `attr:${K}`]?: FbSideSheetAttributes[K] } & { [K in keyof FbSideSheet & keyof FbSideSheetAttributes as `prop:${K}`]?: FbSideSheet[K] };
@@ -2372,6 +2462,7 @@ declare module "@stencil/core" {
             "fb-pagination": LocalJSX.IntrinsicElements["fb-pagination"] & JSXBase.HTMLAttributes<HTMLFbPaginationElement>;
             "fb-popover": LocalJSX.IntrinsicElements["fb-popover"] & JSXBase.HTMLAttributes<HTMLFbPopoverElement>;
             "fb-radio-group": LocalJSX.IntrinsicElements["fb-radio-group"] & JSXBase.HTMLAttributes<HTMLFbRadioGroupElement>;
+            "fb-resizable-group": LocalJSX.IntrinsicElements["fb-resizable-group"] & JSXBase.HTMLAttributes<HTMLFbResizableGroupElement>;
             "fb-select": LocalJSX.IntrinsicElements["fb-select"] & JSXBase.HTMLAttributes<HTMLFbSelectElement>;
             "fb-separator": LocalJSX.IntrinsicElements["fb-separator"] & JSXBase.HTMLAttributes<HTMLFbSeparatorElement>;
             "fb-side-sheet": LocalJSX.IntrinsicElements["fb-side-sheet"] & JSXBase.HTMLAttributes<HTMLFbSideSheetElement>;

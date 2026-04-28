@@ -11,6 +11,7 @@
     "components/fb-input/fb-input.js",
     "components/fb-modal/fb-modal.js",
     "components/fb-radio-group/fb-radio-group.js",
+    "components/fb-resizable-group/fb-resizable-group.js",
     "components/fb-select/fb-select.js",
     "components/fb-sidebar/fb-sidebar.js",
     "components/fb-skeleton/fb-skeleton.js",

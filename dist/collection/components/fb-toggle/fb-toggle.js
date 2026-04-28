@@ -13,13 +13,13 @@ export class FbToggle {
         };
     }
     render() {
-        return (h(Host, { key: '9afdab17f280543d3c037c6f649bb8e7b408f92c' }, h("button", { key: '8a2f64dffec1bd42138ac5bf704c063f779ceb1c', type: "button", class: {
+        return (h(Host, { key: '2cd30d0450f8c13eddfc424d92858c0c7942a5ba' }, h("button", { key: '5fa3d3ac05f735f4de8530591e9517922a80e41a', type: "button", class: {
                 'fb-toggle': true,
                 [`variant-${this.variant}`]: true,
                 [`size-${this.size}`]: true,
                 'pressed': this.pressed,
                 'disabled': this.disabled,
-            }, "aria-pressed": String(this.pressed), "aria-label": this.label || null, disabled: this.disabled, onClick: this.handleClick }, h("slot", { key: '7873d00399e37c6293dd29116be1796bb24d086e' }))));
+            }, "aria-pressed": String(this.pressed), "aria-label": this.label || null, disabled: this.disabled, onClick: this.handleClick }, h("slot", { key: '377ec0b21e2d7f466069e3a79ed3a23a61cdf11c' }))));
     }
     static get is() { return "fb-toggle"; }
     static get encapsulation() { return "shadow"; }

@@ -50,7 +50,7 @@ const FbAvatar = class {
         const content = this.src
             ? h("img", { src: this.src, alt: this.alt, class: "fb-avatar__img" })
             : (h("span", { role: "img", "aria-label": this.alt || this.initials || 'Avatar', class: "fb-avatar__initials" }, this.initials));
-        return (h(Host, { key: '83acdef33deb57e218c2678dfd1342e34e0606d5' }, h("span", { key: '3977b42e1705915625fd999f86895f86c84d0579', class: classes }, content, this.status !== 'none' && (h("span", { key: '0a703e639732ded0bc7e30483dd93b32da585f40', class: `fb-avatar__status fb-avatar__status--${this.status}`, "aria-label": this.getStatusLabel(), role: "img" })))));
+        return (h(Host, { key: '5dc6d20f9ef0cad0f27e5addbcc17ab6c5c38930' }, h("span", { key: 'bcb85fd9f2cd8b5b42bc5b2d3d3360cc7f5913ac', class: classes }, content, this.status !== 'none' && (h("span", { key: '018641dc7053f0a5f501b686875fef1be2a9ac34', class: `fb-avatar__status fb-avatar__status--${this.status}`, "aria-label": this.getStatusLabel(), role: "img" })))));
     }
 };
 FbAvatar.style = fbAvatarCss();
@@ -707,9 +707,9 @@ const FbPagination = class {
         const pages = this.getPages();
         const isFirst = this.currentPage === 1;
         const isLast = this.currentPage === this.totalPages;
-        return (h(Host, { key: '27d8e530d89d291b0adae1aced39013f331895d7' }, h("nav", { key: 'ca414e8ecf8bc5232d57b4a16d048769cf7173fe', "aria-label": this.label, class: "fb-pagination" }, h("button", { key: '9b07b7b0f5ab152f7785c2cf5fd7e063e833ac58', type: "button", class: "page-btn nav-btn", "aria-label": "Go to previous page", disabled: isFirst, "aria-disabled": isFirst ? 'true' : null, onClick: () => this.go(this.currentPage - 1) }, h("svg", { key: 'd04a2b0e624863d570a5987dda2c3f2f05f0cc3e', "aria-hidden": "true", width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }, h("path", { key: 'bc91a6ff4d9d740600fea5ce71ac5f8f217d0d30', d: "M15 18l-6-6 6-6" }))), pages.map((page, i) => page === '...'
+        return (h(Host, { key: '01724bfbca19d482c5066aeb6d5922fc48d78c33' }, h("nav", { key: '94f684d61dbd2131fc0949ccee41b2d34745612b', "aria-label": this.label, class: "fb-pagination" }, h("button", { key: 'd12c702f56a293bcdc1d9dc55584b40fc5cefc42', type: "button", class: "page-btn nav-btn", "aria-label": "Go to previous page", disabled: isFirst, "aria-disabled": isFirst ? 'true' : null, onClick: () => this.go(this.currentPage - 1) }, h("svg", { key: 'f8ff6b772362c52f2cb1fb08b9859f7817e93460', "aria-hidden": "true", width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }, h("path", { key: 'e4c65a53d3bf73b6d552116e712523322049c785', d: "M15 18l-6-6 6-6" }))), pages.map((page, i) => page === '...'
             ? h("span", { key: `ellipsis-${i}`, class: "ellipsis", "aria-hidden": "true" }, "\u2026")
-            : (h("button", { key: page, type: "button", class: { 'page-btn': true, 'active': page === this.currentPage }, "aria-label": `Go to page ${page}`, "aria-current": page === this.currentPage ? 'page' : null, onClick: () => this.go(page) }, page))), h("button", { key: 'bcaa6600c736d3c75763e9533355db0a948d3c7d', type: "button", class: "page-btn nav-btn", "aria-label": "Go to next page", disabled: isLast, "aria-disabled": isLast ? 'true' : null, onClick: () => this.go(this.currentPage + 1) }, h("svg", { key: 'e653c5bd2938b8e11b9f0919c1adb2f773485932', "aria-hidden": "true", width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }, h("path", { key: '7d6408aeb03af2b0a41151c90d73f9fcc0db4da0', d: "M9 18l6-6-6-6" }))))));
+            : (h("button", { key: page, type: "button", class: { 'page-btn': true, 'active': page === this.currentPage }, "aria-label": `Go to page ${page}`, "aria-current": page === this.currentPage ? 'page' : null, onClick: () => this.go(page) }, page))), h("button", { key: '4286efc6753d06a773267265bab8cd0d20204bec', type: "button", class: "page-btn nav-btn", "aria-label": "Go to next page", disabled: isLast, "aria-disabled": isLast ? 'true' : null, onClick: () => this.go(this.currentPage + 1) }, h("svg", { key: 'cbf63c02e6a4b996e6face9d3d828e7532b323e9', "aria-hidden": "true", width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }, h("path", { key: '9b1e717c26b6157497a4667d3a9f18d0908159c8', d: "M9 18l6-6-6-6" }))))));
     }
 };
 FbPagination.style = fbPaginationCss();
@@ -791,7 +791,7 @@ const FbPopover = class {
         return Array.from((_b = (_a = this.el.shadowRoot) === null || _a === void 0 ? void 0 : _a.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')) !== null && _b !== void 0 ? _b : []);
     }
     render() {
-        return (h(Host, { key: '1f25147ad68015e461da1e11849f7246d5e478ee' }, h("span", { key: 'bef70d515edabbf65a0264f816cfca82dfb08f14', class: "fb-popover-anchor" }, h("button", { key: 'bb9253a32571dd8822a3e943e28f17d7230097aa', id: this.triggerId, type: "button", "aria-haspopup": "dialog", "aria-expanded": this._open ? 'true' : 'false', "aria-controls": this._open ? this.popoverId : null, class: "fb-popover-trigger", onClick: () => this.toggle() }, h("slot", { key: 'b5976e76c18a0023516f012be5aba0e8444ed087', name: "trigger" }, "Open")), this._open && (h("div", { key: '2e8281267f6d2f72fa275a454fd9bd910dea730e', id: this.popoverId, role: "dialog", "aria-modal": "false", "aria-label": this.heading || 'Popover', class: `fb-popover fb-popover--${this.placement}`, onKeyDown: this.handleKeyDown }, h("div", { key: 'b65fce691deab4d556d7391648d4b559296b0c5c', class: "fb-popover__header" }, this.heading && h("span", { key: 'f1e8b58ebe235169b888c1b34c7634657710f1ae', class: "fb-popover__heading" }, this.heading), h("button", { key: '336bc30b601fce58c185834c412a661c3a182d91', type: "button", class: "fb-popover__close", "aria-label": "Close popover", onClick: () => this.closePopover() }, h("svg", { key: '67cc402d69b17fd915aa3ad5c86473bb080a81d7', "aria-hidden": "true", width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round", "stroke-linejoin": "round" }, h("path", { key: '36341dafc0c33768e0adc062f3ea8409be51e3b8', d: "M18 6L6 18M6 6l12 12" })))), h("div", { key: 'd3e5a1d3700584cc70586c7ba34f3cd1752f6b99', class: "fb-popover__body" }, h("slot", { key: 'a10da665979d8b4553f3611642d66d85d880c106' })))))));
+        return (h(Host, { key: '76a1f904d3aa6e9b71e4bc5f90eb4d669be685a1' }, h("span", { key: '3f43953afba723e17b6de6f4a8cd275c485f26af', class: "fb-popover-anchor" }, h("button", { key: '147dc6f1630884e9e8bb21928dde40f5fba19ec9', id: this.triggerId, type: "button", "aria-haspopup": "dialog", "aria-expanded": this._open ? 'true' : 'false', "aria-controls": this._open ? this.popoverId : null, class: "fb-popover-trigger", onClick: () => this.toggle() }, h("slot", { key: 'c4d0875d8b601e1e7ff7560945b1fa4cbe8a8bf4', name: "trigger" }, "Open")), this._open && (h("div", { key: '974044572aa8afa1cf07484df624992b82eda5b6', id: this.popoverId, role: "dialog", "aria-modal": "false", "aria-label": this.heading || 'Popover', class: `fb-popover fb-popover--${this.placement}`, onKeyDown: this.handleKeyDown }, h("div", { key: 'a518dca2b14d242b7a6c015879bcb63ea6b22118', class: "fb-popover__header" }, this.heading && h("span", { key: '764f14ff1a6d3d9aff86b9585018c0fd3724961a', class: "fb-popover__heading" }, this.heading), h("button", { key: '1c18af977221899b21a2f6028bbd7218e40f89da', type: "button", class: "fb-popover__close", "aria-label": "Close popover", onClick: () => this.closePopover() }, h("svg", { key: '49ca8f105c2680db48c85b132e50483ab02baf48', "aria-hidden": "true", width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round", "stroke-linejoin": "round" }, h("path", { key: '9626df4b1190ec24cf6b9c7b4f82c1df8a8f0454', d: "M18 6L6 18M6 6l12 12" })))), h("div", { key: '0e8d0d32cd3d832a50693c9c774b264e5f68ec07', class: "fb-popover__body" }, h("slot", { key: 'cc99094b383ecf882109b49449c981f095855ee4' })))))));
     }
     get el() { return getElement(this); }
     static get watchers() { return {
@@ -990,14 +990,14 @@ const FbSelect = class {
         const activeId = this.open && this.focusedIndex >= 0
             ? `${this.listboxId}-opt-${(_a = enabledOpts[this.focusedIndex]) === null || _a === void 0 ? void 0 : _a.value}`
             : undefined;
-        return (h(Host, { key: 'f6bd9d4f080d4ac0362c72aa6d00ac4fdb561d17' }, h("div", { key: '31a12134898db53808755ec9be6addc00133b331', class: "fb-select-wrapper", style: { fontFamily: 'var(--font-family-primary)' } }, this.label && (h("label", { key: 'd8cee8e3a28ccad85035ecce584b5d7fd51a52c1', id: this.labelId, htmlFor: this.triggerId, class: "fb-label" }, this.label, this.required && h("span", { key: '95dfc9b748af2faa91fc85a6119e971ec1a11bc7', class: "required-indicator", "aria-hidden": "true" }, " *"))), h("div", { key: 'cd5160a66f48bb9477213d2ac466f6f9c0847569', class: "fb-select-container", style: { position: 'relative' } }, h("button", { key: 'da94b54f77c01aa4ba25db5c3027f97169267eac', id: this.triggerId, type: "button", role: "combobox", "aria-haspopup": "listbox", "aria-expanded": this.open ? 'true' : 'false', "aria-controls": this.listboxId, "aria-labelledby": this.label ? `${this.labelId} ${this.triggerId}` : null, "aria-activedescendant": activeId, "aria-required": this.required ? 'true' : null, "aria-invalid": this.isError ? 'true' : null, "aria-describedby": hasHelper ? this.helperId : null, disabled: this.isDisabled, class: {
+        return (h(Host, { key: '313434f9907acad78a8ba0eec85e0f33b86cea10' }, h("div", { key: 'b57a0d2908cdc11680f174d49815c3c1a8a87446', class: "fb-select-wrapper", style: { fontFamily: 'var(--font-family-primary)' } }, this.label && (h("label", { key: '88115af578b92dd6b00a49f3734dd8c2cf6401fa', id: this.labelId, htmlFor: this.triggerId, class: "fb-label" }, this.label, this.required && h("span", { key: '14014ef8d1ed2ef1c4517739e9a6b4ca92b6f457', class: "required-indicator", "aria-hidden": "true" }, " *"))), h("div", { key: '5b0a6189f0dc209f7043299aaa0ba462f5b7b2f2', class: "fb-select-container", style: { position: 'relative' } }, h("button", { key: 'e2eb2a99e229573d3ea0b9c385e7d455b2f2266c', id: this.triggerId, type: "button", role: "combobox", "aria-haspopup": "listbox", "aria-expanded": this.open ? 'true' : 'false', "aria-controls": this.listboxId, "aria-labelledby": this.label ? `${this.labelId} ${this.triggerId}` : null, "aria-activedescendant": activeId, "aria-required": this.required ? 'true' : null, "aria-invalid": this.isError ? 'true' : null, "aria-describedby": hasHelper ? this.helperId : null, disabled: this.isDisabled, class: {
                 'fb-select-trigger': true,
                 [`size-${this.size}`]: true,
                 'open': this.open,
                 'state-error': this.isError,
                 'state-disabled': this.isDisabled,
                 'has-value': !!this.selectedOption,
-            }, onClick: () => this.open ? this.close() : this.open_(), onKeyDown: this.handleTriggerKeyDown }, h("span", { key: 'e062a0f4b3664699f1dd0e8a2a0eb685346c0f55', class: "trigger-text" }, this.selectedOption ? this.selectedOption.label : this.placeholder), h("span", { key: '427c4538a401079930f90739e6989812884913f6', "aria-hidden": "true", class: { 'chevron': true, 'chevron--open': this.open } }, h("svg", { key: 'c4242a5e69ed30b61aa015a83a2269115d35a08e', width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }, h("path", { key: 'fe5bf315ee4abd819f3dcbda5682da298da41163', d: "M6 9l6 6 6-6" })))), this.open && (h("ul", { key: 'bd6daf00c6ea5b1483e47ee95c21ba1c991ec5fd', id: this.listboxId, role: "listbox", "aria-label": this.label || 'Options', class: "fb-listbox" }, opts.map((opt) => {
+            }, onClick: () => this.open ? this.close() : this.open_(), onKeyDown: this.handleTriggerKeyDown }, h("span", { key: 'ebb029d9fa62dac6fed8d264ea0eff6c0aefa167', class: "trigger-text" }, this.selectedOption ? this.selectedOption.label : this.placeholder), h("span", { key: '4f8114ab3ba6af0ae36cd7313e0249ea19926b04', "aria-hidden": "true", class: { 'chevron': true, 'chevron--open': this.open } }, h("svg", { key: '6a50d3cc58926c414cbfb6273b060dc43561f83a', width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }, h("path", { key: '9dd3606c0088790e86f8a11f98a9df47d6c360f6', d: "M6 9l6 6 6-6" })))), this.open && (h("ul", { key: '519ce70d80fe8026b1896da3532216dce9e0ae56', id: this.listboxId, role: "listbox", "aria-label": this.label || 'Options', class: "fb-listbox" }, opts.map((opt) => {
             var _a;
             const isSelected = this.value === opt.value;
             const isFocused = ((_a = enabledOpts[this.focusedIndex]) === null || _a === void 0 ? void 0 : _a.value) === opt.value;
@@ -1008,7 +1008,7 @@ const FbSelect = class {
                     'focused': isFocused,
                     'disabled': !!opt.disabled,
                 }, onClick: () => this.selectOption(opt), onKeyDown: (e) => this.handleOptionKeyDown(e, opt) }, h("span", null, opt.label), isSelected && (h("svg", { "aria-hidden": "true", width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round", "stroke-linejoin": "round" }, h("path", { d: "M20 6L9 17l-5-5" })))));
-        })))), hasHelper && (h("div", { key: '994a6074966f3023f752b986fe51f875a127696b', id: this.helperId, class: { 'fb-helper': true, 'fb-helper--error': this.isError }, role: this.isError ? 'alert' : null }, this.helperText)))));
+        })))), hasHelper && (h("div", { key: 'a2b1c98973414b10f13e93bf07319d8a88b268c0', id: this.helperId, class: { 'fb-helper': true, 'fb-helper--error': this.isError }, role: this.isError ? 'alert' : null }, this.helperText)))));
     }
     get el() { return getElement(this); }
 };
@@ -1199,7 +1199,7 @@ const FbSidebar = class {
     }
     render() {
         const items = this.parsedItems;
-        return (h(Host, { key: '54f6c21a7f81ab5f294c1a62abd19eaabad4c055' }, h("nav", { key: '337a5dfa47fe0f69c7dc8175e40091b2184b472f', "aria-label": this.label, class: { 'fb-sidebar': true, 'fb-sidebar--collapsed': this.collapsed } }, h("ul", { key: '90b2b06002effbf021f97a9690347c3d7e538a79', role: "list", class: "fb-sidebar__list" }, this.renderItems(items)), h("slot", { key: '68d7c4d033ed2a4067e23f93c2182aaa17848436', name: "footer" }))));
+        return (h(Host, { key: '306cff7696de1ebb67738bd4769984a0772dc87a' }, h("nav", { key: 'ed7d69bbd8e22e684b7f7c62c224a7a1984ae8d3', "aria-label": this.label, class: { 'fb-sidebar': true, 'fb-sidebar--collapsed': this.collapsed } }, h("ul", { key: 'd20cf25164f2f4589f844692e0a8c085fe5dd2a7', role: "list", class: "fb-sidebar__list" }, this.renderItems(items)), h("slot", { key: '823410195a9df4a93043f65d8032eeb2ee523d61', name: "footer" }))));
     }
 };
 FbSidebar.style = fbSidebarCss();
@@ -1219,7 +1219,7 @@ const FbSkeleton = class {
             width: this.width,
             height: this.height || (this.variant === 'text' ? '1em' : this.variant === 'circle' ? this.width : '80px'),
         };
-        return (h(Host, { key: '04ca6f723d16aacd4838e2279e720387fb91878f' }, h("span", { key: '4bfe5d69721cfd6b18f45a4c3409d60d7ef8a120', "aria-hidden": "true", class: { 'fb-skeleton': true, [`variant-${this.variant}`]: true }, style: style })));
+        return (h(Host, { key: '0db41cd256f6b6c2c161e539ff4ad3edf8288fe4' }, h("span", { key: '4c817ed1f6fdf6710cf09af84f41eeb7ba265b5a', "aria-hidden": "true", class: { 'fb-skeleton': true, [`variant-${this.variant}`]: true }, style: style })));
     }
 };
 FbSkeleton.style = fbSkeletonCss();
@@ -1235,7 +1235,7 @@ const FbSpinner = class {
         this.label = 'Loading, please wait';
     }
     render() {
-        return (h(Host, { key: '5ed8ba7f076972e995fdaabff30f8025fb1bb988' }, h("span", { key: 'd14e37e65b2cfcc3965b265cb1d901d3171fbf06', role: "status", "aria-label": this.label, class: { 'fb-spinner': true, [`size-${this.size}`]: true } }, h("svg", { key: 'b36a1bab6ad78e7e1360483bdf30723105acb0f5', "aria-hidden": "true", viewBox: "0 0 24 24", fill: "none", class: "spinner-svg" }, h("circle", { key: '8289d3db112dc7f667d8e12c393a3eb8c24f2b18', class: "track", cx: "12", cy: "12", r: "10", "stroke-width": "2.5" }), h("path", { key: '4e3f71473babdecb930c5f136d365a7f144ea905', class: "arc", d: "M12 2a10 10 0 0 1 10 10", "stroke-width": "2.5", "stroke-linecap": "round" })), h("span", { key: '24bfc287f77d2f200b94273f911b7e90543fb297', class: "visually-hidden" }, this.label))));
+        return (h(Host, { key: '82406bca363db2a0d15837aef618bd3da581ea1f' }, h("span", { key: '0b27cb8ffe3e22f95ea519d96fcf3c85812c87b5', role: "status", "aria-label": this.label, class: { 'fb-spinner': true, [`size-${this.size}`]: true } }, h("svg", { key: '2439875da5a014ee63fcde783deb310d08827c1d', "aria-hidden": "true", viewBox: "0 0 24 24", fill: "none", class: "spinner-svg" }, h("circle", { key: 'd6ea3f7040060e54e0744ab31daa06902fb71f20', class: "track", cx: "12", cy: "12", r: "10", "stroke-width": "2.5" }), h("path", { key: '65c1d1d882cc9c76ee5c8bc157201ff3d5f044d8', class: "arc", d: "M12 2a10 10 0 0 1 10 10", "stroke-width": "2.5", "stroke-linecap": "round" })), h("span", { key: '33758a9667b49bfb4da326a18694fa227d89a984', class: "visually-hidden" }, this.label))));
     }
 };
 FbSpinner.style = fbSpinnerCss();
@@ -1260,10 +1260,10 @@ const FbSwitch = class {
     }
     render() {
         const hasHelper = !!this.helperText;
-        return (h(Host, { key: '2823bdece8351f74027953fced0b421d9ad4b886' }, h("div", { key: 'eee0f1e1e241e9e1ac378f0c426b6f15c251c5c1', class: "fb-switch-wrapper" }, h("label", { key: '7fafc30dabd6c79b8d9bceeec9112b60c637408b', htmlFor: this.switchId, class: { 'fb-switch-label': true, 'disabled': this.disabled } }, h("input", { key: 'ec8115e055c61e31e7b2ef2695ad18af5a3cf3a3', id: this.switchId, type: "checkbox", role: "switch", checked: this.checked, disabled: this.disabled, "aria-checked": this.checked ? 'true' : 'false', "aria-describedby": hasHelper ? this.helperId : null, class: "native-switch", onChange: (e) => {
+        return (h(Host, { key: '7f20cf5e0eab30491eb3b76be6a1f70f7770ba8b' }, h("div", { key: 'fb692aced4ba86f6452fda63a37a94ade07fac4a', class: "fb-switch-wrapper" }, h("label", { key: '5e98d84412ac8237140ec68ce6a6086bcca18443', htmlFor: this.switchId, class: { 'fb-switch-label': true, 'disabled': this.disabled } }, h("input", { key: '9d03d9ed494b735ba5b6c81ece1dda09130bf4d2', id: this.switchId, type: "checkbox", role: "switch", checked: this.checked, disabled: this.disabled, "aria-checked": this.checked ? 'true' : 'false', "aria-describedby": hasHelper ? this.helperId : null, class: "native-switch", onChange: (e) => {
                 this.checked = e.target.checked;
                 this.fbChange.emit(this.checked);
-            } }), h("span", { key: 'e85631a7c9e0ce732bbf947a0583ec4b1e5a68a2', "aria-hidden": "true", class: { 'switch-track': true, 'on': this.checked } }, h("span", { key: 'dfbfaff05c44d8c7f996f9ebbb0997def1517159', class: "switch-thumb" })), this.label && h("span", { key: '7b1d5e639fa61912a567ce729c487d825ee47fc0', class: "label-text" }, this.label)), hasHelper && (h("div", { key: '0874c61dfd0f0a4fc5d2debb34029b804163fa4b', id: this.helperId, class: "fb-helper" }, this.helperText)))));
+            } }), h("span", { key: 'd9f3001a9a34fa2cbd168cf0db23144dae771c61', "aria-hidden": "true", class: { 'switch-track': true, 'on': this.checked } }, h("span", { key: 'd66e64a04438381782fd1e77bfbe49e17a507a86', class: "switch-thumb" })), this.label && h("span", { key: 'b84109c03fae55ac9e23823720008e5bec007fea', class: "label-text" }, this.label)), hasHelper && (h("div", { key: '544bccc9cd4b949e25c506695dbe443b2fbdfd41', id: this.helperId, class: "fb-helper" }, this.helperText)))));
     }
 };
 FbSwitch.style = fbSwitchCss();
@@ -1345,7 +1345,7 @@ const FbTabs = class {
         var _a;
         const tabs = this.parsedTabs;
         const active = this._activeTab || ((_a = tabs.find(t => !t.disabled)) === null || _a === void 0 ? void 0 : _a.id);
-        return (h(Host, { key: 'fe8cea77c789645354272ec1de95d6c5e1946e54', ref: (el) => this.el = el }, h("div", { key: '9f8e43649573bd90d22e5ab19b174b0e71a18466', role: "tablist", "aria-label": this.label, class: {
+        return (h(Host, { key: '6e5dfc617b109630dd86b81e559113bef8eeceda', ref: (el) => this.el = el }, h("div", { key: 'e1de632f1442b9b90f58d931d4ebd247d0b2be4b', role: "tablist", "aria-label": this.label, class: {
                 'fb-tablist': true,
                 [`variant-${this.variant}`]: true,
                 'full-width': this.fullWidth,
@@ -1399,7 +1399,7 @@ const FbTextarea = class {
         const showCounter = !!this.maxLength;
         const counterId = showCounter ? `${this.textareaId}-counter` : null;
         const describedBy = [hasHelper ? this.helperId : null, counterId].filter(Boolean).join(' ') || null;
-        return (h(Host, { key: '861010b21c4f0832357fba79b662b55c8413f42f' }, h("div", { key: '7b4379647848e16f1a28775242cd70f5b322e67b', class: "fb-textarea-wrapper" }, this.label && (h("label", { key: '22486a5f45e212fabc69e76901fbbda3e827292a', htmlFor: this.textareaId, class: "fb-label" }, this.label, this.required && h("span", { key: 'b845a86f344933d535aea7131e80c82f5f6e553b', class: "required-indicator", "aria-hidden": "true" }, " *"))), h("textarea", { key: '5385a350987adb2888d610e6e48b62df895d6b9f', id: this.textareaId, rows: this.rows, placeholder: this.placeholder, disabled: this.isDisabled, readOnly: this.isReadOnly, required: this.required, maxLength: this.maxLength, "aria-required": this.required ? 'true' : null, "aria-invalid": this.isError ? 'true' : null, "aria-describedby": describedBy, class: {
+        return (h(Host, { key: '630b8868b728ea7c4f8a4f35fa011dfaa6a7eda2' }, h("div", { key: '74753e90d501a52cdc5ee9a4e88da136a82e5dde', class: "fb-textarea-wrapper" }, this.label && (h("label", { key: '1dd225293354e08fd408c35c441a649e24d5aa73', htmlFor: this.textareaId, class: "fb-label" }, this.label, this.required && h("span", { key: 'c2ae106aee20a65a91c8b33db38d269a598f900f', class: "required-indicator", "aria-hidden": "true" }, " *"))), h("textarea", { key: '59bf5e4092a549cca31b17280b31702bb245d4c3', id: this.textareaId, rows: this.rows, placeholder: this.placeholder, disabled: this.isDisabled, readOnly: this.isReadOnly, required: this.required, maxLength: this.maxLength, "aria-required": this.required ? 'true' : null, "aria-invalid": this.isError ? 'true' : null, "aria-describedby": describedBy, class: {
                 'fb-textarea': true,
                 [`size-${this.size}`]: true,
                 'state-error': this.isError,
@@ -1409,9 +1409,9 @@ const FbTextarea = class {
                 const val = e.target.value;
                 this.value = val;
                 this.fbChange.emit(val);
-            }, onFocus: () => this.fbFocus.emit(), onBlur: () => this.fbBlur.emit() }, this.value), h("div", { key: '83509904800604fda1018e715339323d4f0e9589', class: "fb-textarea-footer" }, hasHelper && (h("div", { key: '12874bbf397b65d713e285266c29978e7d2e5cb3', id: this.helperId, class: { 'fb-helper': true, 'fb-helper--error': this.isError }, role: this.isError ? 'alert' : null }, this.isError && (h("svg", { key: '490c0bfc75f90a7e5f9a68e1907564a5e6549822', "aria-hidden": "true", width: "13", height: "13", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round", "stroke-linejoin": "round" }, h("circle", { key: 'd31a3ebd3238c3ef3338b955f4344469f3404919', cx: "12", cy: "12", r: "10" }), h("line", { key: '3aa32a60d7f5682de6cf2b51decc9916e1e81a52', x1: "12", y1: "8", x2: "12", y2: "12" }), h("line", { key: 'c937a43d9ec8a28d5a8ee3dca8d78d4b1198c428', x1: "12", y1: "16", x2: "12.01", y2: "16" }))), this.helperText)), showCounter && (
+            }, onFocus: () => this.fbFocus.emit(), onBlur: () => this.fbBlur.emit() }, this.value), h("div", { key: '15c66b58650087db27362fe0568d21cfee66bcf4', class: "fb-textarea-footer" }, hasHelper && (h("div", { key: 'cb4f8bd02565a4e81c9f4e8ff8dddc1a1ace6b35', id: this.helperId, class: { 'fb-helper': true, 'fb-helper--error': this.isError }, role: this.isError ? 'alert' : null }, this.isError && (h("svg", { key: 'b6004e8c352db2a7ef5445815e4ed49f4abda951', "aria-hidden": "true", width: "13", height: "13", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round", "stroke-linejoin": "round" }, h("circle", { key: '8b8c490bb9fcb8a4231f88f3eb1f4b2b6b7db369', cx: "12", cy: "12", r: "10" }), h("line", { key: '76bcfcb572878cbf26a463ee77a960f3ede1ca77', x1: "12", y1: "8", x2: "12", y2: "12" }), h("line", { key: 'bd91ccf081e81c7d516875d451ea952e5904a20c', x1: "12", y1: "16", x2: "12.01", y2: "16" }))), this.helperText)), showCounter && (
         // aria-live="polite" announces the count as the user types
-        h("div", { key: '150f34fdd0d53e1f0427945f9d450c16fd30b753', id: counterId, class: { 'fb-counter': true, 'fb-counter--limit': charCount >= this.maxLength }, "aria-live": "polite" }, charCount, "/", this.maxLength))))));
+        h("div", { key: '07c712f8bb7f9a47a2aa9be430c1c34d90f9c8f9', id: counterId, class: { 'fb-counter': true, 'fb-counter--limit': charCount >= this.maxLength }, "aria-live": "polite" }, charCount, "/", this.maxLength))))));
     }
 };
 FbTextarea.style = fbTextareaCss();
@@ -1447,7 +1447,7 @@ const FbTimeline = class {
     }
     render() {
         const items = this.parsedItems;
-        return (h(Host, { key: '18807acb19b45d9f58c45968eddc79fff6da38ab' }, h("ol", { key: 'ca7899eb79ead9ebe2d2f87f9fac0f93bb3b1b8b', "aria-label": this.label, class: `fb-timeline fb-timeline--${this.orientation}` }, items.map((item, i) => {
+        return (h(Host, { key: '1eed34c9e14569dfa362dae454327c007ad06422' }, h("ol", { key: 'e5c78e16827cdfcd96e500c5099b18498ff76daa', "aria-label": this.label, class: `fb-timeline fb-timeline--${this.orientation}` }, items.map((item, i) => {
             var _a, _b, _c;
             return (h("li", { key: item.id, class: {
                     'fb-timeline__item': true,
@@ -1523,13 +1523,13 @@ const FbToggle = class {
         };
     }
     render() {
-        return (h(Host, { key: '9afdab17f280543d3c037c6f649bb8e7b408f92c' }, h("button", { key: '8a2f64dffec1bd42138ac5bf704c063f779ceb1c', type: "button", class: {
+        return (h(Host, { key: '2cd30d0450f8c13eddfc424d92858c0c7942a5ba' }, h("button", { key: '5fa3d3ac05f735f4de8530591e9517922a80e41a', type: "button", class: {
                 'fb-toggle': true,
                 [`variant-${this.variant}`]: true,
                 [`size-${this.size}`]: true,
                 'pressed': this.pressed,
                 'disabled': this.disabled,
-            }, "aria-pressed": String(this.pressed), "aria-label": this.label || null, disabled: this.disabled, onClick: this.handleClick }, h("slot", { key: '7873d00399e37c6293dd29116be1796bb24d086e' }))));
+            }, "aria-pressed": String(this.pressed), "aria-label": this.label || null, disabled: this.disabled, onClick: this.handleClick }, h("slot", { key: '377ec0b21e2d7f466069e3a79ed3a23a61cdf11c' }))));
     }
 };
 FbToggle.style = fbToggleCss();
@@ -1643,7 +1643,7 @@ const FbToggleGroup = class {
         const isOutline = this.variant === 'outline';
         const isV = this.orientation === 'vertical';
         const last = items.length - 1;
-        return (h(Host, { key: '2670c285aa2b2dffa3b1ccdfbc0833d50ccd70cb' }, h("div", { key: '0427ae0a748febab8b65de21bb9a9b68aeccc6d1', role: "group", "aria-label": this.label, "aria-disabled": this.disabled ? 'true' : null, class: {
+        return (h(Host, { key: '10bdf9353c8e0f0dadf8b4e58d52df2a73bb5207' }, h("div", { key: '43ef648fb0a35584fc820e7bd72c312a8574c911', role: "group", "aria-label": this.label, "aria-disabled": this.disabled ? 'true' : null, class: {
                 'fb-toggle-group': true,
                 [`variant-${this.variant}`]: true,
                 [`size-${this.size}`]: true,
@@ -1692,7 +1692,7 @@ const FbTooltip = class {
     show() { this.visible = true; }
     hide() { this.visible = false; }
     render() {
-        return (h(Host, { key: 'f3835c55c507399246d054caaa3af6b5764914f5' }, h("span", { key: 'bc60a49afba417ae5bec532655f1a278aea47a26', class: "fb-tooltip-wrapper", onMouseEnter: () => this.show(), onMouseLeave: () => this.hide(), onFocusin: () => this.show(), onFocusout: () => this.hide() }, h("span", { key: '64c60924505012c36e20c5a845392ce2ca97c44e', "aria-describedby": this.visible ? this.tooltipId : null }, h("slot", { key: 'db06be6123305332b73598054cef403a3badd8ad' })), this.visible && (h("span", { key: '6a306c8b4f2eae2db80f81fab86824be80298ec0', id: this.tooltipId, role: "tooltip", class: `fb-tooltip fb-tooltip--${this.placement}` }, this.content)))));
+        return (h(Host, { key: '5c6e4c64e2eb61e0aec496f44ce933c3607dc6a5' }, h("span", { key: 'c5e348f4d520b955e56d39d5e399ea59bed9fc66', class: "fb-tooltip-wrapper", onMouseEnter: () => this.show(), onMouseLeave: () => this.hide(), onFocusin: () => this.show(), onFocusout: () => this.hide() }, h("span", { key: 'a3939c91652228608ac2490865b48d38b38b426b', "aria-describedby": this.visible ? this.tooltipId : null }, h("slot", { key: 'dd8e8bec3b3b696305c0e59da4d3a6ab693611df' })), this.visible && (h("span", { key: '86bbcfbf987d3d1c844c7fb325e80763b5a6ca85', id: this.tooltipId, role: "tooltip", class: `fb-tooltip fb-tooltip--${this.placement}` }, this.content)))));
     }
     get el() { return getElement(this); }
 };

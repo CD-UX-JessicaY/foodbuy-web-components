@@ -104,7 +104,7 @@ export class FbToggleGroup {
         const isOutline = this.variant === 'outline';
         const isV = this.orientation === 'vertical';
         const last = items.length - 1;
-        return (h(Host, { key: '2670c285aa2b2dffa3b1ccdfbc0833d50ccd70cb' }, h("div", { key: '0427ae0a748febab8b65de21bb9a9b68aeccc6d1', role: "group", "aria-label": this.label, "aria-disabled": this.disabled ? 'true' : null, class: {
+        return (h(Host, { key: '10bdf9353c8e0f0dadf8b4e58d52df2a73bb5207' }, h("div", { key: '43ef648fb0a35584fc820e7bd72c312a8574c911', role: "group", "aria-label": this.label, "aria-disabled": this.disabled ? 'true' : null, class: {
                 'fb-toggle-group': true,
                 [`variant-${this.variant}`]: true,
                 [`size-${this.size}`]: true,

@@ -1,0 +1,89 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Group container ─────────────────────────────────────────────── */
+.fb-resizable-group {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  border: var(--border-standard) solid var(--color-neutral-200);
+  box-sizing: border-box;
+}
+
+.fb-resizable-group.horizontal { flex-direction: row; }
+.fb-resizable-group.vertical   { flex-direction: column; }
+
+/* ── Panels ──────────────────────────────────────────────────────── */
+.fb-panel {
+  overflow: auto;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* Start panel fills its percentage; end panel fills the rest */
+.horizontal .fb-panel { height: 100%; }
+.vertical   .fb-panel { width: 100%; }
+
+/* ── Resize handle ───────────────────────────────────────────────── */
+.fb-handle {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-neutral-100);
+  transition: background 0.15s;
+  position: relative;
+  z-index: 1;
+  outline: none;
+  /* Hit-area: 4px by default, 8px when grip is visible */
+  cursor: col-resize;
+}
+
+.horizontal .fb-handle {
+  width: 4px;
+  height: 100%;
+  cursor: col-resize;
+}
+.vertical .fb-handle {
+  height: 4px;
+  width: 100%;
+  cursor: row-resize;
+}
+
+.horizontal .fb-handle--with-grip { width: 10px; }
+.vertical   .fb-handle--with-grip { height: 10px; }
+
+.fb-handle:hover { background: var(--color-primary-100); }
+
+.fb-handle:focus-visible {
+  background: var(--color-primary-200);
+  outline: var(--focus-width) solid var(--focus-color);
+  outline-offset: -2px;
+}
+
+/* ── Grip indicator ──────────────────────────────────────────────── */
+.fb-grip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-neutral-300);
+  border-radius: var(--radius-max);
+  color: var(--color-neutral-600);
+  pointer-events: none;
+}
+
+.horizontal .fb-grip {
+  width: 8px;
+  height: 32px;
+}
+.vertical .fb-grip {
+  width: 32px;
+  height: 8px;
+}
+
+.fb-handle:hover  .fb-grip { background: var(--color-primary-300); color: var(--color-primary-700); }

@@ -449,7 +449,8 @@ export class FbDataTable {
 
           {/* ── Table ──────────────────────────────────────────────── */}
           <div class="fb-dt-table-wrap">
-            <div class="fb-dt-scroll">
+            {/* tabIndex="0" makes the scroll region keyboard-focusable — WCAG 2.1 SC 2.1.1 */}
+            <div class="fb-dt-scroll" tabIndex={0} role="region" aria-label={this.caption ? `${this.caption} table` : 'Data table'}>
               <table class="fb-dt-table" role="grid" aria-label={this.caption || 'Data table'}>
                 <thead>
                   <tr>

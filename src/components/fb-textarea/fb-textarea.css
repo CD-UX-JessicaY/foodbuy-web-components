@@ -42,7 +42,7 @@
 .state-disabled { background-color: var(--color-neutral-100); border-color: var(--color-neutral-200); opacity: 0.6; cursor: not-allowed; }
 .state-readonly { background-color: var(--color-neutral-50); }
 
-.fb-textarea::placeholder { color: var(--color-neutral-400); }
+.fb-textarea::placeholder { color: var(--color-neutral-600); }
 
 .fb-textarea-footer {
   display: flex;
@@ -53,5 +53,5 @@
 .fb-helper        { display: flex; align-items: center; gap: var(--spacing-4); font-size: var(--font-size-12); color: var(--color-neutral-500); }
 .fb-helper--error { color: var(--color-danger-600); }
 
-.fb-counter         { font-size: var(--font-size-12); color: var(--color-neutral-400); margin-left: auto; }
+.fb-counter         { font-size: var(--font-size-12); color: var(--color-neutral-500); margin-left: auto; }
 .fb-counter--limit  { color: var(--color-danger-500); font-weight: var(--font-weight-semibold); }

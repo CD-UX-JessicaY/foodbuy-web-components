@@ -48,11 +48,11 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: var(--color-neutral-400);
+  color: var(--color-neutral-600);
 }
 .fb-select-trigger.has-value .trigger-text { color: var(--color-neutral-black); }
 
-.chevron { display: flex; align-items: center; color: var(--color-neutral-400); transition: transform 0.2s; flex-shrink: 0; }
+.chevron { display: flex; align-items: center; color: var(--color-neutral-600); transition: transform 0.2s; flex-shrink: 0; }
 .chevron--open { transform: rotate(180deg); }
 
 /* ── Listbox dropdown ─────────────────────────────────────────────── */

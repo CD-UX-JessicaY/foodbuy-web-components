@@ -86,7 +86,7 @@
 .size-default .native-input { font-size: var(--font-size-14); padding: 0 var(--spacing-12); }
 .size-lg      .native-input { font-size: var(--font-size-16); padding: 0 var(--spacing-16); }
 
-.native-input::placeholder { color: var(--color-neutral-400); }
+.native-input::placeholder { color: var(--color-neutral-600); }
 .native-input:disabled      { cursor: not-allowed; }
 
 /* ── Adornments ───────────────────────────────────────────────────── */
@@ -101,7 +101,7 @@
 
 .adornment--prefix      { padding: 0 var(--spacing-8) 0 var(--spacing-12); border-right: 1px solid var(--color-neutral-200); }
 .adornment--suffix      { padding: 0 var(--spacing-12) 0 var(--spacing-8); border-left:  1px solid var(--color-neutral-200); }
-.adornment--prefix-icon { padding: 0 var(--spacing-4) 0 var(--spacing-12); color: var(--color-neutral-400); }
+.adornment--prefix-icon { padding: 0 var(--spacing-4) 0 var(--spacing-12); color: var(--color-neutral-600); }
 
 /* ── Adornment buttons (clear, eye) ───────────────────────────────── */
 .adornment-btn {
@@ -113,7 +113,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--color-neutral-400);
+  color: var(--color-neutral-600);
   flex-shrink: 0;
   border-radius: 0;
 }

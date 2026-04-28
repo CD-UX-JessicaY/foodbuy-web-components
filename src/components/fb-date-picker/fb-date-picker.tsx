@@ -294,49 +294,51 @@ export class FbDatePicker {
 
           <div class="fb-dp-container">
             {/*
-              Trigger button.
-              aria-haspopup="dialog" tells AT a dialog will appear.
-              aria-expanded reflects open state.
+              Trigger + clear are SIBLINGS inside fb-dp-field (not nested).
+              Nesting a <button> inside a <button> violates WCAG interactive-controls rule.
+              The clear button is absolutely positioned to appear visually inside the trigger.
             */}
-            <button
-              id={this.triggerId}
-              type="button"
-              class={{
-                'fb-dp-trigger': true,
-                'is-open':        this.open,
-                'state-error':    this.isError,
-                'state-disabled': this.isDisabled,
-                'has-value':      this.hasValue,
-                'is-range':       this.mode === 'range',
-              }}
-              aria-haspopup="dialog"
-              aria-expanded={this.open ? 'true' : 'false'}
-              aria-controls={this.dialogId}
-              aria-labelledby={this.label ? `${this.labelId} ${this.triggerId}` : null}
-              aria-required={this.required ? 'true' : null}
-              aria-invalid={this.isError ? 'true' : null}
-              aria-describedby={hasHelper ? this.helperId : null}
-              disabled={this.isDisabled}
-              onClick={() => this.open ? this.closeCalendar() : this.openCalendar()}
-              onKeyDown={e => {
-                if ((e.key === 'Enter' || e.key === ' ') && !this.open) { e.preventDefault(); this.openCalendar(); }
-                if (e.key === 'Escape' && this.open) { e.preventDefault(); this.closeCalendar(); }
-              }}
-            >
-              <span class="fb-dp-icon" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="2" y="3" width="12" height="11" rx="2"/>
-                  <path d="M2 7h12"/>
-                  <path d="M5 2v2M11 2v2" stroke-linecap="round"/>
-                </svg>
-              </span>
-              <span class="fb-dp-text">{this.displayText}</span>
+            <div class="fb-dp-field">
+              <button
+                id={this.triggerId}
+                type="button"
+                class={{
+                  'fb-dp-trigger': true,
+                  'is-open':        this.open,
+                  'state-error':    this.isError,
+                  'state-disabled': this.isDisabled,
+                  'has-value':      this.hasValue,
+                  'has-clear':      this.hasValue && !this.isDisabled,
+                  'is-range':       this.mode === 'range',
+                }}
+                aria-haspopup="dialog"
+                aria-expanded={this.open ? 'true' : 'false'}
+                aria-controls={this.dialogId}
+                aria-labelledby={this.label ? `${this.labelId} ${this.triggerId}` : null}
+                aria-required={this.required ? 'true' : null}
+                aria-invalid={this.isError ? 'true' : null}
+                aria-describedby={hasHelper ? this.helperId : null}
+                disabled={this.isDisabled}
+                onClick={() => this.open ? this.closeCalendar() : this.openCalendar()}
+                onKeyDown={e => {
+                  if ((e.key === 'Enter' || e.key === ' ') && !this.open) { e.preventDefault(); this.openCalendar(); }
+                  if (e.key === 'Escape' && this.open) { e.preventDefault(); this.closeCalendar(); }
+                }}
+              >
+                <span class="fb-dp-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="2" y="3" width="12" height="11" rx="2"/>
+                    <path d="M2 7h12"/>
+                    <path d="M5 2v2M11 2v2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <span class="fb-dp-text">{this.displayText}</span>
+              </button>
               {this.hasValue && !this.isDisabled && (
                 <button
                   type="button"
                   class="fb-dp-clear"
                   aria-label="Clear date"
-                  tabIndex={-1}
                   onMouseDown={e => e.preventDefault()}
                   onClick={this.clearValue}
                 >
@@ -346,7 +348,7 @@ export class FbDatePicker {
                   </svg>
                 </button>
               )}
-            </button>
+            </div>
 
             {this.open && (
               <div

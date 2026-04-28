@@ -64,7 +64,7 @@
 .search-icon {
   display: flex;
   align-items: center;
-  color: var(--color-neutral-400);
+  color: var(--color-neutral-600);
   flex-shrink: 0;
 }
 .size-sm      .search-icon { padding: 0 var(--spacing-4) 0 var(--spacing-8);  }
@@ -88,7 +88,7 @@
 .size-default .native-input { font-size: var(--font-size-14); }
 .size-lg      .native-input { font-size: var(--font-size-16); }
 
-.native-input::placeholder { color: var(--color-neutral-400); }
+.native-input::placeholder { color: var(--color-neutral-600); }
 .native-input:disabled      { cursor: not-allowed; }
 
 /* ── Icon buttons (clear) ───────────────────────────────────────────── */
@@ -101,7 +101,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--color-neutral-400);
+  color: var(--color-neutral-600);
   flex-shrink: 0;
   border-radius: 0;
   transition: color 0.15s;
@@ -112,7 +112,7 @@
 .chevron {
   display: flex;
   align-items: center;
-  color: var(--color-neutral-400);
+  color: var(--color-neutral-600);
   flex-shrink: 0;
   transition: transform 0.2s;
 }
@@ -166,7 +166,7 @@
 .fb-option.disabled                { opacity: 0.4; cursor: not-allowed; }
 
 .fb-option--empty {
-  color: var(--color-neutral-400);
+  color: var(--color-neutral-600);
   cursor: default;
   justify-content: center;
   font-style: italic;

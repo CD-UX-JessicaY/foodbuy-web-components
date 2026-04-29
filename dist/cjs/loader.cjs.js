@@ -1,6 +1,6 @@
 'use strict';
 
-var index = require('./index-CGtW1orf.js');
+var index = require('./index-BA9qOWo8.js');
 
 const defineCustomElements = async (win, options) => {
   if (typeof window === 'undefined') return undefined;

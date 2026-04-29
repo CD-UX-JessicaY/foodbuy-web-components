@@ -9,7 +9,7 @@
 
 .fb-legend {
   font-size: var(--font-size-14);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-regular);
   color: var(--color-neutral-700);
   margin-bottom: var(--spacing-8);
   padding: 0;

@@ -1,4 +1,5 @@
 import { Component, Prop, Event, EventEmitter, h, Host } from '@stencil/core';
+import { renderFieldLabel, renderHelperText } from '../../utils/field-helpers';
 
 export type TextareaState = 'default' | 'error' | 'disabled' | 'read-only';
 export type TextareaSize  = 'sm' | 'default' | 'lg';
@@ -52,12 +53,7 @@ export class FbTextarea {
     return (
       <Host>
         <div class="fb-textarea-wrapper">
-          {this.label && (
-            <label htmlFor={this.textareaId} class="fb-label">
-              {this.label}
-              {this.required && <span class="required-indicator" aria-hidden="true"> *</span>}
-            </label>
-          )}
+          {renderFieldLabel(this.label, this.required, this.textareaId)}
 
           <textarea
             id={this.textareaId}
@@ -89,20 +85,7 @@ export class FbTextarea {
           </textarea>
 
           <div class="fb-textarea-footer">
-            {hasHelper && (
-              <div
-                id={this.helperId}
-                class={{ 'fb-helper': true, 'fb-helper--error': this.isError }}
-                role={this.isError ? 'alert' : null}
-              >
-                {this.isError && (
-                  <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
-                  </svg>
-                )}
-                {this.helperText}
-              </div>
-            )}
+            {renderHelperText(this.helperText, this.helperId, this.isError)}
 
             {showCounter && (
               // aria-live="polite" announces the count as the user types

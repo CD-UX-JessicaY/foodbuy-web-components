@@ -72,7 +72,7 @@ export class FbTabs {
         var _a;
         const tabs = this.parsedTabs;
         const active = this._activeTab || ((_a = tabs.find(t => !t.disabled)) === null || _a === void 0 ? void 0 : _a.id);
-        return (h(Host, { key: '6e5dfc617b109630dd86b81e559113bef8eeceda', ref: (el) => this.el = el }, h("div", { key: 'e1de632f1442b9b90f58d931d4ebd247d0b2be4b', role: "tablist", "aria-label": this.label, class: {
+        return (h(Host, { key: '926c16d554589ecaaf090fb4854b5611408151fd', ref: (el) => this.el = el }, h("div", { key: 'f50215b17fa23d471f25d21d91bc0934e58a8920', role: "tablist", "aria-label": this.label, class: {
                 'fb-tablist': true,
                 [`variant-${this.variant}`]: true,
                 'full-width': this.fullWidth,

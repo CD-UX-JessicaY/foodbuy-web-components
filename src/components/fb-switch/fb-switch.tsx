@@ -1,4 +1,5 @@
 import { Component, Prop, Event, EventEmitter, h, Host } from '@stencil/core';
+import { renderHelperText } from '../../utils/field-helpers';
 
 let idCounter = 0;
 
@@ -65,9 +66,7 @@ export class FbSwitch {
             {this.label && <span class="label-text">{this.label}</span>}
           </label>
 
-          {hasHelper && (
-            <div id={this.helperId} class="fb-helper">{this.helperText}</div>
-          )}
+          {renderHelperText(this.helperText, this.helperId, false)}
         </div>
       </Host>
     );

@@ -1,4 +1,5 @@
 import { h, Host } from "@stencil/core";
+import { renderFieldLabel, renderHelperText } from "../../utils/field-helpers";
 let idCounter = 0;
 export class FbSelect {
     constructor() {
@@ -133,14 +134,14 @@ export class FbSelect {
         const activeId = this.open && this.focusedIndex >= 0
             ? `${this.listboxId}-opt-${(_a = enabledOpts[this.focusedIndex]) === null || _a === void 0 ? void 0 : _a.value}`
             : undefined;
-        return (h(Host, { key: '313434f9907acad78a8ba0eec85e0f33b86cea10' }, h("div", { key: 'b57a0d2908cdc11680f174d49815c3c1a8a87446', class: "fb-select-wrapper", style: { fontFamily: 'var(--font-family-primary)' } }, this.label && (h("label", { key: '88115af578b92dd6b00a49f3734dd8c2cf6401fa', id: this.labelId, htmlFor: this.triggerId, class: "fb-label" }, this.label, this.required && h("span", { key: '14014ef8d1ed2ef1c4517739e9a6b4ca92b6f457', class: "required-indicator", "aria-hidden": "true" }, " *"))), h("div", { key: '5b0a6189f0dc209f7043299aaa0ba462f5b7b2f2', class: "fb-select-container", style: { position: 'relative' } }, h("button", { key: 'e2eb2a99e229573d3ea0b9c385e7d455b2f2266c', id: this.triggerId, type: "button", role: "combobox", "aria-haspopup": "listbox", "aria-expanded": this.open ? 'true' : 'false', "aria-controls": this.listboxId, "aria-labelledby": this.label ? `${this.labelId} ${this.triggerId}` : null, "aria-activedescendant": activeId, "aria-required": this.required ? 'true' : null, "aria-invalid": this.isError ? 'true' : null, "aria-describedby": hasHelper ? this.helperId : null, disabled: this.isDisabled, class: {
+        return (h(Host, { key: '3bbe86ccdf4523d2ec3f29961829d4af297698c8' }, h("div", { key: 'e703ac3823f68718dd1691f86f10994855f443cb', class: "fb-select-wrapper", style: { fontFamily: 'var(--font-family-primary)' } }, renderFieldLabel(this.label, this.required, this.triggerId, this.labelId), h("div", { key: '59a87b49af3e1c085643cda07aa04589e9bc1359', class: "fb-select-container", style: { position: 'relative' } }, h("button", { key: '63530fc441ae62f574ae99522f00c76e658f0830', id: this.triggerId, type: "button", role: "combobox", "aria-haspopup": "listbox", "aria-expanded": this.open ? 'true' : 'false', "aria-controls": this.listboxId, "aria-labelledby": this.label ? `${this.labelId} ${this.triggerId}` : null, "aria-activedescendant": activeId, "aria-required": this.required ? 'true' : null, "aria-invalid": this.isError ? 'true' : null, "aria-describedby": hasHelper ? this.helperId : null, disabled: this.isDisabled, class: {
                 'fb-select-trigger': true,
                 [`size-${this.size}`]: true,
                 'open': this.open,
                 'state-error': this.isError,
                 'state-disabled': this.isDisabled,
                 'has-value': !!this.selectedOption,
-            }, onClick: () => this.open ? this.close() : this.open_(), onKeyDown: this.handleTriggerKeyDown }, h("span", { key: 'ebb029d9fa62dac6fed8d264ea0eff6c0aefa167', class: "trigger-text" }, this.selectedOption ? this.selectedOption.label : this.placeholder), h("span", { key: '4f8114ab3ba6af0ae36cd7313e0249ea19926b04', "aria-hidden": "true", class: { 'chevron': true, 'chevron--open': this.open } }, h("svg", { key: '6a50d3cc58926c414cbfb6273b060dc43561f83a', width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }, h("path", { key: '9dd3606c0088790e86f8a11f98a9df47d6c360f6', d: "M6 9l6 6 6-6" })))), this.open && (h("ul", { key: '519ce70d80fe8026b1896da3532216dce9e0ae56', id: this.listboxId, role: "listbox", "aria-label": this.label || 'Options', class: "fb-listbox" }, opts.map((opt) => {
+            }, onClick: () => this.open ? this.close() : this.open_(), onKeyDown: this.handleTriggerKeyDown }, h("span", { key: '057b181852a367e16e0b54637f33f07f89dabb0e', class: "trigger-text" }, this.selectedOption ? this.selectedOption.label : this.placeholder), h("span", { key: 'd5e4fd198c621a4f5de7aa64ab5ffb8200412686', "aria-hidden": "true", class: { 'chevron': true, 'chevron--open': this.open } }, h("svg", { key: '370a90ea05d8daf05cc1e0f1d313e815813fbab4', width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }, h("path", { key: 'f54b269df6dd75c29a0962dfef4f1b2447eeb98b', d: "M6 9l6 6 6-6" })))), this.open && (h("ul", { key: '1435dac6e64f743254d8cfbfb6a73180a03c605f', id: this.listboxId, role: "listbox", "aria-label": this.label || 'Options', class: "fb-listbox" }, opts.map((opt) => {
             var _a;
             const isSelected = this.value === opt.value;
             const isFocused = ((_a = enabledOpts[this.focusedIndex]) === null || _a === void 0 ? void 0 : _a.value) === opt.value;
@@ -151,7 +152,7 @@ export class FbSelect {
                     'focused': isFocused,
                     'disabled': !!opt.disabled,
                 }, onClick: () => this.selectOption(opt), onKeyDown: (e) => this.handleOptionKeyDown(e, opt) }, h("span", null, opt.label), isSelected && (h("svg", { "aria-hidden": "true", width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round", "stroke-linejoin": "round" }, h("path", { d: "M20 6L9 17l-5-5" })))));
-        })))), hasHelper && (h("div", { key: 'a2b1c98973414b10f13e93bf07319d8a88b268c0', id: this.helperId, class: { 'fb-helper': true, 'fb-helper--error': this.isError }, role: this.isError ? 'alert' : null }, this.helperText)))));
+        })))), renderHelperText(this.helperText, this.helperId, this.isError))));
     }
     static get is() { return "fb-select"; }
     static get encapsulation() { return "shadow"; }

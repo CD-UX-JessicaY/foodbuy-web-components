@@ -1,4 +1,5 @@
 import { h, Host } from "@stencil/core";
+import { renderFieldLabel, renderHelperText } from "../../utils/field-helpers";
 let idCounter = 0;
 export class FbTextarea {
     constructor() {
@@ -28,7 +29,7 @@ export class FbTextarea {
         const showCounter = !!this.maxLength;
         const counterId = showCounter ? `${this.textareaId}-counter` : null;
         const describedBy = [hasHelper ? this.helperId : null, counterId].filter(Boolean).join(' ') || null;
-        return (h(Host, { key: '630b8868b728ea7c4f8a4f35fa011dfaa6a7eda2' }, h("div", { key: '74753e90d501a52cdc5ee9a4e88da136a82e5dde', class: "fb-textarea-wrapper" }, this.label && (h("label", { key: '1dd225293354e08fd408c35c441a649e24d5aa73', htmlFor: this.textareaId, class: "fb-label" }, this.label, this.required && h("span", { key: 'c2ae106aee20a65a91c8b33db38d269a598f900f', class: "required-indicator", "aria-hidden": "true" }, " *"))), h("textarea", { key: '59bf5e4092a549cca31b17280b31702bb245d4c3', id: this.textareaId, rows: this.rows, placeholder: this.placeholder, disabled: this.isDisabled, readOnly: this.isReadOnly, required: this.required, maxLength: this.maxLength, "aria-required": this.required ? 'true' : null, "aria-invalid": this.isError ? 'true' : null, "aria-describedby": describedBy, class: {
+        return (h(Host, { key: 'c2bf79e082bf30306b2506bcc3095ccf7785c22f' }, h("div", { key: 'bc55a222165d2f7b3c22f9c2923831a1f7a4a233', class: "fb-textarea-wrapper" }, renderFieldLabel(this.label, this.required, this.textareaId), h("textarea", { key: 'd100ecfa79137deaffd98c8c968d637de86cbe9c', id: this.textareaId, rows: this.rows, placeholder: this.placeholder, disabled: this.isDisabled, readOnly: this.isReadOnly, required: this.required, maxLength: this.maxLength, "aria-required": this.required ? 'true' : null, "aria-invalid": this.isError ? 'true' : null, "aria-describedby": describedBy, class: {
                 'fb-textarea': true,
                 [`size-${this.size}`]: true,
                 'state-error': this.isError,
@@ -38,9 +39,9 @@ export class FbTextarea {
                 const val = e.target.value;
                 this.value = val;
                 this.fbChange.emit(val);
-            }, onFocus: () => this.fbFocus.emit(), onBlur: () => this.fbBlur.emit() }, this.value), h("div", { key: '15c66b58650087db27362fe0568d21cfee66bcf4', class: "fb-textarea-footer" }, hasHelper && (h("div", { key: 'cb4f8bd02565a4e81c9f4e8ff8dddc1a1ace6b35', id: this.helperId, class: { 'fb-helper': true, 'fb-helper--error': this.isError }, role: this.isError ? 'alert' : null }, this.isError && (h("svg", { key: 'b6004e8c352db2a7ef5445815e4ed49f4abda951', "aria-hidden": "true", width: "13", height: "13", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2", "stroke-linecap": "round", "stroke-linejoin": "round" }, h("circle", { key: '8b8c490bb9fcb8a4231f88f3eb1f4b2b6b7db369', cx: "12", cy: "12", r: "10" }), h("line", { key: '76bcfcb572878cbf26a463ee77a960f3ede1ca77', x1: "12", y1: "8", x2: "12", y2: "12" }), h("line", { key: 'bd91ccf081e81c7d516875d451ea952e5904a20c', x1: "12", y1: "16", x2: "12.01", y2: "16" }))), this.helperText)), showCounter && (
+            }, onFocus: () => this.fbFocus.emit(), onBlur: () => this.fbBlur.emit() }, this.value), h("div", { key: 'c2bbb35e7cba35cbda4b9ba5aea953fb7a08fdf8', class: "fb-textarea-footer" }, renderHelperText(this.helperText, this.helperId, this.isError), showCounter && (
         // aria-live="polite" announces the count as the user types
-        h("div", { key: '07c712f8bb7f9a47a2aa9be430c1c34d90f9c8f9', id: counterId, class: { 'fb-counter': true, 'fb-counter--limit': charCount >= this.maxLength }, "aria-live": "polite" }, charCount, "/", this.maxLength))))));
+        h("div", { key: 'bc64d0193c45f762758472053367f64f9eaa5f7c', id: counterId, class: { 'fb-counter': true, 'fb-counter--limit': charCount >= this.maxLength }, "aria-live": "polite" }, charCount, "/", this.maxLength))))));
     }
     static get is() { return "fb-textarea"; }
     static get encapsulation() { return "shadow"; }

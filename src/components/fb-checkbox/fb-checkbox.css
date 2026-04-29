@@ -1,3 +1,5 @@
+@import '../../global/field-shared.css';
+
 :host { display: block; }
 
 .fb-checkbox-wrapper {
@@ -66,5 +68,4 @@
   line-height: 1.4;
 }
 
-.fb-helper        { font-size: var(--font-size-12); color: var(--color-neutral-500); padding-left: 26px; }
-.fb-helper--error { color: var(--color-danger-600); }
+.fb-helper { padding-left: 26px; }

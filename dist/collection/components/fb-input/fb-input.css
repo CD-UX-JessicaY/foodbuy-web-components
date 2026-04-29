@@ -1,14 +1,4 @@
-:host { display: block; }
-
-.fb-input-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-4);
-  font-family: var(--font-family-primary);
-  width: 100%;
-}
-
-/* ── Label ────────────────────────────────────────────────────────── */
+/* ── Shared field label ────────────────────────────────────────────── */
 .fb-label {
   display: flex;
   align-items: center;
@@ -22,6 +12,32 @@
 .required-indicator {
   color: var(--color-danger-600);
   font-weight: var(--font-weight-bold);
+}
+
+/* ── Shared helper text ────────────────────────────────────────────── */
+.fb-helper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  font-size: var(--font-size-12);
+  color: var(--color-neutral-500);
+}
+
+.fb-helper--error {
+  color: var(--color-danger-600);
+}
+
+.helper-icon { flex-shrink: 0; }
+
+
+:host { display: block; }
+
+.fb-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  font-family: var(--font-family-primary);
+  width: 100%;
 }
 
 /* ── Field row ────────────────────────────────────────────────────── */
@@ -48,7 +64,7 @@
 }
 .state-error:focus-within {
   border-color: var(--color-danger-600);
-  box-shadow: 0 0 0 var(--focus-width) color-mix(in srgb, var(--color-danger-500) 20%, transparent);
+  box-shadow: 0 0 0 var(--focus-width) color-mix(in srgb, var(--color-danger-600) 20%, transparent);
 }
 
 /* Disabled */
@@ -125,17 +141,3 @@
   outline-offset: -2px;
 }
 
-/* ── Helper text ──────────────────────────────────────────────────── */
-.fb-helper {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-4);
-  font-size: var(--font-size-12);
-  color: var(--color-neutral-500);
-}
-
-.fb-helper--error {
-  color: var(--color-danger-600);
-}
-
-.helper-icon { flex-shrink: 0; }

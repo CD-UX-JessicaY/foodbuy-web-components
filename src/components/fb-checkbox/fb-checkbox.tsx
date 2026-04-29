@@ -1,4 +1,5 @@
 import { Component, Prop, Event, EventEmitter, h, Host } from '@stencil/core';
+import { renderHelperText } from '../../utils/field-helpers';
 
 export type CheckboxState = 'default' | 'error' | 'disabled';
 export type CheckboxSize  = 'sm' | 'md' | 'lg';
@@ -99,15 +100,7 @@ export class FbCheckbox {
             {this.label && <span class="label-text">{this.label}</span>}
           </label>
 
-          {hasHelper && (
-            <div
-              id={this.helperId}
-              class={{ 'fb-helper': true, 'fb-helper--error': this.isError }}
-              role={this.isError ? 'alert' : null}
-            >
-              {this.helperText}
-            </div>
-          )}
+          {renderHelperText(this.helperText, this.helperId, this.isError)}
         </div>
       </Host>
     );

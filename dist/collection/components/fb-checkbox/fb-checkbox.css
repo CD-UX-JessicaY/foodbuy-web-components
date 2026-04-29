@@ -1,3 +1,35 @@
+/* ── Shared field label ────────────────────────────────────────────── */
+.fb-label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-700);
+  cursor: default;
+}
+
+.required-indicator {
+  color: var(--color-danger-600);
+  font-weight: var(--font-weight-bold);
+}
+
+/* ── Shared helper text ────────────────────────────────────────────── */
+.fb-helper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  font-size: var(--font-size-12);
+  color: var(--color-neutral-500);
+}
+
+.fb-helper--error {
+  color: var(--color-danger-600);
+}
+
+.helper-icon { flex-shrink: 0; }
+
+
 :host { display: block; }
 
 .fb-checkbox-wrapper {
@@ -66,5 +98,4 @@
   line-height: 1.4;
 }
 
-.fb-helper        { font-size: var(--font-size-12); color: var(--color-neutral-500); padding-left: 26px; }
-.fb-helper--error { color: var(--color-danger-600); }
+.fb-helper { padding-left: 26px; }

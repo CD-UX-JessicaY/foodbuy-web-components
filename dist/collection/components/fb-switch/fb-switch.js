@@ -1,4 +1,5 @@
 import { h, Host } from "@stencil/core";
+import { renderHelperText } from "../../utils/field-helpers";
 let idCounter = 0;
 export class FbSwitch {
     constructor() {
@@ -15,10 +16,10 @@ export class FbSwitch {
     }
     render() {
         const hasHelper = !!this.helperText;
-        return (h(Host, { key: 'b25865eb469e9324c70bb1d6f280bd6298557130' }, h("div", { key: 'd35b0d45c0a7cb174e9f3a33eb939d52a4a9e5e5', class: "fb-switch-wrapper" }, h("label", { key: 'fde740a50cd1fe17a1f8b81bbbfc42224143a03e', htmlFor: this.switchId, class: { 'fb-switch-label': true, 'disabled': this.disabled } }, h("input", { key: '4deddebe07abf8d1bfccea72cbf8b4649897d6b0', id: this.switchId, type: "checkbox", role: "switch", checked: this.checked, disabled: this.disabled, "aria-label": !this.label ? 'Toggle' : null, "aria-checked": this.checked ? 'true' : 'false', "aria-describedby": hasHelper ? this.helperId : null, class: "native-switch", onChange: (e) => {
+        return (h(Host, { key: '1f20ad8e9908e49a6f555f065fe73acb3c577d62' }, h("div", { key: 'cc49c559d29f3df52740ca155b13582d71256f10', class: "fb-switch-wrapper" }, h("label", { key: '1c70923ed593c912c4724451e78a7e8d895bdfc0', htmlFor: this.switchId, class: { 'fb-switch-label': true, 'disabled': this.disabled } }, h("input", { key: 'd234efe828b758cf684f1d39bcb6ebc7f0463476', id: this.switchId, type: "checkbox", role: "switch", checked: this.checked, disabled: this.disabled, "aria-label": !this.label ? 'Toggle' : null, "aria-checked": this.checked ? 'true' : 'false', "aria-describedby": hasHelper ? this.helperId : null, class: "native-switch", onChange: (e) => {
                 this.checked = e.target.checked;
                 this.fbChange.emit(this.checked);
-            } }), h("span", { key: 'cdfc04b6a40a5ba0d7120da589f3bae006371349', "aria-hidden": "true", class: { 'switch-track': true, 'on': this.checked } }, h("span", { key: 'd2d64266911f1a703ceba01ed48042efaf4e64f6', class: "switch-thumb" })), this.label && h("span", { key: '82e52960c127f952cd8fb6e837a4bb4a846ea6e2', class: "label-text" }, this.label)), hasHelper && (h("div", { key: '12d4531ccd4698fec7656e6f2a23944dbb3bb180', id: this.helperId, class: "fb-helper" }, this.helperText)))));
+            } }), h("span", { key: '78bcbd1b78eddf650452a6a6e4c43cc5c15c6e9c', "aria-hidden": "true", class: { 'switch-track': true, 'on': this.checked } }, h("span", { key: '65ab5bc9886bae3b1c046d6d48210e92cc47a83e', class: "switch-thumb" })), this.label && h("span", { key: '17d67d16afeb29260fb06d28e6f9c4f036952dfd', class: "label-text" }, this.label)), renderHelperText(this.helperText, this.helperId, false))));
     }
     static get is() { return "fb-switch"; }
     static get encapsulation() { return "shadow"; }

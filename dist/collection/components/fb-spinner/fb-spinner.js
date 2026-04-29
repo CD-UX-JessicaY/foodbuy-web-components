@@ -7,7 +7,7 @@ export class FbSpinner {
         this.label = 'Loading, please wait';
     }
     render() {
-        return (h(Host, { key: '82406bca363db2a0d15837aef618bd3da581ea1f' }, h("span", { key: '0b27cb8ffe3e22f95ea519d96fcf3c85812c87b5', role: "status", "aria-label": this.label, class: { 'fb-spinner': true, [`size-${this.size}`]: true } }, h("svg", { key: '2439875da5a014ee63fcde783deb310d08827c1d', "aria-hidden": "true", viewBox: "0 0 24 24", fill: "none", class: "spinner-svg" }, h("circle", { key: 'd6ea3f7040060e54e0744ab31daa06902fb71f20', class: "track", cx: "12", cy: "12", r: "10", "stroke-width": "2.5" }), h("path", { key: '65c1d1d882cc9c76ee5c8bc157201ff3d5f044d8', class: "arc", d: "M12 2a10 10 0 0 1 10 10", "stroke-width": "2.5", "stroke-linecap": "round" })), h("span", { key: '33758a9667b49bfb4da326a18694fa227d89a984', class: "visually-hidden" }, this.label))));
+        return (h(Host, { key: '9651a8c17ef4fa4fb615c5f9b92e5a22cc2118d6' }, h("span", { key: '417c95ba1acb54da1dcf9ac64f4cc6881c409386', role: "status", "aria-label": this.label, class: { 'fb-spinner': true, [`size-${this.size}`]: true } }, h("svg", { key: '74051d76be7c1913a93115fc1d50c1c9d90e2140', "aria-hidden": "true", viewBox: "0 0 24 24", fill: "none", class: "spinner-svg" }, h("circle", { key: '5d85bf9351a5818b6ce5ddb0a76b3f1e7da8ce7f', class: "track", cx: "12", cy: "12", r: "10", "stroke-width": "2.5" }), h("path", { key: '704033688558476f78034933aef8aacc871d824b', class: "arc", d: "M12 2a10 10 0 0 1 10 10", "stroke-width": "2.5", "stroke-linecap": "round" })), h("span", { key: '2b2a77a99be9f7de2df583f8cf3edb4dc5b125c6', class: "visually-hidden" }, this.label))));
     }
     static get is() { return "fb-spinner"; }
     static get encapsulation() { return "shadow"; }

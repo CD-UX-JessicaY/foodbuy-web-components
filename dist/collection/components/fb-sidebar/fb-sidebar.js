@@ -63,7 +63,7 @@ export class FbSidebar {
     }
     render() {
         const items = this.parsedItems;
-        return (h(Host, { key: '306cff7696de1ebb67738bd4769984a0772dc87a' }, h("nav", { key: 'ed7d69bbd8e22e684b7f7c62c224a7a1984ae8d3', "aria-label": this.label, class: { 'fb-sidebar': true, 'fb-sidebar--collapsed': this.collapsed } }, h("ul", { key: 'd20cf25164f2f4589f844692e0a8c085fe5dd2a7', role: "list", class: "fb-sidebar__list" }, this.renderItems(items)), h("slot", { key: '823410195a9df4a93043f65d8032eeb2ee523d61', name: "footer" }))));
+        return (h(Host, { key: 'aabf63be5d3e2cb6edd974df994926b02d2feaf1' }, h("nav", { key: '5e1e21a12ea4cbac29c5810ab8e347d102de278e', "aria-label": this.label, class: { 'fb-sidebar': true, 'fb-sidebar--collapsed': this.collapsed } }, h("ul", { key: '17513d7b279cb9bb583b6a5d97d18e8478e387e8', role: "list", class: "fb-sidebar__list" }, this.renderItems(items)), h("slot", { key: 'd8a55e0c0d3e204d3ce79310fedda0b4ae1eb969', name: "footer" }))));
     }
     static get is() { return "fb-sidebar"; }
     static get encapsulation() { return "shadow"; }

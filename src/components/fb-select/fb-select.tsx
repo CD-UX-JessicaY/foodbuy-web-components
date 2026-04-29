@@ -1,4 +1,5 @@
 import { Component, Prop, State, Event, EventEmitter, Element, Listen, h, Host } from '@stencil/core';
+import { renderFieldLabel, renderHelperText } from '../../utils/field-helpers';
 
 export interface SelectOption {
   value: string;
@@ -148,12 +149,7 @@ export class FbSelect {
       <Host>
         <div class="fb-select-wrapper" style={{ fontFamily: 'var(--font-family-primary)' }}>
 
-          {this.label && (
-            <label id={this.labelId} htmlFor={this.triggerId} class="fb-label">
-              {this.label}
-              {this.required && <span class="required-indicator" aria-hidden="true"> *</span>}
-            </label>
-          )}
+          {renderFieldLabel(this.label, this.required, this.triggerId, this.labelId)}
 
           <div class="fb-select-container" style={{ position: 'relative' }}>
             {/*
@@ -240,15 +236,7 @@ export class FbSelect {
             )}
           </div>
 
-          {hasHelper && (
-            <div
-              id={this.helperId}
-              class={{ 'fb-helper': true, 'fb-helper--error': this.isError }}
-              role={this.isError ? 'alert' : null}
-            >
-              {this.helperText}
-            </div>
-          )}
+          {renderHelperText(this.helperText, this.helperId, this.isError)}
         </div>
       </Host>
     );

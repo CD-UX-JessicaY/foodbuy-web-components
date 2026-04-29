@@ -1,4 +1,5 @@
 import { Component, Prop, State, Event, EventEmitter, Element, Listen, Watch, h, Host } from '@stencil/core';
+import { renderFieldLabel, renderHelperText } from '../../utils/field-helpers';
 
 // ── Calendar utilities ──────────────────────────────────────────────────────
 
@@ -285,12 +286,7 @@ export class FbDatePicker {
       <Host>
         <div class="fb-dp-wrapper">
 
-          {this.label && (
-            <label id={this.labelId} htmlFor={this.triggerId} class="fb-label">
-              {this.label}
-              {this.required && <span class="required-indicator" aria-hidden="true"> *</span>}
-            </label>
-          )}
+          {renderFieldLabel(this.label, this.required, this.triggerId, this.labelId)}
 
           <div class="fb-dp-container">
             {/*
@@ -372,15 +368,7 @@ export class FbDatePicker {
             )}
           </div>
 
-          {hasHelper && (
-            <div
-              id={this.helperId}
-              class={{ 'fb-helper': true, 'fb-helper--error': this.isError }}
-              role={this.isError ? 'alert' : null}
-            >
-              {this.helperText}
-            </div>
-          )}
+          {renderHelperText(this.helperText, this.helperId, this.isError)}
         </div>
       </Host>
     );

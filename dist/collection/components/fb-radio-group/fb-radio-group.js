@@ -31,7 +31,7 @@ export class FbRadioGroup {
     render() {
         const options = this.parsedOptions;
         const hasHelper = !!this.helperText;
-        return (h(Host, { key: 'c1dcd925bee51b2b16a55b6aec766f752e9dcc75' }, h("fieldset", { key: 'e18b0a24b04f2ab486ae75aba16002a84e07fee9', class: { 'fb-radio-group': true, 'has-error': this.isError }, disabled: this.disabled, "aria-describedby": hasHelper ? this.helperId : null, "aria-required": this.required ? 'true' : null }, h("legend", { key: 'c09d542ca39832ed8a8ef7fecfa9639d82c3a194', class: "fb-legend" }, this.label || 'Select an option'), h("div", { key: '2a5c1040d14f1961879f27ece76a09df7d9e7b5f', class: "options-list" }, options.map((opt) => {
+        return (h(Host, { key: 'd2f0a4c4fda313063c52d5854e73a7ed0817cf81' }, h("fieldset", { key: '52b53763d30813bb8564f3fc555c1a8e00bac2b4', class: { 'fb-radio-group': true, 'has-error': this.isError }, disabled: this.disabled, "aria-describedby": hasHelper ? this.helperId : null, "aria-required": this.required ? 'true' : null }, h("legend", { key: '61d4795f2347314244399848cf4fdff66fe2adb6', class: "fb-legend" }, this.label || 'Select an option'), h("div", { key: '4b485fd0e61856627c4b5a7149b8a23f16aa9f8f', class: "options-list" }, options.map((opt) => {
             const optId = `${this.groupName}-${opt.value}`;
             return (h("label", { key: opt.value, htmlFor: optId, class: {
                     'fb-radio-label': true,
@@ -40,7 +40,7 @@ export class FbRadioGroup {
                     this.value = opt.value;
                     this.fbChange.emit(opt.value);
                 } }), h("span", { "aria-hidden": "true", class: { 'radio-dot': true, 'checked': this.value === opt.value } }), h("span", { class: "option-label" }, opt.label)));
-        })), hasHelper && (h("div", { key: 'c9c699b3a09ce1f465c9f31d6cb29a256959445e', id: this.helperId, class: { 'fb-helper': true, 'fb-helper--error': this.isError }, role: this.isError ? 'alert' : null }, this.helperText)))));
+        })), hasHelper && (h("div", { key: '80261067a09a820c6ae1813395aceccc3a4fe1a2', id: this.helperId, class: { 'fb-helper': true, 'fb-helper--error': this.isError }, role: this.isError ? 'alert' : null }, this.helperText)))));
     }
     static get is() { return "fb-radio-group"; }
     static get encapsulation() { return "shadow"; }

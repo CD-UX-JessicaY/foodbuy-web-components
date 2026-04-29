@@ -1,3 +1,5 @@
+@import '../../global/field-shared.css';
+
 :host { display: block; }
 
 .fb-switch-wrapper { display: flex; flex-direction: column; gap: var(--spacing-4); font-family: var(--font-family-primary); }
@@ -42,4 +44,4 @@
 .switch-track.on .switch-thumb { transform: translateX(20px); }
 
 .label-text { font-size: var(--font-size-14); color: var(--color-neutral-700); }
-.fb-helper  { font-size: var(--font-size-12); color: var(--color-neutral-500); padding-left: 52px; }
+.fb-helper  { padding-left: 52px; }

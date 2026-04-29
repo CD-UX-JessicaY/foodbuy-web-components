@@ -107,11 +107,11 @@
 
 /* Destructive */
 .variant-destructive {
-  background-color: var(--color-danger-500);
+  background-color: var(--color-danger-600);
   color: var(--color-neutral-white);
   border: none;
 }
-.variant-destructive:hover:not(:disabled)  { background-color: var(--color-danger-600); }
+.variant-destructive:hover:not(:disabled)  { background-color: var(--color-danger-700); }
 .variant-destructive:active:not(:disabled) { background-color: var(--color-danger-800); }
 
 /* Link */

@@ -1,4 +1,5 @@
 import { h, Host } from "@stencil/core";
+import { renderFieldLabel, renderHelperText } from "../../utils/field-helpers";
 // ── Calendar utilities ──────────────────────────────────────────────────────
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const DAYS_SHORT = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
@@ -197,7 +198,7 @@ export class FbDatePicker {
         const m2Month = this.viewMonth === 11 ? 0 : this.viewMonth + 1;
         const showDual = this.mode === 'range' && this.calendarColumns >= 2;
         const hasHelper = !!this.helperText;
-        return (h(Host, { key: '0aa30e9503ff0f9ef34853362748720781a8b086' }, h("div", { key: 'de2e32427931b47832bcea15034a8604e61bfc01', class: "fb-dp-wrapper" }, this.label && (h("label", { key: '033c21182abeddd3238425927b0c20b88dd5c523', id: this.labelId, htmlFor: this.triggerId, class: "fb-label" }, this.label, this.required && h("span", { key: '965bab130c9e9b48e8bb54c36bbf4c8cd025ef68', class: "required-indicator", "aria-hidden": "true" }, " *"))), h("div", { key: '21bfe6277a4b4a8d385934de7d20c662a408d8a5', class: "fb-dp-container" }, h("div", { key: '10430d75774a1c15d462625bbf4593273c6164c3', class: "fb-dp-field" }, h("button", { key: 'a3ac187b178e69311ac51441af7fbf79e3ece0b4', id: this.triggerId, type: "button", class: {
+        return (h(Host, { key: '31f7beef95d3766109da3fa7a3514757c8c271d6' }, h("div", { key: '9c307bdd77380e9f4259a3e2d5ac5bc489408e71', class: "fb-dp-wrapper" }, renderFieldLabel(this.label, this.required, this.triggerId, this.labelId), h("div", { key: 'b96517888e887a51276c7d9e101daa6d1c3877a3', class: "fb-dp-container" }, h("div", { key: '798a5060df3cc7de4dc24145e6e9bcaf8058ba02', class: "fb-dp-field" }, h("button", { key: 'e2a4ed3146dfc4d97e90df28cc7eb1bcf969d68d', id: this.triggerId, type: "button", class: {
                 'fb-dp-trigger': true,
                 'is-open': this.open,
                 'state-error': this.isError,
@@ -214,7 +215,7 @@ export class FbDatePicker {
                     e.preventDefault();
                     this.closeCalendar();
                 }
-            } }, h("span", { key: '71f77b8f1c7a28dccfa548eb7a8098d3254d8edd', class: "fb-dp-icon", "aria-hidden": "true" }, h("svg", { key: '6750ec5352b108c581ffcf8d739bec6a417449db', width: "16", height: "16", viewBox: "0 0 16 16", fill: "none", stroke: "currentColor", "stroke-width": "1.5" }, h("rect", { key: 'd8aa6d7f14a917cff55dc48a6de895e7af26df04', x: "2", y: "3", width: "12", height: "11", rx: "2" }), h("path", { key: '6fd2bcefd1c817ae25baaaaf7906a3d7a6b2cac8', d: "M2 7h12" }), h("path", { key: 'c7f2a1b5f253ee6a117c0d8dd8883f0b22c56d98', d: "M5 2v2M11 2v2", "stroke-linecap": "round" }))), h("span", { key: '88d3589fbb668848261e5864229f385929376a17', class: "fb-dp-text" }, this.displayText)), this.hasValue && !this.isDisabled && (h("button", { key: '89f4487231977a77601a3c2563fa0ce0dc72005a', type: "button", class: "fb-dp-clear", "aria-label": "Clear date", onMouseDown: e => e.preventDefault(), onClick: this.clearValue }, h("svg", { key: '1a1824bb67028e2a03728c1407d05fb3e0241e19', width: "14", height: "14", viewBox: "0 0 16 16", fill: "none", stroke: "currentColor", "stroke-width": "1.5", "stroke-linecap": "round" }, h("path", { key: 'f22c61faabd1c0f4700ea860af56b97c211e7c45', d: "M3 3l10 10M13 3L3 13" }))))), this.open && (h("div", { key: '35319814a59689879704fca41e07b6b9fa147f94', id: this.dialogId, role: "dialog", "aria-modal": "true", "aria-label": "Date picker calendar", class: { 'fb-cal-popup': true, 'fb-cal-popup--dual': showDual }, onKeyDown: e => {
+            } }, h("span", { key: '1e063015cc7030cc2d97c082abf9133437f03741', class: "fb-dp-icon", "aria-hidden": "true" }, h("svg", { key: 'c6a2fb2b3396201cd24bf88e13afe97bec322334', width: "16", height: "16", viewBox: "0 0 16 16", fill: "none", stroke: "currentColor", "stroke-width": "1.5" }, h("rect", { key: '9abe54e1c1900c0d0e4fb84ab766f3d71f355821', x: "2", y: "3", width: "12", height: "11", rx: "2" }), h("path", { key: '09d46cc319bc95652def28a2342b7a65f642f1de', d: "M2 7h12" }), h("path", { key: 'c1ab6b78f19d7b9e6b1b7e9fd85b0b3c7c242f9c', d: "M5 2v2M11 2v2", "stroke-linecap": "round" }))), h("span", { key: '282e2a3f7313c255ffaa86404a6e3eff92d08347', class: "fb-dp-text" }, this.displayText)), this.hasValue && !this.isDisabled && (h("button", { key: '6f3a3e2bca6204a1a36b5fb6e9ed6821a0a05ba2', type: "button", class: "fb-dp-clear", "aria-label": "Clear date", onMouseDown: e => e.preventDefault(), onClick: this.clearValue }, h("svg", { key: '10ddbc376d25c7c9a9a484ec5db0bc03f7a9c180', width: "14", height: "14", viewBox: "0 0 16 16", fill: "none", stroke: "currentColor", "stroke-width": "1.5", "stroke-linecap": "round" }, h("path", { key: '3c68d9b3540df86db0804908a574e3fdb55765b0', d: "M3 3l10 10M13 3L3 13" }))))), this.open && (h("div", { key: 'd05cd9cad2e7249e3ad89e7ad414e54e68c1ebee', id: this.dialogId, role: "dialog", "aria-modal": "true", "aria-label": "Date picker calendar", class: { 'fb-cal-popup': true, 'fb-cal-popup--dual': showDual }, onKeyDown: e => {
                 if (e.key === 'Escape') {
                     e.preventDefault();
                     this.closeCalendar();
@@ -223,7 +224,7 @@ export class FbDatePicker {
             this.renderMonth(this.viewYear, this.viewMonth, true, false),
             h("div", { class: "fb-cal-divider", "aria-hidden": "true" }),
             this.renderMonth(m2Year, m2Month, false, true),
-        ]) : (this.renderMonth(this.viewYear, this.viewMonth, true, true))))), hasHelper && (h("div", { key: '5dfc0815cce1890e307c9c8193bd3d33cc414862', id: this.helperId, class: { 'fb-helper': true, 'fb-helper--error': this.isError }, role: this.isError ? 'alert' : null }, this.helperText)))));
+        ]) : (this.renderMonth(this.viewYear, this.viewMonth, true, true))))), renderHelperText(this.helperText, this.helperId, this.isError))));
     }
     static get is() { return "fb-date-picker"; }
     static get encapsulation() { return "shadow"; }

@@ -20,7 +20,7 @@
 }
 
 .required-indicator {
-  color: var(--color-danger-500);
+  color: var(--color-danger-600);
   font-weight: var(--font-weight-bold);
 }
 
@@ -43,11 +43,11 @@
 
 /* Error */
 .state-error {
-  border-color: var(--color-danger-500);
+  border-color: var(--color-danger-600);
   border-width: var(--border-thick);
 }
 .state-error:focus-within {
-  border-color: var(--color-danger-500);
+  border-color: var(--color-danger-600);
   box-shadow: 0 0 0 var(--focus-width) color-mix(in srgb, var(--color-danger-500) 20%, transparent);
 }
 

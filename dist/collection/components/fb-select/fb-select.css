@@ -12,7 +12,7 @@
   font-weight: var(--font-weight-semibold);
   color: var(--color-neutral-700);
 }
-.required-indicator { color: var(--color-danger-500); }
+.required-indicator { color: var(--color-danger-600); }
 
 /* ── Trigger button ───────────────────────────────────────────────── */
 .fb-select-trigger {
@@ -36,7 +36,7 @@
 }
 
 .fb-select-trigger.open        { border-color: var(--color-primary-500); }
-.fb-select-trigger.state-error { border-color: var(--color-danger-500); border-width: var(--border-thick); }
+.fb-select-trigger.state-error { border-color: var(--color-danger-600); border-width: var(--border-thick); }
 .fb-select-trigger.state-disabled { background-color: var(--color-neutral-100); opacity: 0.6; cursor: not-allowed; }
 
 .size-sm      { height: 32px; padding: 0 var(--spacing-8);  font-size: var(--font-size-12); }

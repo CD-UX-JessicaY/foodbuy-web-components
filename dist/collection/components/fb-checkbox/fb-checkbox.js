@@ -26,7 +26,7 @@ export class FbCheckbox {
         return (h(Host, { key: '6198179c490277af847b4a9b09fe13d5ad101d2f' }, h("div", { key: '84dc2bd3299205b8e19fdd0cf8b280b8fcdeed9a', class: "fb-checkbox-wrapper" }, h("label", { key: 'c94a3214cc105bbe3cddce9d1a6c6df483474802', htmlFor: this.inputId, class: {
                 'fb-checkbox-label': true,
                 'disabled': this.isDisabled,
-            } }, h("input", { key: '2512268e16515ab582d5d84319146be36fa81dda', id: this.inputId, type: "checkbox", checked: this.checked, disabled: this.isDisabled, required: this.required, value: this.value, "aria-required": this.required ? 'true' : null, "aria-invalid": this.isError ? 'true' : null, "aria-describedby": hasHelper ? this.helperId : null,
+            } }, h("input", { key: '955985137357e2576c48822318e6b15adc36f28f', id: this.inputId, type: "checkbox", checked: this.checked, disabled: this.isDisabled, required: this.required, value: this.value, "aria-label": !this.label ? 'Checkbox' : null, "aria-required": this.required ? 'true' : null, "aria-invalid": this.isError ? 'true' : null, "aria-describedby": hasHelper ? this.helperId : null,
             // indeterminate must be set as a property, not attribute
             ref: (el) => {
                 if (el)
@@ -34,7 +34,7 @@ export class FbCheckbox {
             }, class: "native-checkbox", onChange: (e) => {
                 this.checked = e.target.checked;
                 this.fbChange.emit(this.checked);
-            } }), h("span", { key: 'a7602afdc021bf7feaea30bb86410e033c2aaa83', "aria-hidden": "true", class: {
+            } }), h("span", { key: '970b905201ffcd0d21cf7dbac4976718c889aa30', "aria-hidden": "true", class: {
                 'checkbox-box': true,
                 [`size-${this.size}`]: true,
                 'checked': this.checked || this.indeterminate,
@@ -43,7 +43,7 @@ export class FbCheckbox {
             ? h("svg", { width: "10", height: "2", viewBox: "0 0 10 2", fill: "none" }, h("path", { d: "M1 1h8", stroke: "white", "stroke-width": "2", "stroke-linecap": "round" }))
             : this.checked
                 ? h("svg", { width: "10", height: "8", viewBox: "0 0 10 8", fill: "none" }, h("path", { d: "M1 4l3 3 5-5", stroke: "white", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round" }))
-                : null), this.label && h("span", { key: '0dc47f5645e52fbf7243ec308dd9873f3215115c', class: "label-text" }, this.label)), hasHelper && (h("div", { key: 'ebdf2ab83bae1bb9c532d928b2579118b0093920', id: this.helperId, class: { 'fb-helper': true, 'fb-helper--error': this.isError }, role: this.isError ? 'alert' : null }, this.helperText)))));
+                : null), this.label && h("span", { key: 'b44fee8790b64ad84beaa596686e72d49f2d3f31', class: "label-text" }, this.label)), hasHelper && (h("div", { key: '75be8fb56db5148e081cad513c9634f00ebd1ada', id: this.helperId, class: { 'fb-helper': true, 'fb-helper--error': this.isError }, role: this.isError ? 'alert' : null }, this.helperText)))));
     }
     static get is() { return "fb-checkbox"; }
     static get encapsulation() { return "shadow"; }

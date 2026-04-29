@@ -16,7 +16,7 @@
   color: var(--color-neutral-700);
   cursor: default;
 }
-.required-indicator { color: var(--color-danger-500); }
+.required-indicator { color: var(--color-danger-600); }
 
 /* ── Container (position:relative so listbox can be absolute) ───────── */
 .fb-combobox-container {
@@ -43,9 +43,9 @@
 
 /* States */
 .fb-combobox-field.is-open     { border-color: var(--color-primary-500); }
-.fb-combobox-field.state-error { border-color: var(--color-danger-500); border-width: var(--border-thick); }
+.fb-combobox-field.state-error { border-color: var(--color-danger-600); border-width: var(--border-thick); }
 .fb-combobox-field.state-error:focus-within {
-  border-color: var(--color-danger-500);
+  border-color: var(--color-danger-600);
   box-shadow: 0 0 0 var(--focus-width) color-mix(in srgb, var(--color-danger-500) 20%, transparent);
 }
 .fb-combobox-field.state-disabled {

@@ -47,6 +47,7 @@ export class FbSwitch {
               role="switch"
               checked={this.checked}
               disabled={this.disabled}
+              aria-label={!this.label ? 'Toggle' : null}
               aria-checked={this.checked ? 'true' : 'false'}
               aria-describedby={hasHelper ? this.helperId : null}
               class="native-switch"

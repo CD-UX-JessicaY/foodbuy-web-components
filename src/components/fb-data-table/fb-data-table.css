@@ -232,7 +232,7 @@
 }
 .fb-dt-action-item:hover          { background: var(--color-neutral-50); }
 .fb-dt-action-item:focus-visible  { outline: 2px solid var(--focus-color); outline-offset: 1px; }
-.fb-dt-action-item--danger        { color: var(--color-danger-500); }
+.fb-dt-action-item--danger        { color: var(--color-danger-700); }
 .fb-dt-action-item--danger:hover  { background: var(--color-danger-50); }
 .fb-dt-action-sep {
   height: 1px;

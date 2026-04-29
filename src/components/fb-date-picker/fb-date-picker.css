@@ -15,7 +15,7 @@
   color: var(--color-neutral-700);
   cursor: default;
 }
-.required-indicator { color: var(--color-danger-500); }
+.required-indicator { color: var(--color-danger-600); }
 
 /* ── Container (relative for popup positioning) ──────────────────── */
 .fb-dp-container { position: relative; display: inline-block; }
@@ -50,7 +50,7 @@
 }
 .fb-dp-trigger:hover:not(:disabled),
 .fb-dp-trigger.is-open     { border-color: var(--color-primary-500); }
-.fb-dp-trigger.state-error { border-color: var(--color-danger-500); border-width: var(--border-thick); }
+.fb-dp-trigger.state-error { border-color: var(--color-danger-600); border-width: var(--border-thick); }
 .fb-dp-trigger.state-disabled {
   background: var(--color-neutral-100);
   border-color: var(--color-neutral-200);

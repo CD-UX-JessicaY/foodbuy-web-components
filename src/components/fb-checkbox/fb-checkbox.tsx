@@ -65,6 +65,7 @@ export class FbCheckbox {
               disabled={this.isDisabled}
               required={this.required}
               value={this.value}
+              aria-label={!this.label ? 'Checkbox' : null}
               aria-required={this.required ? 'true' : null}
               aria-invalid={this.isError ? 'true' : null}
               aria-describedby={hasHelper ? this.helperId : null}

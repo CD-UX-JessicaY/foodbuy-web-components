@@ -61,7 +61,7 @@ export class FbRadioGroup {
           aria-describedby={hasHelper ? this.helperId : null}
           aria-required={this.required ? 'true' : null}
         >
-          {this.label && <legend class="fb-legend">{this.label}</legend>}
+          <legend class="fb-legend">{this.label || 'Select an option'}</legend>
 
           <div class="options-list">
             {options.map((opt) => {

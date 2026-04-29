@@ -56,6 +56,6 @@
 }
 .fb-menuitem:hover:not(.disabled)  { background-color: var(--color-neutral-50); }
 .fb-menuitem:focus-visible          { outline: var(--focus-width) solid var(--focus-color); outline-offset: -2px; }
-.fb-menuitem.danger                 { color: var(--color-danger-500); }
+.fb-menuitem.danger                 { color: var(--color-danger-700); }
 .fb-menuitem.danger:hover           { background-color: var(--color-danger-50); }
 .fb-menuitem.disabled               { opacity: 0.4; cursor: not-allowed; }
